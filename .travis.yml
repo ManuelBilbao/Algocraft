@@ -1,0 +1,8 @@
+language: java
+jdk:
+  - oraclejdk11
+
+install: ant
+
+script:
+  - ant integracion-continua
