@@ -2,10 +2,9 @@ package fiuba.algo3.tp2;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class HachaMetalTest {
+public class HachaMetalTest {
 
     @Test
     public void seCreaHachaDeMetalConDurabilidad400YFuerza10() {
