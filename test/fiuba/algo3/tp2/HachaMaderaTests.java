@@ -8,7 +8,8 @@ public class HachaMaderaTests {
 
     @Test
     public void seCreaHachaDeMaderaConDurabilidad100YFuerza2() {
-        Herramienta hacha = new HachaMadera();
+        Jugador jugador = new Jugador();
+        Herramienta hacha = jugador.construirHachaDeMadera();
 
         assertEquals(hacha.getDurabilidad(), 100);
         assertEquals(hacha.getFuerza(), 2);
