@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PicoPiedraTest {
+public class PicoPiedraTests {
 
     @Test
     public void seCreaPicoDePiedraConDurabilidad200YFuerza4() {
