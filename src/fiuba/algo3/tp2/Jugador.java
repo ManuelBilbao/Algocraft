@@ -3,10 +3,23 @@ package fiuba.algo3.tp2;
 public class Jugador {
 
     private Constructor constructor = new Constructor();
+    private Inventario inventarioHerramientas = new Inventario();
+    private Inventario inventarioMateriales = new Inventario();
+
 
     public Jugador() {
-
+        inventarioHerramientas.agregar("hachaDeMadera", this.construirHachaDeMadera());
     }
+
+    public Inventario getInventarioHerramientas(){ return inventarioHerramientas; }
+
+    public Inventario getInventarioMateriales(){ return inventarioMateriales; }
+
+    public int cantidadDeHerramienta(String herramienta){ return inventarioHerramientas.cantidadDe(herramienta);}
+
+    public int cantidadDeMaterial(String material){ return inventarioHerramientas.cantidadDe(material);}
+
+    public boolean inventarioVacio(Inventario inventario){ return inventario.vacio();}
 
     public Herramienta construirHachaDeMadera() {
         return constructor.construirHachaDeMadera();
