@@ -9,7 +9,10 @@ public class Inventario{
 
     public boolean vacio(){ return inventario.isEmpty(); }
 
-    public int cantidadDe(String nombreElemento) { return ((inventario.get(nombreElemento)).cantidad()); }
+    public int cantidadDe(String nombreElemento) {
+        if (! inventario.containsKey(nombreElemento)) throw new ElementoNoEstaEnElInventarioException();
+        return ((inventario.get(nombreElemento)).cantidad());
+    }
 
     public void agregar(String nombreElemento, Object elemento){
         if (inventario.containsKey(nombreElemento)){
