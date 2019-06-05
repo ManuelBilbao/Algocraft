@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2;
 
+
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -21,4 +23,6 @@ public class Tests {
         assertEquals(pico.getDurabilidad(), 100);
         assertEquals(pico.getFuerza(), 2);
     }
+
+
 }
