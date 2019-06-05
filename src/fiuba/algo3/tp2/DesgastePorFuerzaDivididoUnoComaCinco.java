@@ -11,6 +11,7 @@ public class DesgastePorFuerzaDivididoUnoComaCinco extends Desgaste{
 
     @Override
     public void usar() {
+        if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
         durabilidad-= (this.fuerza/1.5);
     }
 

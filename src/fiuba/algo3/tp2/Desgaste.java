@@ -2,9 +2,9 @@ package fiuba.algo3.tp2;
 
 public abstract class Desgaste {
 
-    protected int durabilidad;
+    protected float durabilidad;
 
-    public int getDurabilidad() {
+    public float getDurabilidad() {
         return durabilidad;
     }
 

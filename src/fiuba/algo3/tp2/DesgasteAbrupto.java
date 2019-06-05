@@ -11,6 +11,7 @@ public class DesgasteAbrupto extends Desgaste{
 
      @Override
     public void usar() {
+        if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
         this.usos--;
         if (usos <= 0) durabilidad = 0;
     }

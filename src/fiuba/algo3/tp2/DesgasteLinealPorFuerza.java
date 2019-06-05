@@ -11,6 +11,7 @@ public class DesgasteLinealPorFuerza extends Desgaste{
 
     @Override
     public void usar() {
+        if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
         durabilidad-= this.fuerza;
     }
 

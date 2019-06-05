@@ -8,6 +8,7 @@ public class DesgastePorcentual extends Desgaste {
 
     @Override
     public void usar() {
+        if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
         durabilidad-= (this.durabilidad*0.1);
     }
 
