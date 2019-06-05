@@ -8,6 +8,6 @@ public class MaterialPiedraTests {
     @Test
     public void seCreaPiedraConDurabilidad100() {
         Material piedra = new Piedra();
-        assertEquals(piedra.getDurabilidad(), 50);
+        assertEquals(piedra.getDurabilidad(), 30);
     }
 }
