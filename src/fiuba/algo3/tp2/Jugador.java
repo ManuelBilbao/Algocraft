@@ -20,4 +20,19 @@ public class Jugador {
         return constructor.construirHachaDeMetal();
     }
 
+    public Herramienta construirPicoDeMadera() {
+        return constructor.construirPicoDeMadera();
+    }
+
+    public Herramienta construirPicoDePiedra() {
+        return constructor.construirPicoDePiedra();
+    }
+
+    public Herramienta construirPicoDeMetal() {
+        return constructor.construirPicoDeMetal();
+    }
+
+    public Herramienta construirPicoFino() {
+        return constructor.construirPicoFino();
+    }
 }

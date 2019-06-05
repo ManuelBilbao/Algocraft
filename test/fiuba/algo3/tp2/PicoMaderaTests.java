@@ -8,8 +8,9 @@ public class PicoMaderaTests {
 
 
     @Test
-    public void seCreaPicoDeMaderaConDurabilidad100YFuerza2() {
-        Herramienta pico = new PicoMadera();
+    public void test01SeCreaPicoDeMaderaConDurabilidad100YFuerza2() {
+        Jugador jugador = new Jugador();
+        Herramienta pico = jugador.construirPicoDeMadera();
 
         assertEquals(pico.getDurabilidad(), 100);
         assertEquals(pico.getFuerza(), 2);

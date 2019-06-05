@@ -9,8 +9,9 @@ public class PicoMetalTests {
 
 
     @Test
-    public void seCreaPicoDeMetalConDurabilidad400YFuerza12() {
-        Herramienta pico = new PicoMetal();
+    public void test01SeCreaPicoDeMetalConDurabilidad400YFuerza12() {
+        Jugador jugador = new Jugador();
+        Herramienta pico = jugador.construirPicoDeMetal();
 
         assertEquals(pico.getDurabilidad(), 400);
         assertEquals(pico.getFuerza(), 12);

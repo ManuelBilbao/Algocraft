@@ -8,7 +8,7 @@ public class HachaPiedraTests {
 
 
     @Test
-    public void seCreaHachaDePiedraConDurabilidad200YFuerza5() {
+    public void test01SeCreaHachaDePiedraConDurabilidad200YFuerza5() {
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDePiedra();
 

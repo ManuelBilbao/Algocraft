@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HachaMetalTests {
 
     @Test
-    public void seCreaHachaDeMetalConDurabilidad400YFuerza10() {
+    public void test01SeCreaHachaDeMetalConDurabilidad400YFuerza10() {
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDeMetal();
 
