@@ -155,7 +155,7 @@ public class GeneralTests {
         // Pico de piedra golpea metal y ambos se desgastan
         picoPiedra.golpearMetal(metal);
         assertEquals(durabilidadMetal - picoPiedra.getFuerza(), metal.getDurabilidad());
-//        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad());
+        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad(), 0.00001);
 
         // Las demas herramientas se desgastan pero no al metal (salvo el picofino que no se desgasta)
         durabilidadMetal = metal.getDurabilidad();
@@ -231,7 +231,7 @@ public class GeneralTests {
 
         picoPiedra.golpearDiamante(diamante);
         assertEquals(durabilidadDiamante, diamante.getDurabilidad());
-//        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad());
+        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad(), 0.00001);
 
         picoMetal.golpearDiamante(diamante);
         assertEquals(durabilidadDiamante, diamante.getDurabilidad());
