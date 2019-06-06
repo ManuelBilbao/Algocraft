@@ -10,4 +10,16 @@ public class MaterialMetalTests {
         Material metal = new Metal();
         assertEquals(metal.getDurabilidad(), 50);
     }
+
+    @Test
+    public void seGolpeaPiedraConHachaYNoSeReduceDurabilidad() {
+        Jugador jugador = new Jugador();
+        Herramienta picoDeMadera = jugador.construirPicoDeMadera();
+        Material metal = new Metal();
+        int durabilidadInicial = metal.getDurabilidad();
+
+
+        metal.recibirGolpe(picoDeMadera);
+        assertEquals(metal.getDurabilidad(), durabilidadInicial);
+    }
 }
