@@ -8,6 +8,6 @@ public class Material {
     }
 
     public void desgastar(int fuerza) {
-        // Desgastar
+        durabilidad = durabilidad - fuerza;
     }
 }
