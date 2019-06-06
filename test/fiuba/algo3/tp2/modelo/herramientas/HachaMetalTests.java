@@ -27,9 +27,6 @@ public class HachaMetalTests {
 
         hacha.golpearMadera(madera);
         assertEquals(durabilidad - (hacha.getFuerza() / 2), hacha.getDurabilidad());
-        durabilidad -= (hacha.getFuerza() / 2);
-        hacha.golpearMadera(madera);
-        assertEquals(durabilidad - (hacha.getFuerza() / 2), hacha.getDurabilidad());
     }
 
     @Test

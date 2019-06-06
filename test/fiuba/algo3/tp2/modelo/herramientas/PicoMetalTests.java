@@ -50,12 +50,7 @@ public class PicoMetalTests {
         assertEquals(durabilidad, pico.getDurabilidad());
         pico.golpearPiedra(piedra);
         assertEquals(durabilidad, pico.getDurabilidad());
-        for (int i = 3; i <= 9; i++) {
-            pico.golpearPiedra(piedra);
-        }
-        assertEquals(durabilidad, pico.getDurabilidad());
         pico.golpearPiedra(piedra);
-        assertEquals(0, pico.getDurabilidad());
     }
 
     @Test

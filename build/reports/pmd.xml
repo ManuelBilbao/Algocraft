@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.3" timestamp="2019-06-06T11:15:06.782">
+<pmd version="4.3" timestamp="2019-06-06T14:48:08.141">
 <file name="fiuba/algo3/tp2/modelo/Constructor.java">
 <violation beginline="21" endline="23" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Controversial Rules" package="fiuba.algo3.tp2.modelo" class="Constructor" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnnecessaryConstructor" priority="3">
 Avoid unnecessary constructors - the compiler will generate these for you
