@@ -26,6 +26,6 @@ public class PicoFino extends Herramienta {
     @Override
     public void golpearDiamante(Material bloque) {
         super.golpearDiamante(bloque);
-        bloque.desgastar(fuerza);
+        bloque.recibirGolpe(fuerza);
     }
 }

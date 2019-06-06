@@ -6,13 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaterialMaderaTests {
     @Test
-    public void seCreaMaderaConDurabilidad10() {
+    public void Test01seCreaMaderaConDurabilidad10() {
         Material madera = new Madera();
         assertEquals(madera.getDurabilidad(), 10);
     }
 
     @Test
-    public void seGolpeaConHachaDeMaderaYSeReduceSuDurabilidad(){
+    public void Test02seGolpeaConHachaDeMaderaYSeReduceSuDurabilidad(){
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDeMadera();
         int fuerzaHacha = hacha.getFuerza();
@@ -21,7 +21,7 @@ public class MaterialMaderaTests {
 
         assertEquals(bloqueMadera.getDurabilidad(), 10);
 
-        bloqueMadera.recibirGolpe(hacha);
+        hacha.golpearMadera(bloqueMadera);
 
         assertEquals(bloqueMadera.getDurabilidad(), durabilidadInicial - fuerzaHacha);
     }

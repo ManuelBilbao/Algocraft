@@ -5,9 +5,7 @@ public abstract class Material {
 
     public int getDurabilidad() { return durabilidad; }
 
-    public abstract void recibirGolpe(Herramienta herramienta);
-
-    public void desgastar(int fuerza) {
+    public void recibirGolpe(int fuerza) {
         if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
         durabilidad = durabilidad - fuerza;
     }

@@ -6,20 +6,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaterialMetalTests {
     @Test
-    public void seCreaMetalConDurabilidad50() {
+    public void test01SeCreaMetalConDurabilidad50() {
         Material metal = new Metal();
         assertEquals(metal.getDurabilidad(), 50);
     }
 
     @Test
-    public void seGolpeaPiedraConHachaYNoSeReduceDurabilidad() {
+    public void test02SeGolpeaPiedraConHachaYNoSeReduceDurabilidad() {
         Jugador jugador = new Jugador();
         Herramienta picoDeMadera = jugador.construirPicoDeMadera();
         Material metal = new Metal();
         int durabilidadInicial = metal.getDurabilidad();
 
 
-        metal.recibirGolpe(picoDeMadera);
+        picoDeMadera.golpearMetal(metal);
         assertEquals(metal.getDurabilidad(), durabilidadInicial);
     }
 }

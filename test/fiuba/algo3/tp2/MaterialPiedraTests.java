@@ -6,13 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaterialPiedraTests {
     @Test
-    public void seCreaPiedraConDurabilidad100() {
+    public void test01SeCreaPiedraConDurabilidad100() {
         Material piedra = new Piedra();
         assertEquals(piedra.getDurabilidad(), 30);
     }
 
     @Test
-    public void seGolpeaPiedraConHachaYNoSeReduceDurabilidad(){
+    public void test02SeGolpeaPiedraConHachaYNoSeReduceDurabilidad(){
         Jugador jugador = new Jugador();
         Herramienta hachaDeMadera = jugador.construirHachaDeMadera();
         Herramienta hachaDeMetal = jugador.construirHachaDeMetal();
@@ -21,13 +21,13 @@ public class MaterialPiedraTests {
         int durabilidadInicial = piedra.getDurabilidad();
 
 
-        piedra.recibirGolpe(hachaDeMadera);
+        hachaDeMadera.golpearMetal(piedra);
         assertEquals(piedra.getDurabilidad(), durabilidadInicial);
 
-        piedra.recibirGolpe(hachaDeMetal);
+        hachaDeMetal.golpearMetal(piedra);
         assertEquals(piedra.getDurabilidad(), durabilidadInicial);
 
-        piedra.recibirGolpe(hachaDePiedra);
+        hachaDePiedra.golpearMetal(piedra);
         assertEquals(piedra.getDurabilidad(), durabilidadInicial);
     }
 }

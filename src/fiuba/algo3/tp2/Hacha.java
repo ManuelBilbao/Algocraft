@@ -11,6 +11,6 @@ public class Hacha extends Herramienta {
     @Override
     public void golpearMadera(Material bloque) {
         super.golpearMadera(bloque);
-        bloque.desgastar(fuerza);
+        bloque.recibirGolpe(fuerza);
     }
 }

@@ -11,6 +11,6 @@ public class Pico extends Herramienta {
     @Override
     public void golpearPiedra(Material bloque) {
         super.golpearPiedra(bloque);
-        bloque.desgastar(fuerza)
+        bloque.recibirGolpe(fuerza);
 ;    }
 }
