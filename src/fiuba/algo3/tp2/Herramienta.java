@@ -29,4 +29,5 @@ public abstract class Herramienta {
     public void golpearDiamante(Diamante bloque) {
         desgaste.usar();
     }
+
 }

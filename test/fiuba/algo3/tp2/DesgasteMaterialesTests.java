@@ -45,4 +45,68 @@ public class DesgasteMaterialesTests {
         assertEquals(diamante.getDurabilidad(),20);
     }
 
+    @Test
+    public void seDesgastaDiamanteSinDurabilidadLanzaExcepcion() {
+        Material diamante = new Diamante();
+        diamante.desgastar(120);
+
+        String resultado = "Sin excepciones.";
+
+        try {
+            diamante.desgastar(20);
+        } catch (NoPoseeDurabilidadException ex) {
+            resultado = "NoPoseeDurabilidad";
+        }
+
+        assertEquals("NoPoseeDurabilidad", resultado);
+    }
+
+    @Test
+    public void seDesgastaPiedraSinDurabilidadLanzaExcepcion() {
+        Material piedra = new Piedra();
+        piedra.desgastar(120);
+
+        String resultado = "Sin excepciones.";
+
+        try {
+            piedra.desgastar(20);
+        } catch (NoPoseeDurabilidadException ex) {
+            resultado = "NoPoseeDurabilidad";
+        }
+
+        assertEquals("NoPoseeDurabilidad", resultado);
+    }
+
+    @Test
+    public void seDesgastaMetalSinDurabilidadLanzaExcepcion() {
+        Material metal = new Metal();
+        metal.desgastar(120);
+
+        String resultado = "Sin excepciones.";
+
+        try {
+            metal.desgastar(20);
+        } catch (NoPoseeDurabilidadException ex) {
+            resultado = "NoPoseeDurabilidad";
+        }
+
+        assertEquals("NoPoseeDurabilidad", resultado);
+    }
+
+    @Test
+    public void seDesgastaMaderaSinDurabilidadLanzaExcepcion() {
+        Material madera = new Madera();
+        madera.desgastar(120);
+
+        String resultado = "Sin excepciones.";
+
+        try {
+            madera.desgastar(20);
+        } catch (NoPoseeDurabilidadException ex) {
+            resultado = "NoPoseeDurabilidad";
+        }
+
+        assertEquals("NoPoseeDurabilidad", resultado);
+    }
+
 }

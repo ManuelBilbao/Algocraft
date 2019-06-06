@@ -8,6 +8,7 @@ public class Material {
     }
 
     public void desgastar(int fuerza) {
+        if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
         durabilidad = durabilidad - fuerza;
     }
 }
