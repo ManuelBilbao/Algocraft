@@ -9,6 +9,6 @@ public class PicoPiedra extends Pico {
     @Override
     public void golpearMetal(Material bloque) {
         super.golpearMetal(bloque);
-        bloque.recibirGolpe(this);
+        bloque.recibirGolpe(this.getFuerza());
     }
 }
