@@ -9,4 +9,5 @@ public abstract class Desgaste {
     }
 
     public abstract void usar();
+
 }
