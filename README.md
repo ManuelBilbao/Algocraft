@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/30eefc8465144308b57dec546eacdbc2)](https://app.codacy.com/app/ManuelBilbao/Algocraft?utm_source=github.com&utm_medium=referral&utm_content=ManuelBilbao/Algocraft&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/ManuelBilbao/Algocraft.svg?branch=master)](https://travis-ci.org/ManuelBilbao/Algocraft)
 [![codecov](https://img.shields.io/codecov/c/github/dwyl/hapi-auth-jwt2.svg?maxAge=2592000)](https://codecov.io/gh/ManuelBilbao/Algocraft)
 # Algocraft
