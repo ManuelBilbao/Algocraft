@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/ManuelBilbao/Algocraft.svg?branch=master)](https://travis-ci.org/ManuelBilbao/Algocraft)
-[![codecov](https://img.shields.io/codecov/c/github/dwyl/hapi-auth-jwt2.svg?maxAge=2592000)](https://codecov.io/gh/ManuelBilbao/Algocraft)
+[![codecov](https://codecov.io/gh/ManuelBilbao/Algocraft/branch/master/graph/badge.svg)](https://codecov.io/gh/ManuelBilbao/Algocraft)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/30eefc8465144308b57dec546eacdbc2)](https://app.codacy.com/app/ManuelBilbao/Algocraft?utm_source=github.com&utm_medium=referral&utm_content=ManuelBilbao/Algocraft&utm_campaign=Badge_Grade_Dashboard)
 # Algocraft
 ## Consigna
 Desarrollar la aplicación completa, incluyendo el modelo de clases e interfaz gráfica. La aplicación deberá ser acompañada por pruebas unitarias e integrales y documentación de diseño. 
