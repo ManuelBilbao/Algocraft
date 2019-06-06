@@ -9,7 +9,22 @@ public class PicoFino extends Herramienta {
     }
 
     @Override
-    public void golpearDiamante(Diamante bloque) {
+    public void golpearMadera(Material bloque) {
+
+    }
+
+    @Override
+    public void golpearMetal(Material bloque) {
+
+    }
+
+    @Override
+    public void golpearPiedra(Material bloque) {
+
+    }
+
+    @Override
+    public void golpearDiamante(Material bloque) {
         super.golpearDiamante(bloque);
         bloque.desgastar(fuerza);
     }
