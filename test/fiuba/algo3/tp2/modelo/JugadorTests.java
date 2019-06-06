@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.modelo;
 
 import fiuba.algo3.tp2.modelo.Jugador;
 import org.junit.jupiter.api.Test;
