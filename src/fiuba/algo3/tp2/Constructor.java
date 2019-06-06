@@ -51,7 +51,8 @@ public class Constructor {
 
     public Herramienta construirPicoDePiedra() {
         Desgaste desgaste = new DesgastePorFuerzaDivididoUnoComaCinco(DURABILIDAD_PICO_PIEDRA, FUERZA_PICO_PIEDRA);
-        return construirPico(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA, desgaste);
+        PicoPiedra pico = new PicoPiedra(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA, desgaste);
+        return pico;
     }
 
     public Herramienta construirPicoDeMetal() {
