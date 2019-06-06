@@ -2,31 +2,31 @@ package fiuba.algo3.tp2;
 
 public abstract class Herramienta {
 
-    protected int durabilidad;
+    protected float durabilidad;
     protected int fuerza;
     protected Desgaste desgaste;
 
-    public int getDurabilidad() {
-        return durabilidad;
+    public float getDurabilidad() {
+        return desgaste.getDurabilidad();
     }
 
     public int getFuerza() {
         return fuerza;
     }
 
-    public void golpearMadera(Madera bloque) {
+    public void golpearMadera(Material bloque) {
         desgaste.usar();
     }
 
-    public void golpearPiedra(Piedra bloque) {
+    public void golpearPiedra(Material bloque) {
         desgaste.usar();
     }
 
-    public void golpearMetal(Metal bloque) {
+    public void golpearMetal(Material bloque) {
         desgaste.usar();
     }
 
-    public void golpearDiamante(Diamante bloque) {
+    public void golpearDiamante(Material bloque) {
         desgaste.usar();
     }
 

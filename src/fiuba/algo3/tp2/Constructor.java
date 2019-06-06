@@ -55,7 +55,7 @@ public class Constructor {
     }
 
     public Herramienta construirPicoDeMetal() {
-        Desgaste desgaste = new DesgasteAbrupto(DURABILIDAD_PICO_METAL, FUERZA_PICO_METAL);
+        Desgaste desgaste = new DesgasteAbrupto(DURABILIDAD_PICO_METAL, 10);
         return construirPico(FUERZA_PICO_METAL, DURABILIDAD_PICO_METAL, desgaste);
     }
 
