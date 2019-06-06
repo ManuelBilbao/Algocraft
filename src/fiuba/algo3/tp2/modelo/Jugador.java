@@ -1,7 +1,7 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.modelo;
 
-import fiuba.algo3.tp2.herramientas.Herramienta;
-import fiuba.algo3.tp2.inventario.Inventario;
+import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
+import fiuba.algo3.tp2.modelo.inventario.Inventario;
 
 public class Jugador {
 

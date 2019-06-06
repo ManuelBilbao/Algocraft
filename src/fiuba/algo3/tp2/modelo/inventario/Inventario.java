@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.inventario;
+package fiuba.algo3.tp2.modelo.inventario;
 
 
 import java.util.HashMap;

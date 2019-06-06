@@ -1,25 +1,27 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.modelo.herramientas;
 
+import fiuba.algo3.tp2.modelo.Jugador;
+import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
+import fiuba.algo3.tp2.modelo.materiales.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class HachaPiedraTests {
-
+public class HachaMaderaTests {
 
     @Test
-    public void test01SeCreaHachaDePiedraConDurabilidad200YFuerza5() {
+    public void test01SeCreaHachaDeMaderaConDurabilidad100YFuerza2() {
         Jugador jugador = new Jugador();
-        Herramienta hacha = jugador.construirHachaDePiedra();
+        Herramienta hacha = jugador.construirHachaDeMadera();
 
-        assertEquals(hacha.getDurabilidad(), 200);
-        assertEquals(hacha.getFuerza(), 5);
+        assertEquals(100, hacha.getDurabilidad());
+        assertEquals(2, hacha.getFuerza());
     }
 
     @Test
-    public void test02HachaDePiedraGolpeaBloqueDeMadera() {
+    public void test02HachaDeMaderaGolpeaBloqueDeMadera() {
         Jugador jugador = new Jugador();
-        Herramienta hacha = jugador.construirHachaDePiedra();
+        Herramienta hacha = jugador.construirHachaDeMadera();
         Material madera = new Madera();
         float durabilidad = hacha.getDurabilidad();
 
@@ -31,9 +33,9 @@ public class HachaPiedraTests {
     }
 
     @Test
-    public void test03HachaDePiedraGolpeaBloqueDePiedra() {
+    public void test03HachaDeMaderaGolpeaBloqueDePiedra() {
         Jugador jugador = new Jugador();
-        Herramienta hacha = jugador.construirHachaDePiedra();
+        Herramienta hacha = jugador.construirHachaDeMadera();
         Material piedra = new Piedra();
         float durabilidad = hacha.getDurabilidad();
 
@@ -45,9 +47,9 @@ public class HachaPiedraTests {
     }
 
     @Test
-    public void test04HachaDePiedraGolpeaBloqueDeMetal() {
+    public void test04HachaDeMaderaGolpeaBloqueDeMetal() {
         Jugador jugador = new Jugador();
-        Herramienta hacha = jugador.construirHachaDePiedra();
+        Herramienta hacha = jugador.construirHachaDeMadera();
         Material metal = new Metal();
         float durabilidad = hacha.getDurabilidad();
 
@@ -59,9 +61,9 @@ public class HachaPiedraTests {
     }
 
     @Test
-    public void test05HachaDePiedraGolpeaBloqueDeDiamante() {
+    public void test05HachaDeMaderaGolpeaBloqueDeDiamante() {
         Jugador jugador = new Jugador();
-        Herramienta hacha = jugador.construirHachaDePiedra();
+        Herramienta hacha = jugador.construirHachaDeMadera();
         Material diamante = new Diamante();
         float durabilidad = hacha.getDurabilidad();
 

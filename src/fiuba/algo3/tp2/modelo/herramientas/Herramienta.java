@@ -1,7 +1,7 @@
-package fiuba.algo3.tp2.herramientas;
+package fiuba.algo3.tp2.modelo.herramientas;
 
-import fiuba.algo3.tp2.desgastes.Desgaste;
-import fiuba.algo3.tp2.materiales.Material;
+import fiuba.algo3.tp2.modelo.desgastes.Desgaste;
+import fiuba.algo3.tp2.modelo.materiales.Material;
 
 public abstract class Herramienta {
 

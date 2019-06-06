@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.desgastes;
+package fiuba.algo3.tp2.modelo.desgastes;
 
 public class DesgastePorFuerzaDivididoUnoComaCinco extends Desgaste{
 

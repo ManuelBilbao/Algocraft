@@ -1,7 +1,7 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.modelo;
 
-import fiuba.algo3.tp2.desgastes.*;
-import fiuba.algo3.tp2.herramientas.*;
+import fiuba.algo3.tp2.modelo.desgastes.*;
+import fiuba.algo3.tp2.modelo.herramientas.*;
 
 public class Constructor {
 
