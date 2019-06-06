@@ -6,4 +6,8 @@ public class Material {
     public int getDurabilidad() {
         return durabilidad;
     }
+
+    public void desgastar(int fuerza) {
+        // Desgastar
+    }
 }

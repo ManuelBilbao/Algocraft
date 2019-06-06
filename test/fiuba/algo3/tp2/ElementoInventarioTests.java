@@ -34,8 +34,8 @@ public class ElementoInventarioTests {
 
     @Test
     public void elementoInventarioDisminuyeSuCantidad(){
-
-        Hacha hacha = new Hacha(10,10);
+        Jugador jugador = new Jugador();
+        Herramienta hacha = jugador.construirHachaDeMadera();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
         assertEquals(elemento.cantidad(), 1);
@@ -47,7 +47,8 @@ public class ElementoInventarioTests {
 
     @Test
     public void nombreElementoInventario(){
-        Hacha hacha = new Hacha(10,10);
+        Jugador jugador = new Jugador();
+        Herramienta hacha = jugador.construirHachaDeMadera();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
         assertEquals(elemento.nombre(), "hacha");
@@ -55,7 +56,8 @@ public class ElementoInventarioTests {
 
     @Test
     public void getElementoInventario(){
-        Hacha hacha = new Hacha(10,10);
+        Jugador jugador = new Jugador();
+        Herramienta hacha = jugador.construirHachaDeMadera();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
         assertEquals(elemento.getElemento(), hacha);

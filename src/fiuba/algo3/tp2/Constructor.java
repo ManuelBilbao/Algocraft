@@ -19,38 +19,44 @@ public class Constructor {
 
     }
 
-    private Hacha construirHacha(int fuerza, int durabilidad) {
-        Hacha hacha = new Hacha(fuerza, durabilidad);
+    private Hacha construirHacha(int fuerza, int durabilidad, Desgaste desgaste) {
+        Hacha hacha = new Hacha(fuerza, durabilidad, desgaste);
         return hacha;
     }
 
-    private Pico construirPico(int fuerza, int durabilidad) {
-        Pico pico = new Pico(fuerza, durabilidad);
+    private Pico construirPico(int fuerza, int durabilidad, Desgaste desgaste) {
+        Pico pico = new Pico(fuerza, durabilidad, desgaste);
         return pico;
     }
 
     public Herramienta construirHachaDeMadera() {
-        return construirHacha(FUERZA_HACHA_MADERA, DURABILIDAD_HACHA_MADERA);
+        Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_MADERA, FUERZA_HACHA_MADERA);
+        return construirHacha(FUERZA_HACHA_MADERA, DURABILIDAD_HACHA_MADERA, desgaste);
     }
 
     public Herramienta construirHachaDePiedra() {
-        return construirHacha(FUERZA_HACHA_PIEDRA, DURABILIDAD_HACHA_PIEDRA);
+        Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_PIEDRA, FUERZA_HACHA_PIEDRA);
+        return construirHacha(FUERZA_HACHA_PIEDRA, DURABILIDAD_HACHA_PIEDRA, desgaste);
     }
 
     public Herramienta construirHachaDeMetal() {
-        return construirHacha(FUERZA_HACHA_METAL, DURABILIDAD_HACHA_METAL);
+        Desgaste desgaste = new DesgasteMitadDeFuerza(DURABILIDAD_HACHA_METAL, FUERZA_HACHA_METAL);
+        return construirHacha(FUERZA_HACHA_METAL, DURABILIDAD_HACHA_METAL, desgaste);
     }
 
     public Herramienta construirPicoDeMadera() {
-        return construirPico(FUERZA_PICO_MADERA, DURABILIDAD_PICO_MADERA);
+        Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_PICO_MADERA, FUERZA_PICO_MADERA);
+        return construirPico(FUERZA_PICO_MADERA, DURABILIDAD_PICO_MADERA, desgaste);
     }
 
     public Herramienta construirPicoDePiedra() {
-        return construirPico(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA);
+        Desgaste desgaste = new DesgastePorFuerzaDivididoUnoComaCinco(DURABILIDAD_PICO_PIEDRA, FUERZA_PICO_PIEDRA);
+        return construirPico(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA, desgaste);
     }
 
     public Herramienta construirPicoDeMetal() {
-        return construirPico(FUERZA_PICO_METAL, DURABILIDAD_PICO_METAL);
+        Desgaste desgaste = new DesgasteAbrupto(DURABILIDAD_PICO_METAL, FUERZA_PICO_METAL);
+        return construirPico(FUERZA_PICO_METAL, DURABILIDAD_PICO_METAL, desgaste);
     }
 
     public Herramienta construirPicoFino() {

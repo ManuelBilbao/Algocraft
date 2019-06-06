@@ -5,8 +5,8 @@ public class ElementoInventario {
     protected int cantidad;
     protected String nombre;
 
-    public ElementoInventario(String nombreElemento,Object elem){
-        elemento = elem;
+    public ElementoInventario(String nombreElemento, Object elemento){
+        this.elemento = elemento;
         cantidad = 1;
         nombre = nombreElemento;
     }

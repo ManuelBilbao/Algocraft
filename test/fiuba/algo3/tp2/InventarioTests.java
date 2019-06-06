@@ -18,7 +18,8 @@ public class InventarioTests {
     @Test
     public void seAgregaElementoAlInventarioYSuCantidadEsCorrecta(){
         Inventario inventario = new Inventario();
-        Hacha hacha = new Hacha(10,10);
+        Jugador jugador = new Jugador();
+        Herramienta hacha = jugador.construirHachaDeMadera();
 
         inventario.agregar("hacha", hacha);
         assertEquals(inventario.cantidadDe("hacha"),1);
