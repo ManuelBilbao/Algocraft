@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ManuelBilbao/Algocraft.svg?branch=master)](https://travis-ci.org/ManuelBilbao/Algocraft)
+[![codecov](https://img.shields.io/codecov/c/github/dwyl/hapi-auth-jwt2.svg?maxAge=2592000)](https://codecov.io/gh/ManuelBilbao/Algocraft)
 # Algocraft
 ## Consigna
 Desarrollar la aplicación completa, incluyendo el modelo de clases e interfaz gráfica. La aplicación deberá ser acompañada por pruebas unitarias e integrales y documentación de diseño. 

@@ -6,3 +6,5 @@ install: ant
 
 script:
   - ant integracion-continua
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
