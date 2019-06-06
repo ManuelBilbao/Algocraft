@@ -1,5 +1,8 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.herramientas.Herramienta;
+import fiuba.algo3.tp2.inventario.Inventario;
+
 public class Jugador {
 
     private Constructor constructor = new Constructor();

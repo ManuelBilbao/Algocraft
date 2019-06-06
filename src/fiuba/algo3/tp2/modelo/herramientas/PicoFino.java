@@ -1,4 +1,7 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.herramientas;
+
+import fiuba.algo3.tp2.desgastes.DesgastePorcentual;
+import fiuba.algo3.tp2.materiales.Material;
 
 public class PicoFino extends Herramienta {
 

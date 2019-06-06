@@ -1,10 +1,10 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.desgastes;
 
-public class DesgastePorFuerzaDivididoUnoComaCinco extends Desgaste{
+public class DesgasteMitadDeFuerza extends Desgaste{
 
     private int fuerza;
 
-    public DesgastePorFuerzaDivididoUnoComaCinco(int durabilidadInicial, int fuerza) {
+    public DesgasteMitadDeFuerza(int durabilidadInicial, int fuerza) {
         this.durabilidad = durabilidadInicial;
         this.fuerza = fuerza;
     }
@@ -12,7 +12,7 @@ public class DesgastePorFuerzaDivididoUnoComaCinco extends Desgaste{
     @Override
     public void usar() {
         if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
-        durabilidad-= (this.fuerza/1.5);
+        durabilidad-= (this.fuerza/2);
     }
 
 

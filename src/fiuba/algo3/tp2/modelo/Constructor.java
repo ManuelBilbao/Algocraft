@@ -1,5 +1,8 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.desgastes.*;
+import fiuba.algo3.tp2.herramientas.*;
+
 public class Constructor {
 
     private final int FUERZA_HACHA_MADERA = 2;
