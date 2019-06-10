@@ -19,14 +19,12 @@ public class MaterialMaderaTests {
     public void Test02seGolpeaConHachaDeMaderaYSeReduceSuDurabilidad(){
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDeMadera();
-        int fuerzaHacha = hacha.getFuerza();
         Madera bloqueMadera = new Madera();
-        int durabilidadInicial = bloqueMadera.getDurabilidad();
 
         assertEquals(bloqueMadera.getDurabilidad(), 10);
 
         hacha.golpearMadera(bloqueMadera);
 
-        assertEquals(bloqueMadera.getDurabilidad(), durabilidadInicial - fuerzaHacha);
+        assertEquals(bloqueMadera.getDurabilidad(), 8);
     }
 }

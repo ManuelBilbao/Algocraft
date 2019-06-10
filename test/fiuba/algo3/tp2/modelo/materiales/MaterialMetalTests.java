@@ -20,10 +20,12 @@ public class MaterialMetalTests {
         Jugador jugador = new Jugador();
         Herramienta picoDeMadera = jugador.construirPicoDeMadera();
         Material metal = new Metal();
-        int durabilidadInicial = metal.getDurabilidad();
 
 
         picoDeMadera.golpearMetal(metal);
-        assertEquals(metal.getDurabilidad(), durabilidadInicial);
+        assertEquals(metal.getDurabilidad(), 50);
+
+        picoDeMadera.golpearMetal(metal);
+        assertEquals(metal.getDurabilidad(), 50);
     }
 }

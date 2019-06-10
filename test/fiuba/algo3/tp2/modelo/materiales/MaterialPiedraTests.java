@@ -21,16 +21,15 @@ public class MaterialPiedraTests {
         Herramienta hachaDeMetal = jugador.construirHachaDeMetal();
         Herramienta hachaDePiedra = jugador.construirHachaDePiedra();
         Material piedra = new Piedra();
-        int durabilidadInicial = piedra.getDurabilidad();
 
 
         hachaDeMadera.golpearMetal(piedra);
-        assertEquals(piedra.getDurabilidad(), durabilidadInicial);
+        assertEquals(piedra.getDurabilidad(), 30);
 
         hachaDeMetal.golpearMetal(piedra);
-        assertEquals(piedra.getDurabilidad(), durabilidadInicial);
+        assertEquals(piedra.getDurabilidad(), 30);
 
         hachaDePiedra.golpearMetal(piedra);
-        assertEquals(piedra.getDurabilidad(), durabilidadInicial);
+        assertEquals(piedra.getDurabilidad(), 30);
     }
 }

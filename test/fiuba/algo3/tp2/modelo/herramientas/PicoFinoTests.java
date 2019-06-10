@@ -23,16 +23,15 @@ public class PicoFinoTests {
         Jugador jugador = new Jugador();
         Herramienta pico = jugador.construirPicoFino();
         Material madera = new Madera();
-        float durabilidad = pico.getDurabilidad();
 
         pico.golpearMadera(madera);
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
         pico.golpearMadera(madera);
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
         for (int i = 0; i < 10; i++) {
             pico.golpearMadera(madera);
         }
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
     }
 
     @Test
@@ -40,16 +39,15 @@ public class PicoFinoTests {
         Jugador jugador = new Jugador();
         Herramienta pico = jugador.construirPicoFino();
         Material piedra = new Piedra();
-        float durabilidad = pico.getDurabilidad();
 
         pico.golpearPiedra(piedra);
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
         pico.golpearPiedra(piedra);
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
         for (int i = 0; i < 10; i++) {
             pico.golpearPiedra(piedra);
         }
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
     }
 
     @Test
@@ -57,16 +55,15 @@ public class PicoFinoTests {
         Jugador jugador = new Jugador();
         Herramienta pico = jugador.construirPicoFino();
         Material metal = new Metal();
-        float durabilidad = pico.getDurabilidad();
 
         pico.golpearMetal(metal);
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
         pico.golpearMetal(metal);
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
         for (int i = 0; i < 10; i++) {
             pico.golpearMetal(metal);
         }
-        assertEquals(durabilidad, pico.getDurabilidad());
+        assertEquals(1000, pico.getDurabilidad());
     }
 
     @Test
@@ -74,13 +71,11 @@ public class PicoFinoTests {
         Jugador jugador = new Jugador();
         Herramienta pico = jugador.construirPicoFino();
         Material diamante = new Diamante();
-        float durabilidad = pico.getDurabilidad();
 
         pico.golpearDiamante(diamante);
-        assertEquals(durabilidad - durabilidad * 0.1, pico.getDurabilidad());
-        durabilidad -= durabilidad * 0.1;
+        assertEquals(900, pico.getDurabilidad());
         pico.golpearDiamante(diamante);
-        assertEquals(durabilidad - durabilidad * 0.1, pico.getDurabilidad());
+        assertEquals(810, pico.getDurabilidad());
     }
 
 }

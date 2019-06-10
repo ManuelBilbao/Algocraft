@@ -23,13 +23,11 @@ public class HachaMaderaTests {
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material madera = new Madera();
-        float durabilidad = hacha.getDurabilidad();
 
         hacha.golpearMadera(madera);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
-        durabilidad -= hacha.getFuerza();
+        assertEquals(98, hacha.getDurabilidad());
         hacha.golpearMadera(madera);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
+        assertEquals(96, hacha.getDurabilidad());
     }
 
     @Test
@@ -37,13 +35,11 @@ public class HachaMaderaTests {
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material piedra = new Piedra();
-        float durabilidad = hacha.getDurabilidad();
 
         hacha.golpearMadera(piedra);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
-        durabilidad -= hacha.getFuerza();
+        assertEquals(98, hacha.getDurabilidad());
         hacha.golpearMadera(piedra);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
+        assertEquals(96, hacha.getDurabilidad());
     }
 
     @Test
@@ -51,13 +47,12 @@ public class HachaMaderaTests {
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material metal = new Metal();
-        float durabilidad = hacha.getDurabilidad();
+
 
         hacha.golpearMadera(metal);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
-        durabilidad -= hacha.getFuerza();
+        assertEquals(98, hacha.getDurabilidad());
         hacha.golpearMadera(metal);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
+        assertEquals(96, hacha.getDurabilidad());
     }
 
     @Test
@@ -65,13 +60,12 @@ public class HachaMaderaTests {
         Jugador jugador = new Jugador();
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material diamante = new Diamante();
-        float durabilidad = hacha.getDurabilidad();
+
 
         hacha.golpearMadera(diamante);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
-        durabilidad -= hacha.getFuerza();
+        assertEquals(98, hacha.getDurabilidad());
         hacha.golpearMadera(diamante);
-        assertEquals(durabilidad - hacha.getFuerza(), hacha.getDurabilidad());
+        assertEquals(96, hacha.getDurabilidad());
     }
 
 }
