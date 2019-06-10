@@ -24,54 +24,40 @@ public class GeneralTests {
         Material metal = new Metal();
         Material diamante = new Diamante();
 
-        float durabilidadHachaMadera = hachaMadera.getDurabilidad();
-        float durabilidadHachaPiedra = hachaPiedra.getDurabilidad();
-        float durabilidadHachaMetal= hachaMetal.getDurabilidad();
-        float durabilidadPicoMadera = picoMadera.getDurabilidad();
-        float durabilidadPicoPiedra = picoPiedra.getDurabilidad();
-        float durabilidadPicoMetal= picoMetal.getDurabilidad();
-        float durabilidadPicoFino= picoFino.getDurabilidad();
 
-        float durabilidadMadera = madera.getDurabilidad();
-        float durabilidadPiedra = piedra.getDurabilidad();
-        float durabilidadMetal = metal.getDurabilidad();
-        float durabilidadDiamante = diamante.getDurabilidad();
 
         // Hachas desgastan madera y se desgastan
         hachaMadera.golpearMadera(madera);
-        assertEquals(durabilidadMadera - hachaMadera.getFuerza(), madera.getDurabilidad());
-        assertEquals(durabilidadHachaMadera - hachaMadera.getFuerza(), hachaMadera.getDurabilidad());
+        assertEquals(8, madera.getDurabilidad());
+        assertEquals(98, hachaMadera.getDurabilidad());
 
-        durabilidadMadera = madera.getDurabilidad();
         hachaPiedra.golpearMadera(madera);
-        assertEquals(durabilidadMadera - hachaPiedra.getFuerza(), madera.getDurabilidad());
-        assertEquals(durabilidadHachaPiedra - hachaPiedra.getFuerza(), hachaPiedra.getDurabilidad());
+        assertEquals(3, madera.getDurabilidad());
+        assertEquals(195, hachaPiedra.getDurabilidad());
 
         madera = new Madera();
-        durabilidadMadera = madera.getDurabilidad();
         hachaMetal.golpearMadera(madera);
-        assertEquals(durabilidadMadera - hachaMetal.getFuerza(), madera.getDurabilidad());
-        assertEquals(durabilidadHachaMetal - hachaMetal.getFuerza() / 2, hachaMetal.getDurabilidad());
+        assertEquals(0, madera.getDurabilidad());
+        assertEquals(395, hachaMetal.getDurabilidad());
 
         // Picos y pico fino no rompen la madera pero los picos se desgastan
         madera = new Madera();
-        durabilidadMadera = madera.getDurabilidad();
 
         picoMadera.golpearMadera(madera);
-        assertEquals(durabilidadMadera, madera.getDurabilidad());
-        assertEquals(durabilidadPicoMadera - picoMadera.getFuerza(), picoMadera.getDurabilidad());
+        assertEquals(10, madera.getDurabilidad());
+        assertEquals(98, picoMadera.getDurabilidad());
 
         picoPiedra.golpearMadera(madera);
-        assertEquals(durabilidadMadera, madera.getDurabilidad());
+        assertEquals(10, madera.getDurabilidad());
 //        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad());
 
         picoMetal.golpearMadera(madera);
-        assertEquals(durabilidadMadera, madera.getDurabilidad());
-        assertEquals(durabilidadPicoMetal, picoMetal.getDurabilidad()); // Se desgasta al decimo golpe
+        assertEquals(10, madera.getDurabilidad());
+        assertEquals(400, picoMetal.getDurabilidad()); // Se desgasta al decimo golpe
 
         picoFino.golpearMadera(madera);
-        assertEquals(durabilidadMadera, madera.getDurabilidad());
-        assertEquals(durabilidadPicoFino, picoFino.getDurabilidad());
+        assertEquals(10, madera.getDurabilidad());
+        assertEquals(1000, picoFino.getDurabilidad());
     }
 
     @Test
@@ -86,48 +72,36 @@ public class GeneralTests {
         Herramienta picoFino = jugador.construirPicoFino();
 
         Material piedra = new Piedra();
-        float durabilidadPiedra = piedra.getDurabilidad();
-
-        float durabilidadHachaMadera = hachaMadera.getDurabilidad();
-        float durabilidadHachaPiedra = hachaPiedra.getDurabilidad();
-        float durabilidadHachaMetal= hachaMetal.getDurabilidad();
-        float durabilidadPicoMadera = picoMadera.getDurabilidad();
-        float durabilidadPicoPiedra = picoPiedra.getDurabilidad();
-        float durabilidadPicoMetal= picoMetal.getDurabilidad();
-        float durabilidadPicoFino= picoFino.getDurabilidad();
 
         // Picos desgastan piedra y se desgastan
         picoMadera.golpearPiedra(piedra);
-        assertEquals(durabilidadPiedra - picoMadera.getFuerza(), piedra.getDurabilidad());
-        assertEquals(durabilidadPicoMadera - picoMadera.getFuerza(), picoMadera.getDurabilidad());
+        assertEquals(28, piedra.getDurabilidad());
+        assertEquals(98, picoMadera.getDurabilidad());
 
-        durabilidadPiedra = piedra.getDurabilidad();
         picoPiedra.golpearPiedra(piedra);
-        assertEquals(durabilidadPiedra - picoPiedra.getFuerza(), piedra.getDurabilidad());
+        assertEquals(24, piedra.getDurabilidad());
 //        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad());
 
-        durabilidadPiedra = piedra.getDurabilidad();
         picoMetal.golpearPiedra(piedra);
-        assertEquals(durabilidadPiedra - picoMetal.getFuerza(), piedra.getDurabilidad());
-        assertEquals(durabilidadPicoMetal, picoMetal.getDurabilidad());
+        assertEquals(12, piedra.getDurabilidad());
+        assertEquals(400, picoMetal.getDurabilidad());
 
         // Hachas y pico fino no desgastan piedra pero a ellos si
-        durabilidadPiedra = piedra.getDurabilidad();
         hachaMadera.golpearPiedra(piedra);
-        assertEquals(durabilidadPiedra, piedra.getDurabilidad());
-        assertEquals(durabilidadHachaMadera - hachaMadera.getFuerza(), hachaMadera.getDurabilidad());
+        assertEquals(12, piedra.getDurabilidad());
+        assertEquals(98, hachaMadera.getDurabilidad());
 
         hachaPiedra.golpearPiedra(piedra);
-        assertEquals(durabilidadPiedra, piedra.getDurabilidad());
-        assertEquals(durabilidadHachaPiedra - hachaPiedra.getFuerza(), hachaPiedra.getDurabilidad());
+        assertEquals(12, piedra.getDurabilidad());
+        assertEquals(195, hachaPiedra.getDurabilidad());
 
         hachaMetal.golpearPiedra(piedra);
-        assertEquals(durabilidadPiedra, piedra.getDurabilidad());
-        assertEquals(durabilidadHachaMetal - hachaMetal.getFuerza() / 2, hachaMetal.getDurabilidad());
+        assertEquals(12, piedra.getDurabilidad());
+        assertEquals(395, hachaMetal.getDurabilidad());
 
         picoFino.golpearPiedra(piedra);
-        assertEquals(durabilidadPiedra, piedra.getDurabilidad());
-        assertEquals(durabilidadPicoFino, picoFino.getDurabilidad());
+        assertEquals(12, piedra.getDurabilidad());
+        assertEquals(1000, picoFino.getDurabilidad());
     }
 
     @Test
@@ -142,46 +116,37 @@ public class GeneralTests {
         Herramienta picoFino = jugador.construirPicoFino();
 
         Material metal = new Metal();
-        float durabilidadMetal = metal.getDurabilidad();
-
-        float durabilidadHachaMadera = hachaMadera.getDurabilidad();
-        float durabilidadHachaPiedra = hachaPiedra.getDurabilidad();
-        float durabilidadHachaMetal= hachaMetal.getDurabilidad();
-        float durabilidadPicoMadera = picoMadera.getDurabilidad();
         float durabilidadPicoPiedra = picoPiedra.getDurabilidad();
-        float durabilidadPicoMetal= picoMetal.getDurabilidad();
-        float durabilidadPicoFino= picoFino.getDurabilidad();
 
         // Pico de piedra golpea metal y ambos se desgastan
         picoPiedra.golpearMetal(metal);
-        assertEquals(durabilidadMetal - picoPiedra.getFuerza(), metal.getDurabilidad());
+        assertEquals(46, metal.getDurabilidad());
         assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad(), 0.00001);
 
         // Las demas herramientas se desgastan pero no al metal (salvo el picofino que no se desgasta)
-        durabilidadMetal = metal.getDurabilidad();
         hachaMadera.golpearMetal(metal);
-        assertEquals(durabilidadMetal, metal.getDurabilidad());
-        assertEquals(durabilidadHachaMadera - hachaMadera.getFuerza(), hachaMadera.getDurabilidad());
+        assertEquals(46, metal.getDurabilidad());
+        assertEquals(98, hachaMadera.getDurabilidad());
 
         hachaPiedra.golpearMetal(metal);
-        assertEquals(durabilidadMetal, metal.getDurabilidad());
-        assertEquals(durabilidadHachaPiedra - hachaPiedra.getFuerza(), hachaPiedra.getDurabilidad());
+        assertEquals(46, metal.getDurabilidad());
+        assertEquals(195, hachaPiedra.getDurabilidad());
 
         hachaMetal.golpearMetal(metal);
-        assertEquals(durabilidadMetal, metal.getDurabilidad());
-        assertEquals(durabilidadHachaMetal - hachaMetal.getFuerza() / 2, hachaMetal.getDurabilidad());
+        assertEquals(46, metal.getDurabilidad());
+        assertEquals(395, hachaMetal.getDurabilidad());
 
         picoMadera.golpearMetal(metal);
-        assertEquals(durabilidadMetal, metal.getDurabilidad());
-        assertEquals(durabilidadPicoMadera - picoMadera.getFuerza(), picoMadera.getDurabilidad());
+        assertEquals(46, metal.getDurabilidad());
+        assertEquals(98, picoMadera.getDurabilidad());
 
         picoMetal.golpearMetal(metal);
-        assertEquals(durabilidadMetal, metal.getDurabilidad());
-        assertEquals(durabilidadPicoMetal, picoMetal.getDurabilidad());
+        assertEquals(46, metal.getDurabilidad());
+        assertEquals(400, picoMetal.getDurabilidad());
 
         picoFino.golpearMetal(metal);
-        assertEquals(durabilidadMetal, metal.getDurabilidad());
-        assertEquals(durabilidadPicoFino, durabilidadPicoFino);
+        assertEquals(46, metal.getDurabilidad());
+        assertEquals(1000, picoFino.getDurabilidad());
     }
 
     @Test
@@ -196,46 +161,38 @@ public class GeneralTests {
         Herramienta picoFino = jugador.construirPicoFino();
 
         Material diamante = new Diamante();
-        float durabilidadDiamante = diamante.getDurabilidad();
 
-        float durabilidadHachaMadera = hachaMadera.getDurabilidad();
-        float durabilidadHachaPiedra = hachaPiedra.getDurabilidad();
-        float durabilidadHachaMetal= hachaMetal.getDurabilidad();
-        float durabilidadPicoMadera = picoMadera.getDurabilidad();
         float durabilidadPicoPiedra = picoPiedra.getDurabilidad();
-        float durabilidadPicoMetal= picoMetal.getDurabilidad();
-        float durabilidadPicoFino= picoFino.getDurabilidad();
 
         // Pico fino golpea diamante y ambos se desgastan
         picoFino.golpearDiamante(diamante);
-        assertEquals(durabilidadDiamante - picoFino.getFuerza(), diamante.getDurabilidad());
-        assertEquals(durabilidadPicoFino - durabilidadPicoFino * 0.1, picoFino.getDurabilidad());
+        assertEquals(80, diamante.getDurabilidad());
+        assertEquals(900, picoFino.getDurabilidad());
 
         // Demas herramientas golpean diamante sin desgastarlo pero ellas si
-        durabilidadDiamante = diamante.getDurabilidad();
         hachaMadera.golpearDiamante(diamante);
-        assertEquals(durabilidadDiamante, diamante.getDurabilidad());
-        assertEquals(durabilidadHachaMadera - hachaMadera.getFuerza(), hachaMadera.getDurabilidad());
+        assertEquals(80, diamante.getDurabilidad());
+        assertEquals(98, hachaMadera.getDurabilidad());
 
         hachaPiedra.golpearDiamante(diamante);
-        assertEquals(durabilidadDiamante, diamante.getDurabilidad());
-        assertEquals(durabilidadHachaPiedra - hachaPiedra.getFuerza(), hachaPiedra.getDurabilidad());
+        assertEquals(80, diamante.getDurabilidad());
+        assertEquals(195, hachaPiedra.getDurabilidad());
 
         hachaMetal.golpearDiamante(diamante);
-        assertEquals(durabilidadDiamante, diamante.getDurabilidad());
-        assertEquals(durabilidadHachaMetal - hachaMetal.getFuerza() / 2, hachaMetal.getDurabilidad());
+        assertEquals(80, diamante.getDurabilidad());
+        assertEquals(395, hachaMetal.getDurabilidad());
 
         picoMadera.golpearDiamante(diamante);
-        assertEquals(durabilidadDiamante, diamante.getDurabilidad());
-        assertEquals(durabilidadPicoMadera - picoMadera.getFuerza(), picoMadera.getDurabilidad());
+        assertEquals(80, diamante.getDurabilidad());
+        assertEquals(98, picoMadera.getDurabilidad());
 
         picoPiedra.golpearDiamante(diamante);
-        assertEquals(durabilidadDiamante, diamante.getDurabilidad());
+        assertEquals(80, diamante.getDurabilidad());
         assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad(), 0.00001);
 
         picoMetal.golpearDiamante(diamante);
-        assertEquals(durabilidadDiamante, diamante.getDurabilidad());
-        assertEquals(durabilidadPicoMetal, picoMetal.getDurabilidad());
+        assertEquals(80, diamante.getDurabilidad());
+        assertEquals(400, picoMetal.getDurabilidad());
     }
 
 }
