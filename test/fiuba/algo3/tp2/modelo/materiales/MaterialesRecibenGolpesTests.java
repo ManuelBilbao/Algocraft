@@ -1,7 +1,7 @@
 package fiuba.algo3.tp2.modelo.materiales;
 
 import fiuba.algo3.tp2.modelo.desgastes.NoPoseeDurabilidadException;
-import fiuba.algo3.tp2.modelo.materiales.*;
+import fiuba.algo3.tp2.modelo.materiales.bloques.*;
 import org.junit.jupiter.api.Test;
 
 

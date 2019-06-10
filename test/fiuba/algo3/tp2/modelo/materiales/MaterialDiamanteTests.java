@@ -1,8 +1,8 @@
 package fiuba.algo3.tp2.modelo.materiales;
 
 
-import fiuba.algo3.tp2.modelo.materiales.Diamante;
-import fiuba.algo3.tp2.modelo.materiales.Material;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Diamante;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Material;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

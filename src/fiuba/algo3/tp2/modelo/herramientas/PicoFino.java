@@ -1,7 +1,8 @@
 package fiuba.algo3.tp2.modelo.herramientas;
 
 import fiuba.algo3.tp2.modelo.desgastes.DesgastePorcentual;
-import fiuba.algo3.tp2.modelo.materiales.Material;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Material;
+import fiuba.algo3.tp2.modelo.materiales.herramientas.MaderaYPiedra;
 
 public class PicoFino extends Herramienta {
 
@@ -9,6 +10,7 @@ public class PicoFino extends Herramienta {
         this.durabilidad = 1000;
         this.fuerza = 20;
         this.desgaste = new DesgastePorcentual(1000);
+        this.material = new MaderaYPiedra();
     }
 
     @Override
@@ -29,6 +31,6 @@ public class PicoFino extends Herramienta {
     @Override
     public void golpearDiamante(Material bloque) {
         super.golpearDiamante(bloque);
-        bloque.recibirGolpe(fuerza);
+        material.enviarGolpeADiamante(bloque, fuerza);
     }
 }

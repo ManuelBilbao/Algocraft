@@ -1,8 +1,7 @@
 package fiuba.algo3.tp2.modelo.herramientas;
 
 import fiuba.algo3.tp2.modelo.Jugador;
-import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
-import fiuba.algo3.tp2.modelo.materiales.*;
+import fiuba.algo3.tp2.modelo.materiales.bloques.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

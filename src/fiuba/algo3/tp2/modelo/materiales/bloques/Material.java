@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.modelo.materiales;
+package fiuba.algo3.tp2.modelo.materiales.bloques;
 
 import fiuba.algo3.tp2.modelo.desgastes.NoPoseeDurabilidadException;
 

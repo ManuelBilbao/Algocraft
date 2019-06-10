@@ -2,6 +2,10 @@ package fiuba.algo3.tp2.modelo;
 
 import fiuba.algo3.tp2.modelo.desgastes.*;
 import fiuba.algo3.tp2.modelo.herramientas.*;
+import fiuba.algo3.tp2.modelo.materiales.herramientas.Madera;
+import fiuba.algo3.tp2.modelo.materiales.herramientas.Material;
+import fiuba.algo3.tp2.modelo.materiales.herramientas.Metal;
+import fiuba.algo3.tp2.modelo.materiales.herramientas.Piedra;
 
 public class Constructor {
 
@@ -22,45 +26,50 @@ public class Constructor {
 
     }
 
-    private Hacha construirHacha(int fuerza, int durabilidad, Desgaste desgaste) {
-        Hacha hacha = new Hacha(fuerza, durabilidad, desgaste);
+    private Hacha construirHacha(int fuerza, int durabilidad, Desgaste desgaste, Material material) {
+        Hacha hacha = new Hacha(fuerza, durabilidad, desgaste, material);
         return hacha;
     }
 
-    private Pico construirPico(int fuerza, int durabilidad, Desgaste desgaste) {
-        Pico pico = new Pico(fuerza, durabilidad, desgaste);
+    private Pico construirPico(int fuerza, int durabilidad, Desgaste desgaste, Material material) {
+        Pico pico = new Pico(fuerza, durabilidad, desgaste, material);
         return pico;
     }
 
     public Herramienta construirHachaDeMadera() {
         Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_MADERA, FUERZA_HACHA_MADERA);
-        return construirHacha(FUERZA_HACHA_MADERA, DURABILIDAD_HACHA_MADERA, desgaste);
+        Material madera = new Madera();
+        return construirHacha(FUERZA_HACHA_MADERA, DURABILIDAD_HACHA_MADERA, desgaste, madera);
     }
 
     public Herramienta construirHachaDePiedra() {
         Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_PIEDRA, FUERZA_HACHA_PIEDRA);
-        return construirHacha(FUERZA_HACHA_PIEDRA, DURABILIDAD_HACHA_PIEDRA, desgaste);
+        Material piedra = new Piedra();
+        return construirHacha(FUERZA_HACHA_PIEDRA, DURABILIDAD_HACHA_PIEDRA, desgaste, piedra);
     }
 
     public Herramienta construirHachaDeMetal() {
         Desgaste desgaste = new DesgasteMitadDeFuerza(DURABILIDAD_HACHA_METAL, FUERZA_HACHA_METAL);
-        return construirHacha(FUERZA_HACHA_METAL, DURABILIDAD_HACHA_METAL, desgaste);
+        Material metal = new Metal();
+        return construirHacha(FUERZA_HACHA_METAL, DURABILIDAD_HACHA_METAL, desgaste, metal);
     }
 
     public Herramienta construirPicoDeMadera() {
         Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_PICO_MADERA, FUERZA_PICO_MADERA);
-        return construirPico(FUERZA_PICO_MADERA, DURABILIDAD_PICO_MADERA, desgaste);
+        Material madera = new Madera();
+        return construirPico(FUERZA_PICO_MADERA, DURABILIDAD_PICO_MADERA, desgaste, madera);
     }
 
     public Herramienta construirPicoDePiedra() {
         Desgaste desgaste = new DesgastePorFuerzaDivididoUnoComaCinco(DURABILIDAD_PICO_PIEDRA, FUERZA_PICO_PIEDRA);
-        PicoPiedra pico = new PicoPiedra(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA, desgaste);
-        return pico;
+        Material piedra = new Piedra();
+        return construirPico(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA, desgaste, piedra);
     }
 
     public Herramienta construirPicoDeMetal() {
         Desgaste desgaste = new DesgasteAbrupto(DURABILIDAD_PICO_METAL, 10);
-        return construirPico(FUERZA_PICO_METAL, DURABILIDAD_PICO_METAL, desgaste);
+        Material metal = new Metal();
+        return construirPico(FUERZA_PICO_METAL, DURABILIDAD_PICO_METAL, desgaste, metal);
     }
 
     public Herramienta construirPicoFino() {
