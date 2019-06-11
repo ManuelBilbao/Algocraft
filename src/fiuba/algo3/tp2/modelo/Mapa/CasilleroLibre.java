@@ -4,9 +4,8 @@ public class CasilleroLibre extends EstadoCasillero {
 
     @Override
     public void ocupar(Casillero casillero, Object elemento){
-    //    casillero.setEstadoCasillero(new CasilleroOcupado());
-    //    casillero.setContenido(elemento);
-        System.out.println(elemento.toString());
+        casillero.setEstadoCasillero(new CasilleroOcupado());
+        casillero.setContenido(elemento);
 
     }
 
