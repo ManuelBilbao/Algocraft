@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.modelo.mapa;
 
-import fiuba.algo3.tp2.modelo.Mapa.Posicion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.modelo.construccionDeHerramientas;
 
-import fiuba.algo3.tp2.modelo.Mapa.*;
+import fiuba.algo3.tp2.modelo.mapa.*;
 
 
 public class Mesa {

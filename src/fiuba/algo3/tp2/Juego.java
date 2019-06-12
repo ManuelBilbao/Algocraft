@@ -1,9 +1,9 @@
 package fiuba.algo3.tp2;
 
 import fiuba.algo3.tp2.modelo.Jugador;
-import fiuba.algo3.tp2.modelo.Mapa.CasilleroOcupadoException;
-import fiuba.algo3.tp2.modelo.Mapa.Mapa;
-import fiuba.algo3.tp2.modelo.Mapa.Posicion;
+import fiuba.algo3.tp2.modelo.mapa.CasilleroOcupadoException;
+import fiuba.algo3.tp2.modelo.mapa.Mapa;
+import fiuba.algo3.tp2.modelo.mapa.Posicion;
 
 public class Juego {
 
@@ -20,7 +20,6 @@ public class Juego {
             mapa.ocuparCasillero(posicionNueva, this.jugador);
             mapa.liberarCasillero(posicionActual);
             mapa.setPosicionJugador(posicionNueva);
-            System.out.println("Nueva posicion: [" + mapa.getPosicionJugador().getFila() + ":" + mapa.getPosicionJugador().getColumna() + "]");
         } catch (CasilleroOcupadoException e) {
             return;
         }
@@ -48,6 +47,10 @@ public class Juego {
         Posicion posicionJugador = mapa.getPosicionJugador();
         Posicion posicionNueva = posicionJugador.posicionDerecha();
         moverJugador(posicionJugador, posicionNueva);
+    }
+
+    public Mapa getMapa() {
+        return mapa;
     }
 
 }

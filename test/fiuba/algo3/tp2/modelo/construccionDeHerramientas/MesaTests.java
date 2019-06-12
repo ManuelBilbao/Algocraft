@@ -1,6 +1,6 @@
 package fiuba.algo3.tp2.modelo.construccionDeHerramientas;
 
-import fiuba.algo3.tp2.modelo.Mapa.*;
+import fiuba.algo3.tp2.modelo.mapa.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

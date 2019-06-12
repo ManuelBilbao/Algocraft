@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.modelo.Mapa;
+package fiuba.algo3.tp2.modelo.mapa;
 
 
 import fiuba.algo3.tp2.modelo.Jugador;

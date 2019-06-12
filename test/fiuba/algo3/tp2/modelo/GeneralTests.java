@@ -69,11 +69,6 @@ public class GeneralTests {
         Herramienta picoFino = jugador.construirPicoFino();
 
         Material madera = new Madera();
-        Material piedra = new Piedra();
-        Material metal = new Metal();
-        Material diamante = new Diamante();
-
-
 
         // Hachas desgastan madera y se desgastan
         hachaMadera.golpearMadera(madera);
@@ -98,7 +93,7 @@ public class GeneralTests {
 
         picoPiedra.golpearMadera(madera);
         assertEquals(10, madera.getDurabilidad());
-//        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad());
+        assertEquals(197.333, picoPiedra.getDurabilidad(), 0.001);
 
         picoMetal.golpearMadera(madera);
         assertEquals(10, madera.getDurabilidad());
@@ -178,7 +173,7 @@ public class GeneralTests {
 
         picoPiedra.golpearPiedra(piedra);
         assertEquals(24, piedra.getDurabilidad());
-//        assertEquals(durabilidadPicoPiedra - picoPiedra.getFuerza() / 1.5, picoPiedra.getDurabilidad());
+        assertEquals(197.333, picoPiedra.getDurabilidad(), 0.001);
 
         picoMetal.golpearPiedra(piedra);
         assertEquals(12, piedra.getDurabilidad());
