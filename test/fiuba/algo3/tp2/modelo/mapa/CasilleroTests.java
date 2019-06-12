@@ -6,6 +6,7 @@ import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.Mapa.Casillero;
 import fiuba.algo3.tp2.modelo.Mapa.CasilleroOcupado;
 import fiuba.algo3.tp2.modelo.Mapa.CasilleroOcupadoException;
+import fiuba.algo3.tp2.modelo.Mapa.Posicion;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -27,30 +28,30 @@ public class CasilleroTests {
     }
 
     @Test
-    public void sePideFilaYColumnaDeUnCasilleroOcupado(){
+    public void sePidePosicionDeUnCasilleroOcupado(){
         Casillero casillero = new Casillero(1,1);
         Jugador jugador = new Jugador();
         casillero.ocupar(jugador);
+        Posicion posicion = new Posicion(1,1);
 
-        assertEquals(casillero.getFila(),1);
-        assertEquals(casillero.getColumna(),1);
+        assertEquals(casillero.getPosicion(),posicion);
+
 
     }
 
     @Test
-    public void sePideFilaYColumnaDeUnCasilleroLibre() {
+    public void sePidePosicionDeUnCasilleroLibre() {
         Casillero casillero = new Casillero(1, 1);
+        Posicion posicion = new Posicion(1,1);
 
-        assertEquals(casillero.getFila(), 1);
-        assertEquals(casillero.getColumna(), 1);
+        assertEquals(casillero.getPosicion(),posicion);
+
     }
 
     @Test
     public void seOcupaUnCasilleroLibreConMaterial(){
         Casillero casillero = new Casillero(1,1);
         Madera madera = new Madera();
-
-        casillero.getFila();
 
         assertEquals(casillero.getContenido(),null);
 

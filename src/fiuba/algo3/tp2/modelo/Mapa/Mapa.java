@@ -16,4 +16,6 @@ public class Mapa {
     public Casillero getCasillero(Integer fila, Integer columna){
         return casilleros[fila][columna];
     }
+
+
 }
