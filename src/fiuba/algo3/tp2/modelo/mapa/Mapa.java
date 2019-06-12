@@ -27,10 +27,6 @@ public class Mapa {
         this.posicionJugador = new Posicion(15, 15);
     }
 
-    //    public void moverJugadorArriba(){}
-//    public void moverJugadorAbajo(){}
-//    public void moverJugadorIzquierda(){}
-//    public void moverJugadorDerecha(){}
     public Casillero getCasillero(Integer fila, Integer columna){
         return casilleros[fila][columna];
     }
@@ -42,6 +38,21 @@ public class Mapa {
     public Posicion getPosicionJugador() {
         return posicionJugador;
     }
+
+
+    public void setPosicionJugador(Posicion posicionNueva) {
+        this.posicionJugador = posicionNueva;
+    }
+
+    public void liberarCasillero(Posicion posicion) {
+        casilleros[posicion.getFila()][posicion.getColumna()].liberar();
+    }
+
+    public void ocuparCasillero(Posicion posicion, Jugador jugador) {
+        casilleros[posicion.getFila()][posicion.getColumna()].ocupar(jugador);
+    }
+
+
 
     public void inicializacionMateriales() {
         inicializarDiamante();

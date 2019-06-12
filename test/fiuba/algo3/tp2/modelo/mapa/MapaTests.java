@@ -19,24 +19,4 @@ public class MapaTests {
     }
 
 
-    @Test
-    public void creacionMapaConMateriales(){
-        Mapa mapa = new Mapa();
-        Casillero casillero;
-
-        mapa.inicializacionMateriales();
-
-        for (int fila = 0; fila <= 30; fila++) {
-            for (int col = 0; col <= 30; col++) {
-                casillero = mapa.getCasillero(fila, col);
-                System.out.println(casillero.getContenido());
-                System.out.println(" - ");
-                //assertEquals("madera", casillero.getContenido());
-            }
-        }
-    }
-
-
-
-
 }
