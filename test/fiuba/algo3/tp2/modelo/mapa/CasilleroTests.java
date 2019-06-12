@@ -3,10 +3,6 @@ package fiuba.algo3.tp2.modelo.mapa;
 import fiuba.algo3.tp2.modelo.Jugador;
 
 
-import fiuba.algo3.tp2.modelo.Mapa.Casillero;
-import fiuba.algo3.tp2.modelo.Mapa.CasilleroOcupado;
-import fiuba.algo3.tp2.modelo.Mapa.CasilleroOcupadoException;
-import fiuba.algo3.tp2.modelo.Mapa.Posicion;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

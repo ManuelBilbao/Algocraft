@@ -3,9 +3,7 @@ package fiuba.algo3.tp2.modelo.inventario;
 
 
 import fiuba.algo3.tp2.modelo.Jugador;
-import fiuba.algo3.tp2.modelo.herramientas.Hacha;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
-import fiuba.algo3.tp2.modelo.inventario.ElementoInventario;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

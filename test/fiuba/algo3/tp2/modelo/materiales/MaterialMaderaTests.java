@@ -10,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaterialMaderaTests {
     @Test
-    public void Test01seCreaMaderaConDurabilidad10() {
+    public void test01seCreaMaderaConDurabilidad10() {
         Material madera = new Madera();
         assertEquals(madera.getDurabilidad(), 10);
     }
 
     @Test
-    public void Test02seGolpeaConHachaDeMaderaYSeReduceSuDurabilidad(){
+    public void test02seGolpeaConHachaDeMaderaYSeReduceSuDurabilidad(){
         Jugador jugador = new Jugador();
         jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
         jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
