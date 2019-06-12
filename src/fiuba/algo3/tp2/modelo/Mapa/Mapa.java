@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.modelo.Mapa;
 
 
+import fiuba.algo3.tp2.modelo.Jugador;
+
 public class Mapa {
 
     private final Casillero[][] casilleros = new Casillero[31][31];
@@ -14,7 +16,18 @@ public class Mapa {
         }
     }
 
-//    public void moverJugadorArriba(){}
+    public Mapa(Jugador jugador) {
+        for (int fila = 0; fila <= 30; fila++) {
+            for(int col = 0; col<=30; col++){
+                this.casilleros[fila][col] = new Casillero(fila,col);
+            }
+        }
+
+        this.casilleros[15][15].ocupar(jugador);
+        this.posicionJugador = new Posicion(15, 15);
+    }
+
+    //    public void moverJugadorArriba(){}
 //    public void moverJugadorAbajo(){}
 //    public void moverJugadorIzquierda(){}
 //    public void moverJugadorDerecha(){}
@@ -22,5 +35,12 @@ public class Mapa {
         return casilleros[fila][columna];
     }
 
+    public Casillero getCasillero(Posicion posicion) {
+        return casilleros[posicion.getFila()][posicion.getColumna()];
+    }
+
+    public Posicion getPosicionJugador() {
+        return posicionJugador;
+    }
 
 }

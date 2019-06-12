@@ -27,4 +27,9 @@ public class Casillero {
     public void ocupar(Object elemento){
         estadoCasillero.ocupar(this ,  elemento);
     }
+
+    public void liberar() {
+        this.contenido = null;
+        setEstadoCasillero(new CasilleroLibre());
+    }
 }
