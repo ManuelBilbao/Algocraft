@@ -2,7 +2,6 @@ package fiuba.algo3.tp2.modelo.mapa;
 
 import fiuba.algo3.tp2.modelo.Mapa.Casillero;
 import fiuba.algo3.tp2.modelo.Mapa.Mapa;
-import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

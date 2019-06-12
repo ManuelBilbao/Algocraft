@@ -12,4 +12,20 @@ public class Posicion {
     public int getFila(){ return fila; };
 
     public int getColumna(){ return columna; };
+
+    public void moverArriba(){
+        fila = fila-1;
+    }
+
+    public void moverAbajo(){
+        fila = fila+1;
+    }
+
+    public void moverDerecha(){
+        columna = columna+1;
+    }
+
+    public void moverIzquierda(){
+        columna = columna-1;
+    }
 }
