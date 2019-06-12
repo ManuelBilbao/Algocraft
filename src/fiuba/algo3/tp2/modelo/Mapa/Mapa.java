@@ -35,12 +35,19 @@ public class Mapa {
         return casilleros[fila][columna];
     }
 
-    public Casillero getCasillero(Posicion posicion) {
-        return casilleros[posicion.getFila()][posicion.getColumna()];
-    }
-
     public Posicion getPosicionJugador() {
         return posicionJugador;
     }
 
+    public void setPosicionJugador(Posicion posicionNueva) {
+        this.posicionJugador = posicionNueva;
+    }
+
+    public void liberarCasillero(Posicion posicion) {
+        casilleros[posicion.getFila()][posicion.getColumna()].liberar();
+    }
+
+    public void ocuparCasillero(Posicion posicion, Jugador jugador) {
+        casilleros[posicion.getFila()][posicion.getColumna()].ocupar(jugador);
+    }
 }

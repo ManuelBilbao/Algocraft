@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2;
 
 import fiuba.algo3.tp2.modelo.Jugador;
-import fiuba.algo3.tp2.modelo.Mapa.Casillero;
 import fiuba.algo3.tp2.modelo.Mapa.CasilleroOcupadoException;
 import fiuba.algo3.tp2.modelo.Mapa.Mapa;
 import fiuba.algo3.tp2.modelo.Mapa.Posicion;
@@ -16,17 +15,39 @@ public class Juego {
         mapa = new Mapa(jugador);
     }
 
-    public void moverJugadorArriba() {
-        Posicion posicionJugador = mapa.getPosicionJugador();
-        Casillero casilleroActual = mapa.getCasillero(posicionJugador);
-        posicionJugador.moverArriba();
-        Casillero casilleroNuevo = mapa.getCasillero(posicionJugador);
+    private void moverJugador(Posicion posicionActual, Posicion posicionNueva) {
         try {
-            casilleroNuevo.ocupar(jugador);
-            casilleroActual.liberar();
+            mapa.ocuparCasillero(posicionNueva, this.jugador);
+            mapa.liberarCasillero(posicionActual);
+            mapa.setPosicionJugador(posicionNueva);
+            System.out.println("Nueva posicion: [" + mapa.getPosicionJugador().getFila() + ":" + mapa.getPosicionJugador().getColumna() + "]");
         } catch (CasilleroOcupadoException e) {
             return;
         }
+    }
+
+    public void moverJugadorArriba() {
+        Posicion posicionJugador = mapa.getPosicionJugador();
+        Posicion posicionNueva = posicionJugador.posicionSuperior();
+        moverJugador(posicionJugador, posicionNueva);
+    }
+
+    public void moverJugadorAbajo() {
+        Posicion posicionJugador = mapa.getPosicionJugador();
+        Posicion posicionNueva = posicionJugador.posicionInferior();
+        moverJugador(posicionJugador, posicionNueva);
+    }
+
+    public void moverJugadorIzquieda() {
+        Posicion posicionJugador = mapa.getPosicionJugador();
+        Posicion posicionNueva = posicionJugador.posicionIzquierda();
+        moverJugador(posicionJugador, posicionNueva);
+    }
+
+    public void moverJugadorDerecha() {
+        Posicion posicionJugador = mapa.getPosicionJugador();
+        Posicion posicionNueva = posicionJugador.posicionDerecha();
+        moverJugador(posicionJugador, posicionNueva);
     }
 
 }

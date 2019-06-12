@@ -14,18 +14,34 @@ public class Posicion {
     public int getColumna(){ return columna; };
 
     public void moverArriba(){
-        fila = fila-1;
+        fila--;
     }
 
     public void moverAbajo(){
-        fila = fila+1;
+        fila++;
     }
 
     public void moverDerecha(){
-        columna = columna+1;
+        columna++;
     }
 
     public void moverIzquierda(){
-        columna = columna-1;
+        columna--;
+    }
+
+    public Posicion posicionSuperior() {
+        return new Posicion(fila - 1, columna);
+    }
+
+    public Posicion posicionInferior() {
+        return new Posicion(fila + 1, columna);
+    }
+
+    public Posicion posicionIzquierda() {
+        return new Posicion(fila, columna - 1);
+    }
+
+    public Posicion posicionDerecha() {
+        return new Posicion(fila, columna + 1);
     }
 }
