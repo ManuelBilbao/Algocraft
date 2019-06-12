@@ -39,37 +39,41 @@ public class Jugador {
         mesaDeConstruccion.posicionar(elemento, fila, columna);
     }
 
+    public void vaciarMesaDeConstruccion(){
+        mesaDeConstruccion.limpiar();
+    }
+
     public Mesa getMesaDeConstruccion(){
         return mesaDeConstruccion;
     }
 
     public Herramienta construirHachaDeMadera() {
-        return constructor.construirHachaDeMadera();
+        return constructor.construirHachaDeMadera(this.mesaDeConstruccion);
 
     }
 
     public Herramienta construirHachaDePiedra() {
-        return constructor.construirHachaDePiedra();
+        return constructor.construirHachaDePiedra(this.mesaDeConstruccion);
 
     }
 
     public Herramienta construirHachaDeMetal() {
-        return constructor.construirHachaDeMetal();
+        return constructor.construirHachaDeMetal(this.mesaDeConstruccion);
     }
 
     public Herramienta construirPicoDeMadera() {
-        return constructor.construirPicoDeMadera();
+        return constructor.construirPicoDeMadera(this.mesaDeConstruccion);
     }
 
     public Herramienta construirPicoDePiedra() {
-        return constructor.construirPicoDePiedra();
+        return constructor.construirPicoDePiedra(this.mesaDeConstruccion);
     }
 
     public Herramienta construirPicoDeMetal() {
-        return constructor.construirPicoDeMetal();
+        return constructor.construirPicoDeMetal(this.mesaDeConstruccion);
     }
 
     public Herramienta construirPicoFino() {
-        return constructor.construirPicoFino();
+        return constructor.construirPicoFino(this.mesaDeConstruccion);
     }
 }

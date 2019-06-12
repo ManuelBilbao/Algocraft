@@ -35,6 +35,18 @@ public class JugadorTests {
 
         jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
         assertEquals(jugador.getMesaDeConstruccion().getCasillero(1,1).getContenido(),"madera");
+
+    }
+
+    @Test
+    public void vaciarLaMesaDeConstruccion(){
+        Jugador jugador = new Jugador();
+
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        assertEquals(jugador.getMesaDeConstruccion().getCasillero(1,1).getContenido(),"madera");
+        jugador.vaciarMesaDeConstruccion();
+        assertEquals(jugador.getMesaDeConstruccion().getCasillero(1,1).getContenido(),null);
+
     }
 
 

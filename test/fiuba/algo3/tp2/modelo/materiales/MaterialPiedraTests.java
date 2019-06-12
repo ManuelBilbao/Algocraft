@@ -19,8 +19,29 @@ public class MaterialPiedraTests {
     @Test
     public void test02SeGolpeaPiedraConHachaYNoSeReduceDurabilidad(){
         Jugador jugador = new Jugador();
+
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta hachaDeMadera = jugador.construirHachaDeMadera();
+
+        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("metal",1,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta hachaDeMetal = jugador.construirHachaDeMetal();
+
+        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta hachaDePiedra = jugador.construirHachaDePiedra();
         Material piedra = new Piedra();
 

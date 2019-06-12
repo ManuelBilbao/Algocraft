@@ -1,5 +1,7 @@
 package fiuba.algo3.tp2.modelo;
 
+import fiuba.algo3.tp2.modelo.construccionDeHerramientas.ImposibleConstruirHerramientaException;
+import fiuba.algo3.tp2.modelo.construccionDeHerramientas.Mesa;
 import fiuba.algo3.tp2.modelo.desgastes.*;
 import fiuba.algo3.tp2.modelo.herramientas.*;
 import fiuba.algo3.tp2.modelo.materiales.herramientas.Madera;
@@ -36,44 +38,92 @@ public class Constructor {
         return pico;
     }
 
-    public Herramienta construirHachaDeMadera() {
-        Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_MADERA, FUERZA_HACHA_MADERA);
-        Material madera = new Madera();
-        return construirHacha(FUERZA_HACHA_MADERA, DURABILIDAD_HACHA_MADERA, desgaste, madera);
+    public Herramienta construirHachaDeMadera(Mesa mesaDeConstruccion) {
+        if(mesaDeConstruccion.estructuraHachaMadera()){
+            Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_MADERA, FUERZA_HACHA_MADERA);
+            Material madera = new Madera();
+            mesaDeConstruccion.limpiar();
+            return construirHacha(FUERZA_HACHA_MADERA, DURABILIDAD_HACHA_MADERA, desgaste, madera);
+        }
+        else{
+            return null;
+            //throw new ImposibleConstruirHerramientaException();
+        }
     }
 
-    public Herramienta construirHachaDePiedra() {
-        Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_PIEDRA, FUERZA_HACHA_PIEDRA);
-        Material piedra = new Piedra();
-        return construirHacha(FUERZA_HACHA_PIEDRA, DURABILIDAD_HACHA_PIEDRA, desgaste, piedra);
+    public Herramienta construirHachaDePiedra(Mesa mesaDeConstruccion) {
+        if(mesaDeConstruccion.estructuraHachaPiedra()){
+            Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_HACHA_PIEDRA, FUERZA_HACHA_PIEDRA);
+            Material piedra = new Piedra();
+            mesaDeConstruccion.limpiar();
+            return construirHacha(FUERZA_HACHA_PIEDRA, DURABILIDAD_HACHA_PIEDRA, desgaste, piedra);
+        }
+        else{
+            throw new ImposibleConstruirHerramientaException();
+        }
     }
 
-    public Herramienta construirHachaDeMetal() {
-        Desgaste desgaste = new DesgasteMitadDeFuerza(DURABILIDAD_HACHA_METAL, FUERZA_HACHA_METAL);
-        Material metal = new Metal();
-        return construirHacha(FUERZA_HACHA_METAL, DURABILIDAD_HACHA_METAL, desgaste, metal);
+    public Herramienta construirHachaDeMetal(Mesa mesaDeConstruccion) {
+        if(mesaDeConstruccion.estructuraHachaMetal()){
+            Desgaste desgaste = new DesgasteMitadDeFuerza(DURABILIDAD_HACHA_METAL, FUERZA_HACHA_METAL);
+            Material metal = new Metal();
+            mesaDeConstruccion.limpiar();
+            return construirHacha(FUERZA_HACHA_METAL, DURABILIDAD_HACHA_METAL, desgaste, metal);
+        }
+        else{
+            throw new ImposibleConstruirHerramientaException();
+        }
+
     }
 
-    public Herramienta construirPicoDeMadera() {
-        Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_PICO_MADERA, FUERZA_PICO_MADERA);
-        Material madera = new Madera();
-        return construirPico(FUERZA_PICO_MADERA, DURABILIDAD_PICO_MADERA, desgaste, madera);
+    public Herramienta construirPicoDeMadera(Mesa mesaDeConstruccion) {
+        if(mesaDeConstruccion.estructuraPicoMadera()){
+            Desgaste desgaste = new DesgasteLinealPorFuerza(DURABILIDAD_PICO_MADERA, FUERZA_PICO_MADERA);
+            Material madera = new Madera();
+            mesaDeConstruccion.limpiar();
+            return construirPico(FUERZA_PICO_MADERA, DURABILIDAD_PICO_MADERA, desgaste, madera);
+        }
+        else{
+            throw new ImposibleConstruirHerramientaException();
+        }
+
     }
 
-    public Herramienta construirPicoDePiedra() {
-        Desgaste desgaste = new DesgastePorFuerzaDivididoUnoComaCinco(DURABILIDAD_PICO_PIEDRA, FUERZA_PICO_PIEDRA);
-        Material piedra = new Piedra();
-        return construirPico(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA, desgaste, piedra);
+    public Herramienta construirPicoDePiedra(Mesa mesaDeConstruccion) {
+        if(mesaDeConstruccion.estructuraPicoPiedra()){
+            Desgaste desgaste = new DesgastePorFuerzaDivididoUnoComaCinco(DURABILIDAD_PICO_PIEDRA, FUERZA_PICO_PIEDRA);
+            Material piedra = new Piedra();
+            mesaDeConstruccion.limpiar();
+            return construirPico(FUERZA_PICO_PIEDRA, DURABILIDAD_PICO_PIEDRA, desgaste, piedra);
+        }
+        else{
+            throw new ImposibleConstruirHerramientaException();
+        }
+
     }
 
-    public Herramienta construirPicoDeMetal() {
-        Desgaste desgaste = new DesgasteAbrupto(DURABILIDAD_PICO_METAL, 10);
-        Material metal = new Metal();
-        return construirPico(FUERZA_PICO_METAL, DURABILIDAD_PICO_METAL, desgaste, metal);
+    public Herramienta construirPicoDeMetal(Mesa mesaDeConstruccion) {
+        if(mesaDeConstruccion.estructuraPicoMetal()){
+            Desgaste desgaste = new DesgasteAbrupto(DURABILIDAD_PICO_METAL, 10);
+            Material metal = new Metal();
+            mesaDeConstruccion.limpiar();
+            return construirPico(FUERZA_PICO_METAL, DURABILIDAD_PICO_METAL, desgaste, metal);
+        }
+        else{
+            throw new ImposibleConstruirHerramientaException();
+        }
+
     }
 
-    public Herramienta construirPicoFino() {
-        Herramienta picoFino = new PicoFino();
-        return picoFino;
+    public Herramienta construirPicoFino(Mesa mesaDeConstruccion) {
+        if(mesaDeConstruccion.estructuraPicoFino()){
+            Herramienta picoFino = new PicoFino();
+            mesaDeConstruccion.limpiar();
+            return picoFino;
+        }
+        else{
+            throw new ImposibleConstruirHerramientaException();
+        }
+
     }
 }

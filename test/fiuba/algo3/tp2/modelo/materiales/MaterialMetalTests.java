@@ -18,6 +18,12 @@ public class MaterialMetalTests {
     @Test
     public void test02SeGolpeaPiedraConHachaYNoSeReduceDurabilidad() {
         Jugador jugador = new Jugador();
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta picoDeMadera = jugador.construirPicoDeMadera();
         Material metal = new Metal();
 

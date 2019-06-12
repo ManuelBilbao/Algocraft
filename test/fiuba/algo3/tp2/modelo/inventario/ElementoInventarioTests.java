@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.modelo.inventario;
 
 
 import fiuba.algo3.tp2.modelo.Jugador;
+import fiuba.algo3.tp2.modelo.herramientas.Hacha;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.modelo.inventario.ElementoInventario;
 import org.junit.jupiter.api.Test;
@@ -38,7 +39,15 @@ public class ElementoInventarioTests {
     @Test
     public void elementoInventarioDisminuyeSuCantidad(){
         Jugador jugador = new Jugador();
+
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta hacha = jugador.construirHachaDeMadera();
+
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
         assertEquals(elemento.cantidad(), 1);
@@ -51,6 +60,12 @@ public class ElementoInventarioTests {
     @Test
     public void nombreElementoInventario(){
         Jugador jugador = new Jugador();
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta hacha = jugador.construirHachaDeMadera();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
@@ -60,6 +75,7 @@ public class ElementoInventarioTests {
     @Test
     public void getElementoInventario(){
         Jugador jugador = new Jugador();
+
         Herramienta hacha = jugador.construirHachaDeMadera();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 

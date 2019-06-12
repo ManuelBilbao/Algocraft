@@ -12,6 +12,12 @@ public class PicoMaderaTests {
     @Test
     public void test01SeCreaPicoDeMaderaConDurabilidad100YFuerza2() {
         Jugador jugador = new Jugador();
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta pico = jugador.construirPicoDeMadera();
 
         assertEquals(pico.getDurabilidad(), 100);
@@ -21,6 +27,12 @@ public class PicoMaderaTests {
     @Test
     public void test02PicoDeMaderaGolpeaBloqueDeMadera() {
         Jugador jugador = new Jugador();
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta pico = jugador.construirPicoDeMadera();
         Material madera = new Madera();
 
@@ -33,6 +45,12 @@ public class PicoMaderaTests {
     @Test
     public void test03PicoDeMaderaGolpeaBloqueDePiedra() {
         Jugador jugador = new Jugador();
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta pico = jugador.construirPicoDeMadera();
         Material piedra = new Piedra();
 
@@ -45,6 +63,12 @@ public class PicoMaderaTests {
     @Test
     public void test04PicoDeMaderaGolpeaBloqueDeMetal() {
         Jugador jugador = new Jugador();
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta pico = jugador.construirPicoDeMadera();
         Material metal = new Metal();
 
@@ -57,6 +81,12 @@ public class PicoMaderaTests {
     @Test
     public void test05PicoDeMaderaGolpeaBloqueDeDiamante() {
         Jugador jugador = new Jugador();
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+
         Herramienta pico = jugador.construirPicoDeMadera();
         Material diamante = new Diamante();
 

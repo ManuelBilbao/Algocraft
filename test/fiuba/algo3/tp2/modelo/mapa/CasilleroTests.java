@@ -34,8 +34,8 @@ public class CasilleroTests {
         casillero.ocupar(jugador);
         Posicion posicion = new Posicion(1,1);
 
-        assertEquals(casillero.getPosicion(),posicion);
-
+        assertEquals(casillero.getPosicion().getColumna(),posicion.getColumna());
+        assertEquals(casillero.getPosicion().getFila(),posicion.getFila());
 
     }
 
@@ -44,7 +44,8 @@ public class CasilleroTests {
         Casillero casillero = new Casillero(1, 1);
         Posicion posicion = new Posicion(1,1);
 
-        assertEquals(casillero.getPosicion(),posicion);
+        assertEquals(casillero.getPosicion().getColumna(),posicion.getColumna());
+        assertEquals(casillero.getPosicion().getFila(),posicion.getFila());
 
     }
 
