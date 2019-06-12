@@ -46,8 +46,7 @@ public class Constructor {
             return construirHacha(FUERZA_HACHA_MADERA, DURABILIDAD_HACHA_MADERA, desgaste, madera);
         }
         else{
-            return null;
-            //throw new ImposibleConstruirHerramientaException();
+            throw new ImposibleConstruirHerramientaException();
         }
     }
 

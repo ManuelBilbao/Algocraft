@@ -12,6 +12,11 @@ public class Jugador {
     private Mesa mesaDeConstruccion = new Mesa();
 
     public Jugador() {
+        agregarElementoALaMesaDeConstruccion("madera",0,0);
+        agregarElementoALaMesaDeConstruccion("madera",0,1);
+        agregarElementoALaMesaDeConstruccion("madera",1,0);
+        agregarElementoALaMesaDeConstruccion("madera",1,1);
+        agregarElementoALaMesaDeConstruccion("madera",2,1);
         inventarioHerramientas.agregar("hachaDeMadera", this.construirHachaDeMadera());
     }
 
