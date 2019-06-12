@@ -29,4 +29,13 @@ public class JugadorTests {
     }
 
 
+    @Test
+    public void agregarUnElementoALaMesaDeConstruccion(){
+        Jugador jugador = new Jugador();
+
+        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
+        assertEquals(jugador.getMesaDeConstruccion().getCasillero(1,1).getContenido(),"madera");
+    }
+
+
 }

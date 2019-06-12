@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.modelo.materiales.bloques;
 
 import fiuba.algo3.tp2.modelo.desgastes.NoPoseeDurabilidadException;
 
-public abstract class Material {
+public abstract class   Material {
     protected int durabilidad;
 
     public int getDurabilidad() { return durabilidad; }
