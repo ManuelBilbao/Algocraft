@@ -12,6 +12,11 @@ public class Casillero {
         this.contenido = null;
     }
 
+    public Casillero() {
+        this.estadoCasillero = new CasilleroLibre();
+        this.contenido = null;
+    }
+
     public Posicion getPosicion(){ return posicion;}
 
     public void setEstadoCasillero(EstadoCasillero estado){

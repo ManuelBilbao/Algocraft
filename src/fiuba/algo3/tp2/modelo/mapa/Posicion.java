@@ -21,6 +21,18 @@ public class Posicion {
         fila++;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Posicion posicion = (Posicion)obj;
+        return this.fila == posicion.getFila() && this.columna == posicion.getColumna();
+    }
+
+    @Override
+    public int hashCode() {
+        String hash = String.valueOf(fila) + String.valueOf(columna);
+        return Integer.parseInt(hash);
+    }
+
     public void moverDerecha(){
         columna++;
     }
