@@ -2,20 +2,22 @@ package fiuba.algo3.tp2.modelo.mapa;
 
 
 import fiuba.algo3.tp2.modelo.Jugador;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Diamante;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Metal;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Piedra;
 
 import java.util.HashMap;
 
 public class Mapa {
 
-    private final Casillero[][] casilleros = new Casillero[31][31];
-    private HashMap<Posicion, Casillero> casillerosH = new HashMap<>();
+    private HashMap<Posicion, Casillero> casilleros = new HashMap<>();
     private Posicion posicionJugador;
 
     public Mapa(){
         for (int fila = 0; fila <= 30; fila++) {
             for(int col = 0; col<=30; col++){
-                this.casilleros[fila][col] = new Casillero(fila,col);
-                casillerosH.put(new Posicion(fila, col), new Casillero());
+                casilleros.put(new Posicion(fila, col), new Casillero());
             }
         }
     }
@@ -23,23 +25,20 @@ public class Mapa {
     public Mapa(Jugador jugador) {
         for (int fila = 0; fila <= 30; fila++) {
             for(int col = 0; col<=30; col++){
-                this.casilleros[fila][col] = new Casillero(fila,col);
-                casillerosH.put(new Posicion(fila, col), new Casillero());
+                casilleros.put(new Posicion(fila, col), new Casillero());
             }
         }
 
-        this.casilleros[15][15].ocupar(jugador);
         this.posicionJugador = new Posicion(15, 15);
-//        ocuparCasillero(new Posicion(15, 15), jugador);
-        casillerosH.get(new Posicion(15, 15)).ocupar(jugador);
+        ocuparCasillero(new Posicion(15, 15), jugador);
     }
 
     public Casillero getCasillero(Integer fila, Integer columna){
-        return casilleros[fila][columna];
+        return casilleros.get(new Posicion(fila, columna));
     }
 
     public Casillero getCasillero(Posicion posicion) {
-        return casilleros[posicion.getFila()][posicion.getColumna()];
+        return casilleros.get(posicion);
     }
 
     public Posicion getPosicionJugador() {
@@ -52,15 +51,12 @@ public class Mapa {
     }
 
     public void liberarCasillero(Posicion posicion) {
-        casilleros[posicion.getFila()][posicion.getColumna()].liberar();
+        casilleros.get(posicion).liberar();
     }
 
     public void ocuparCasillero(Posicion posicion, Object elemento) {
-        casilleros[posicion.getFila()][posicion.getColumna()].ocupar(elemento);
-//        casillerosH.get(posicion).setContenido(elemento);
+        casilleros.get(posicion).setContenido(elemento);
     }
-
-
 
     public void inicializacionMateriales() {
         inicializarDiamante();
@@ -70,64 +66,62 @@ public class Mapa {
     }
 
 
-    public void inicializarMadera(){
-        int fila = 0;
-        int columna = 0;
+    private void inicializarMadera(){
+        int fila;
+        int columna;
         int tope = 0;
         while (tope < 200) {
             fila = (int) (Math.random() * 30) + 1;
             columna = (int) (Math.random() * 30) + 1;
-            if (casilleros[fila][columna].getContenido() == null) {
-                casilleros[fila][columna].ocupar("madera");
+            Casillero casillero = getCasillero(fila, columna);
+            if (casillero.getContenido() == null) {
+                casillero.ocupar(new Madera());
                 tope++;
             }
-
         }
     }
 
-    public void inicializarPiedra(){
-        int fila = 0;
-        int columna = 0;
+    private void inicializarPiedra(){
+        int fila;
+        int columna;
         int tope = 0;
         while (tope < 150) {
             fila = (int) (Math.random() * 30) + 1;
             columna = (int) (Math.random() * 30) + 1;
-            if (casilleros[fila][columna].getContenido() == null) {
-                casilleros[fila][columna].ocupar("piedra");
+            Casillero casillero = getCasillero(fila, columna);
+            if (casillero.getContenido() == null) {
+                casillero.ocupar(new Piedra());
                 tope++;
             }
-
         }
     }
 
 
-    public void inicializarMetal(){
-        int fila = 0;
-        int columna = 0;
+    private void inicializarMetal(){
+        int fila;
+        int columna;
         int tope = 0;
         while (tope < 100) {
             fila = (int) (Math.random() * 30) + 1;
             columna = (int) (Math.random() * 30) + 1;
-            if (casilleros[fila][columna].getContenido() == null) {
-                casilleros[fila][columna].ocupar("metal");
-                tope++;
+            Casillero casillero = getCasillero(fila, columna);
+            if (casillero.getContenido() == null) {
+                casillero.ocupar(new Metal());
             }
-
         }
     }
 
-    public void inicializarDiamante(){
-        int fila = 0;
-        int columna = 0;
+    private void inicializarDiamante(){
+        int fila;
+        int columna;
         int tope = 0;
         while (tope < 50) {
             fila = (int) (Math.random() * 30) + 1;
             columna = (int) (Math.random() * 30) + 1;
-            if (casilleros[fila][columna].getContenido() == null) {
-                casilleros[fila][columna].ocupar("diamante");
-                tope++;
+            Casillero casillero = getCasillero(fila, columna);
+            if (casillero.getContenido() == null) {
+                casillero.ocupar(new Diamante());
             }
-
         }
     }
 
