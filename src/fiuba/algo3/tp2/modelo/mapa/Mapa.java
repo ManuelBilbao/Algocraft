@@ -57,7 +57,7 @@ public class Mapa {
     }
 
     public void ocuparCasillero(Posicion posicion, Object elemento) {
-        casilleros.get(posicion).setContenido(elemento);
+        casilleros.get(posicion).ocupar(elemento);
     }
 
 }
