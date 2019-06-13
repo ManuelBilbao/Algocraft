@@ -31,6 +31,8 @@ public class Mapa {
 
         this.posicionJugador = new Posicion(15, 15);
         ocuparCasillero(new Posicion(15, 15), jugador);
+        InicializarMateriales inicializador = new InicializarMateriales();
+        inicializador.inicializacionMateriales(casilleros);
     }
 
     public Casillero getCasillero(Integer fila, Integer columna){
@@ -56,73 +58,6 @@ public class Mapa {
 
     public void ocuparCasillero(Posicion posicion, Object elemento) {
         casilleros.get(posicion).setContenido(elemento);
-    }
-
-    public void inicializacionMateriales() {
-        inicializarDiamante();
-        inicializarMadera();
-        inicializarMetal();
-        inicializarPiedra();
-    }
-
-
-    private void inicializarMadera(){
-        int fila;
-        int columna;
-        int tope = 0;
-        while (tope < 200) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
-            Casillero casillero = getCasillero(fila, columna);
-            if (casillero.getContenido() == null) {
-                casillero.ocupar(new Madera());
-                tope++;
-            }
-        }
-    }
-
-    private void inicializarPiedra(){
-        int fila;
-        int columna;
-        int tope = 0;
-        while (tope < 150) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
-            Casillero casillero = getCasillero(fila, columna);
-            if (casillero.getContenido() == null) {
-                casillero.ocupar(new Piedra());
-                tope++;
-            }
-        }
-    }
-
-
-    private void inicializarMetal(){
-        int fila;
-        int columna;
-        int tope = 0;
-        while (tope < 100) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
-            Casillero casillero = getCasillero(fila, columna);
-            if (casillero.getContenido() == null) {
-                casillero.ocupar(new Metal());
-            }
-        }
-    }
-
-    private void inicializarDiamante(){
-        int fila;
-        int columna;
-        int tope = 0;
-        while (tope < 50) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
-            Casillero casillero = getCasillero(fila, columna);
-            if (casillero.getContenido() == null) {
-                casillero.ocupar(new Diamante());
-            }
-        }
     }
 
 }
