@@ -112,4 +112,129 @@ public class PicoFinoTests {
         assertEquals(810, pico.getDurabilidad());
     }
 
+
+    @Test
+    public void test06SeCreaPicoFinoConDurabilidad1000YFuerza20() {
+
+        Piedra material = new Piedra();
+        Herramienta pico = new PicoFino() ;
+
+        assertEquals(1000, pico.getDurabilidad());
+        assertEquals(20, pico.getFuerza());
+    }
+
+    @Test
+    public void test07PicoFinoGolpeaBloqueDeMaderaSeDesgastaPico() {
+
+        Piedra bloque = new Piedra();
+        Herramienta pico = new PicoFino() ;
+
+        pico.golpearMadera(bloque);
+        assertEquals(1000, pico.getDurabilidad());
+        pico.golpearMadera(bloque);
+        assertEquals(1000, pico.getDurabilidad());
+        for (int i = 0; i < 10; i++) {
+            pico.golpearMadera(bloque);
+        }
+        assertEquals(1000, pico.getDurabilidad());
+
+    }
+
+    @Test
+    public void test08PicoFinoGolpeaBloqueDePiedraSeDesgastaPico() {
+
+        Piedra bloque = new Piedra();
+        Herramienta pico = new PicoFino() ;
+
+        pico.golpearPiedra(bloque);
+        assertEquals(1000, pico.getDurabilidad());
+        pico.golpearPiedra(bloque);
+        assertEquals(1000, pico.getDurabilidad());
+        for (int i = 0; i < 10; i++) {
+            pico.golpearPiedra(bloque);
+        }
+        assertEquals(1000, pico.getDurabilidad());
+
+    }
+
+    @Test
+    public void test09PicoFinoGolpeaBloqueDeMetalSeDesgastaPico() {
+
+        Metal bloque = new fiuba.algo3.tp2.modelo.materiales.bloques.Metal();
+        Herramienta pico = new PicoFino() ;
+
+        pico.golpearMetal(bloque);
+        assertEquals(1000, pico.getDurabilidad());
+        pico.golpearMetal(bloque);
+        assertEquals(1000, pico.getDurabilidad());
+        for (int i = 0; i < 10; i++) {
+            pico.golpearMetal(bloque);
+        }
+        assertEquals(1000, pico.getDurabilidad());
+
+    }
+
+    @Test
+    public void test10PicoFinoGolpeaBloqueDeDiamanteSeDesgastaPico() {
+
+        fiuba.algo3.tp2.modelo.materiales.bloques.Material bloque = new fiuba.algo3.tp2.modelo.materiales.bloques.Diamante();
+        Herramienta pico = new PicoFino() ;
+
+        Material diamante = new Diamante();
+
+        pico.golpearDiamante(diamante);
+        assertEquals(900, pico.getDurabilidad());
+        pico.golpearDiamante(diamante);
+        assertEquals(810, pico.getDurabilidad());
+
+    }
+
+    @Test
+    public void test11PicoFinoGolpeaBloqueDeMaderaNoSeDesgastaMadera() {
+
+        fiuba.algo3.tp2.modelo.materiales.bloques.Material bloque = new fiuba.algo3.tp2.modelo.materiales.bloques.Madera();
+        int durabilidadInicialBloque = bloque.getDurabilidad();
+        Herramienta pico = new PicoFino() ;
+
+        pico.golpearMadera(bloque);
+        assertEquals(durabilidadInicialBloque, bloque.getDurabilidad());
+    }
+
+    @Test
+    public void test12PicoFinoGolpeaBloqueDePiedraSeDesgastaPiedra() {
+
+
+
+        fiuba.algo3.tp2.modelo.materiales.bloques.Material bloque = new fiuba.algo3.tp2.modelo.materiales.bloques.Piedra();
+        float durabilidadInicialBloque = bloque.getDurabilidad();
+        Herramienta pico = new PicoFino() ;
+        ;
+
+        pico.golpearPiedra(bloque);
+        assertEquals(durabilidadInicialBloque, bloque.getDurabilidad());
+    }
+
+    @Test
+    public void test13PicoFinoGolpeaBloqueMetalSeDesgastaMetal() {
+
+        fiuba.algo3.tp2.modelo.materiales.bloques.Material bloque = new fiuba.algo3.tp2.modelo.materiales.bloques.Metal();
+        int durabilidadInicialBloque = bloque.getDurabilidad();
+        Herramienta pico = new PicoFino() ;
+
+        pico.golpearMetal(bloque);
+        assertEquals(durabilidadInicialBloque, bloque.getDurabilidad());
+    }
+
+    @Test
+    public void test14PicoFinoGolpeaBloqueDeDiamanteNoSeDesgastaDiamante() {
+
+        fiuba.algo3.tp2.modelo.materiales.bloques.Material bloque = new fiuba.algo3.tp2.modelo.materiales.bloques.Diamante();
+        int durabilidadInicialBloque = bloque.getDurabilidad();
+
+        Herramienta pico = new PicoFino() ;
+
+        pico.golpearDiamante(bloque);
+        assertEquals(durabilidadInicialBloque-pico.getFuerza(), bloque.getDurabilidad());
+    }
+
 }
