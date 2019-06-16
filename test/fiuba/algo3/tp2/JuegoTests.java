@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2;
 
+import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.mapa.Mapa;
 import fiuba.algo3.tp2.modelo.mapa.Posicion;
 import org.junit.jupiter.api.Test;
