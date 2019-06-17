@@ -1,5 +1,6 @@
-package fiuba.algo3.tp2.vista;
+package fiuba.algo3.tp2.vista.MenuPrincipal;
 
+import fiuba.algo3.tp2.modelo.inventario.ElementoNoEstaEnElInventarioException;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -31,11 +32,12 @@ public class MaterialesDisponiblesMenu {
     }
 
     public void updateCantidadDeMaterialesDisponibles(Inventario inventario){
-
-        labelMadera.setText(Integer.toString(inventario.cantidadDe("madera")));
-        labelPiedra.setText(Integer.toString(inventario.cantidadDe("piedra")));
-        labelMetal.setText(Integer.toString(inventario.cantidadDe("metal")));
-        labelDiamante.setText(Integer.toString(inventario.cantidadDe("diamate")));
+        try {
+            labelMadera.setText(Integer.toString(inventario.cantidadDe("madera")));
+            labelPiedra.setText(Integer.toString(inventario.cantidadDe("piedra")));
+            labelMetal.setText(Integer.toString(inventario.cantidadDe("metal")));
+            labelDiamante.setText(Integer.toString(inventario.cantidadDe("diamate")));
+        }catch (ElementoNoEstaEnElInventarioException e){return;}
     }
 
     public HBox getVisual(){

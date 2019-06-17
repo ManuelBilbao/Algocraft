@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.vista;
+package fiuba.algo3.tp2.vista.MenuPrincipal;
 
 import javafx.scene.control.Button;
 import javafx.stage.Stage;

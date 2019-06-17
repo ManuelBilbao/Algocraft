@@ -25,4 +25,7 @@ public class Inventario{
     }
 
 
+    public Object getElemento(String nombreElemento) {
+        return inventario.get(nombreElemento).getElemento();
+    }
 }
