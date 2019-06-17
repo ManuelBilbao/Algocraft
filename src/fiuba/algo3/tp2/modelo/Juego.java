@@ -53,4 +53,8 @@ public class Juego {
         return mapa;
     }
 
+    public Jugador getJugador() {
+        return jugador;
+    }
+
 }
