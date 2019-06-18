@@ -1,7 +1,11 @@
 package fiuba.algo3.tp2.modelo.construccionDeHerramientas;
 
-import fiuba.algo3.tp2.modelo.mapa.*;
+import fiuba.algo3.tp2.modelo.mapa.Casillero;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Metal;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Piedra;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -40,11 +44,11 @@ public class MesaTests {
     @Test
     public void posicionaElementosParaConstruirLaEstructuraDelPicoDeMadera(){
         Mesa mesa = new Mesa();
-        mesa.posicionar("madera", 0,0);
-        mesa.posicionar("madera", 0,1);
-        mesa.posicionar("madera", 0,2);
-        mesa.posicionar("madera", 1,1);
-        mesa.posicionar("madera", 2,1);
+        mesa.posicionar(new Madera(), 0,0);
+        mesa.posicionar(new Madera(), 0,1);
+        mesa.posicionar(new Madera(), 0,2);
+        mesa.posicionar(new Madera(), 1,1);
+        mesa.posicionar(new Madera(), 2,1);
 
         assertEquals(true, mesa.estructuraPicoMadera());
     }
@@ -52,11 +56,11 @@ public class MesaTests {
     @Test
     public void posicionaElementosParaConstruirLaEstructuraDelPicoDePiedra(){
         Mesa mesa = new Mesa();
-        mesa.posicionar("piedra", 0,0);
-        mesa.posicionar("piedra", 0,1);
-        mesa.posicionar("piedra", 0,2);
-        mesa.posicionar("madera", 1,1);
-        mesa.posicionar("madera", 2,1);
+        mesa.posicionar(new Piedra(), 0,0);
+        mesa.posicionar(new Piedra(), 0,1);
+        mesa.posicionar(new Piedra(), 0,2);
+        mesa.posicionar(new Madera(), 1,1);
+        mesa.posicionar(new Madera(), 2,1);
 
         assertEquals(true, mesa.estructuraPicoPiedra());
     }
@@ -64,11 +68,11 @@ public class MesaTests {
     @Test
     public void posicionaElementosParaConstruirLaEstructuraDelPicoDeMetal(){
         Mesa mesa = new Mesa();
-        mesa.posicionar("metal", 0,0);
-        mesa.posicionar("metal", 0,1);
-        mesa.posicionar("metal", 0,2);
-        mesa.posicionar("madera", 1,1);
-        mesa.posicionar("madera", 2,1);
+        mesa.posicionar(new Metal(), 0,0);
+        mesa.posicionar(new Metal(), 0,1);
+        mesa.posicionar(new Metal(), 0,2);
+        mesa.posicionar(new Madera(), 1,1);
+        mesa.posicionar(new Madera(), 2,1);
 
         assertEquals(true, mesa.estructuraPicoMetal());
     }
@@ -77,11 +81,11 @@ public class MesaTests {
     @Test
     public void posicionaElementosParaConstruirLaEstructuraDelHachaDeMetal(){
         Mesa mesa = new Mesa();
-        mesa.posicionar("metal", 0,0);
-        mesa.posicionar("metal", 0,1);
-        mesa.posicionar("metal", 1,0);
-        mesa.posicionar("madera", 1,1);
-        mesa.posicionar("madera", 2,1);
+        mesa.posicionar(new Metal(), 0,0);
+        mesa.posicionar(new Metal(), 0,1);
+        mesa.posicionar(new Metal(), 1,0);
+        mesa.posicionar(new Madera(), 1,1);
+        mesa.posicionar(new Madera(), 2,1);
 
         assertEquals(true, mesa.estructuraHachaMetal());
     }
@@ -90,11 +94,11 @@ public class MesaTests {
     @Test
     public void posicionaElementosParaConstruirLaEstructuraDelHachaDePiedra(){
         Mesa mesa = new Mesa();
-        mesa.posicionar("piedra", 0,0);
-        mesa.posicionar("piedra", 0,1);
-        mesa.posicionar("piedra", 1,0);
-        mesa.posicionar("madera", 1,1);
-        mesa.posicionar("madera", 2,1);
+        mesa.posicionar(new Piedra(), 0,0);
+        mesa.posicionar(new Piedra(), 0,1);
+        mesa.posicionar(new Piedra(), 1,0);
+        mesa.posicionar(new Madera(), 1,1);
+        mesa.posicionar(new Madera(), 2,1);
 
         assertEquals(true, mesa.estructuraHachaPiedra());
     }
@@ -103,11 +107,11 @@ public class MesaTests {
     @Test
     public void posicionaElementosParaConstruirLaEstructuraDelHachaDeMadera(){
         Mesa mesa = new Mesa();
-        mesa.posicionar("madera", 0,0);
-        mesa.posicionar("madera", 0,1);
-        mesa.posicionar("madera", 1,0);
-        mesa.posicionar("madera", 1,1);
-        mesa.posicionar("madera", 2,1);
+        mesa.posicionar(new Madera(), 0,0);
+        mesa.posicionar(new Madera(), 0,1);
+        mesa.posicionar(new Madera(), 1,0);
+        mesa.posicionar(new Madera(), 1,1);
+        mesa.posicionar(new Madera(), 2,1);
 
         assertEquals(true, mesa.estructuraHachaMadera());
     }
@@ -116,12 +120,12 @@ public class MesaTests {
     @Test
     public void posicionaElementosParaConstruirLaEstructuraDelPicoFino(){
         Mesa mesa = new Mesa();
-        mesa.posicionar("metal", 0,0);
-        mesa.posicionar("metal", 0,1);
-        mesa.posicionar("metal", 0,2);
-        mesa.posicionar("madera", 1,1);
-        mesa.posicionar("madera", 2,1);
-        mesa.posicionar("piedra", 1,0);
+        mesa.posicionar(new Metal(), 0,0);
+        mesa.posicionar(new Metal(), 0,1);
+        mesa.posicionar(new Metal(), 0,2);
+        mesa.posicionar(new Madera(), 1,1);
+        mesa.posicionar(new Madera(), 2,1);
+        mesa.posicionar(new Piedra(), 1,0);
 
         assertEquals(true, mesa.estructuraPicoFino());
     }

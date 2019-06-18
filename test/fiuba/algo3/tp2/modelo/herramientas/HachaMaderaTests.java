@@ -13,11 +13,11 @@ public class HachaMaderaTests {
     @Test
     public void test01SeCreaHachaDeMaderaConDurabilidad100YFuerza2() {
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
 
         Herramienta hacha = jugador.construirHachaDeMadera();
@@ -29,11 +29,11 @@ public class HachaMaderaTests {
     @Test
     public void test02HachaDeMaderaGolpeaBloqueDeMadera() {
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material madera = new Madera();
@@ -47,11 +47,11 @@ public class HachaMaderaTests {
     @Test
     public void test03HachaDeMaderaGolpeaBloqueDePiedra() {
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material piedra = new Piedra();
@@ -65,11 +65,11 @@ public class HachaMaderaTests {
     @Test
     public void test04HachaDeMaderaGolpeaBloqueDeMetal() {
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material metal = new Metal();
@@ -84,11 +84,11 @@ public class HachaMaderaTests {
     @Test
     public void test05HachaDeMaderaGolpeaBloqueDeDiamante() {
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hacha = jugador.construirHachaDeMadera();
         Material diamante = new Diamante();

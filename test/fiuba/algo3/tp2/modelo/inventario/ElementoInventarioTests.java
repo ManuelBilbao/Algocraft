@@ -4,6 +4,7 @@ package fiuba.algo3.tp2.modelo.inventario;
 
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,11 +39,11 @@ public class ElementoInventarioTests {
     public void elementoInventarioDisminuyeSuCantidad(){
         Jugador jugador = new Jugador();
 
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hacha = jugador.construirHachaDeMadera();
 
@@ -58,11 +59,11 @@ public class ElementoInventarioTests {
     @Test
     public void nombreElementoInventario(){
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hacha = jugador.construirHachaDeMadera();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
@@ -73,11 +74,11 @@ public class ElementoInventarioTests {
     @Test
     public void getElementoInventario(){
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
 
         Herramienta hacha = jugador.construirHachaDeMadera();
