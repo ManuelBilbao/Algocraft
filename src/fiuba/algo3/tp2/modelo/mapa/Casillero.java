@@ -1,6 +1,8 @@
 package fiuba.algo3.tp2.modelo.mapa;
 
 
+import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
+
 public class Casillero {
     private Object contenido;
     private EstadoCasillero estadoCasillero;
@@ -15,6 +17,11 @@ public class Casillero {
     public Casillero() {
         this.estadoCasillero = new CasilleroLibre();
         this.contenido = null;
+    }
+
+    public Casillero(Object elemento) {
+        this.estadoCasillero = new CasilleroOcupado();
+        this.contenido = elemento;
     }
 
     public Posicion getPosicion(){ return posicion;}
@@ -36,5 +43,20 @@ public class Casillero {
     public void liberar() {
         this.contenido = null;
         setEstadoCasillero(new CasilleroLibre());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Casillero casillero = (Casillero)obj;
+
+        if (casillero.getContenido() == null && contenido == null) return true;
+        else if (casillero.getContenido() == null || contenido == null) return false;
+
+        return casillero.getContenido().getClass() == contenido.getClass();
+    }
+
+    @Override
+    public int hashCode() {
+        return 1;
     }
 }

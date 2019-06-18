@@ -21,7 +21,7 @@ public class Juego {
             mapa.liberarCasillero(posicionActual);
             mapa.setPosicionJugador(posicionNueva);
         } catch (CasilleroOcupadoException e) {
-            return;
+            System.out.println("Casillero ocupado!");
         }
     }
 

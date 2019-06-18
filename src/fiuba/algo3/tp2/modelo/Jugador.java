@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.modelo;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.*;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 
 public class Jugador {
 
@@ -12,11 +13,11 @@ public class Jugador {
     private Mesa mesaDeConstruccion = new Mesa();
 
     public Jugador() {
-        agregarElementoALaMesaDeConstruccion("madera",0,0);
-        agregarElementoALaMesaDeConstruccion("madera",0,1);
-        agregarElementoALaMesaDeConstruccion("madera",1,0);
-        agregarElementoALaMesaDeConstruccion("madera",1,1);
-        agregarElementoALaMesaDeConstruccion("madera",2,1);
+        agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
         inventarioHerramientas.agregar("hachaDeMadera", this.construirHachaDeMadera());
     }
 

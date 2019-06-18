@@ -9,6 +9,11 @@ import java.util.HashMap;
 
 public class InicializarMateriales {
 
+    private final int DIMENSION_MAPA = 30;
+    private final int CANTIDAD_MADERA = 150;
+    private final int CANTIDAD_PIEDRA = 100;
+    private final int CANTIDAD_METAL = 50;
+    private final int CANTIDAD_DIAMANTE = 25;
 
     public void inicializacionMateriales(HashMap<Posicion, Casillero> casilleros) {
         inicializarDiamante(casilleros);
@@ -21,9 +26,9 @@ public class InicializarMateriales {
         int fila;
         int columna;
         int tope = 0;
-        while (tope < 200) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
+        while (tope < CANTIDAD_MADERA) {
+            fila = (int) (Math.random() * DIMENSION_MAPA) + 1;
+            columna = (int) (Math.random() * DIMENSION_MAPA) + 1;
             Posicion posicion = new Posicion(fila, columna);
             if(casilleros.get(posicion).getContenido() == null){
                 casilleros.get(posicion).setContenido(new Madera());
@@ -37,9 +42,9 @@ public class InicializarMateriales {
         int fila;
         int columna;
         int tope = 0;
-        while (tope < 150) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
+        while (tope < CANTIDAD_PIEDRA) {
+            fila = (int) (Math.random() * DIMENSION_MAPA) + 1;
+            columna = (int) (Math.random() * DIMENSION_MAPA) + 1;
             Posicion posicion = new Posicion(fila, columna);
             if(casilleros.get(posicion).getContenido() == null){
                 casilleros.get(posicion).setContenido(new Piedra());
@@ -53,9 +58,9 @@ public class InicializarMateriales {
         int fila;
         int columna;
         int tope = 0;
-        while (tope < 100) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
+        while (tope < CANTIDAD_METAL) {
+            fila = (int) (Math.random() * DIMENSION_MAPA) + 1;
+            columna = (int) (Math.random() * DIMENSION_MAPA) + 1;
             Posicion posicion = new Posicion(fila, columna);
             if(casilleros.get(posicion).getContenido() == null){
                 casilleros.get(posicion).setContenido(new Metal());
@@ -68,9 +73,9 @@ public class InicializarMateriales {
         int fila;
         int columna;
         int tope = 0;
-        while (tope < 50) {
-            fila = (int) (Math.random() * 30) + 1;
-            columna = (int) (Math.random() * 30) + 1;
+        while (tope < CANTIDAD_DIAMANTE) {
+            fila = (int) (Math.random() * DIMENSION_MAPA) + 1;
+            columna = (int) (Math.random() * DIMENSION_MAPA) + 1;
             Posicion posicion = new Posicion(fila, columna);
             if(casilleros.get(posicion).getContenido() == null){
                 casilleros.get(posicion).setContenido(new Diamante());

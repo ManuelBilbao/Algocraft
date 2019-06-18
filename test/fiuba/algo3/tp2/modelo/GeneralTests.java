@@ -11,60 +11,60 @@ public class GeneralTests {
     @Test
     public void test01HerramientasGolpeanMadera() {
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMadera = jugador.construirHachaDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaPiedra = jugador.construirHachaDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMetal = jugador.construirHachaDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMadera = jugador.construirPicoDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoPiedra = jugador.construirPicoDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMetal = jugador.construirPicoDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoFino = jugador.construirPicoFino();
 
@@ -107,60 +107,60 @@ public class GeneralTests {
     @Test
     public void test02HerramientasGolpeanPiedra() {
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMadera = jugador.construirHachaDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaPiedra = jugador.construirHachaDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMetal = jugador.construirHachaDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMadera = jugador.construirPicoDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoPiedra = jugador.construirPicoDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMetal = jugador.construirPicoDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoFino = jugador.construirPicoFino();
 
@@ -201,60 +201,60 @@ public class GeneralTests {
     public void test03HerramientasGolpeanMetal() {
         Jugador jugador = new Jugador();
 
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMadera = jugador.construirHachaDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaPiedra = jugador.construirHachaDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMetal = jugador.construirHachaDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMadera = jugador.construirPicoDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoPiedra = jugador.construirPicoDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMetal = jugador.construirPicoDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoFino = jugador.construirPicoFino();
 
@@ -296,60 +296,60 @@ public class GeneralTests {
     public void test04HerramientasGolpeanDiamante() {
         Jugador jugador = new Jugador();
 
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMadera = jugador.construirHachaDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaPiedra = jugador.construirHachaDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hachaMetal = jugador.construirHachaDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMadera = jugador.construirPicoDeMadera();
 
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoPiedra = jugador.construirPicoDePiedra();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoMetal = jugador.construirPicoDeMetal();
 
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("metal",0,2);
-        jugador.agregarElementoALaMesaDeConstruccion("piedra",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Metal(),0,2);
+        jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta picoFino = jugador.construirPicoFino();
 

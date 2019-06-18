@@ -18,11 +18,11 @@ public class MaterialMaderaTests {
     @Test
     public void test02seGolpeaConHachaDeMaderaYSeReduceSuDurabilidad(){
         Jugador jugador = new Jugador();
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",0,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,0);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",1,1);
-        jugador.agregarElementoALaMesaDeConstruccion("madera",2,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),0,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
+        jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
         Herramienta hacha = jugador.construirHachaDeMadera();
         Madera bloqueMadera = new Madera();
