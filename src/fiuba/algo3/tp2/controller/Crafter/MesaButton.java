@@ -15,9 +15,9 @@ public class MesaButton {
     int col;
     int  size;
     Inventario inventario;
-    Mesa mesa;
     String material="None";
     String materialAnterior="None";
+    CrafterStage crafter;
 
     public MesaButton(Mesa mesa, Inventario inventario, int fila, int columna, int size, CrafterStage crafter){
 
@@ -25,6 +25,7 @@ public class MesaButton {
         this.col = columna;
         this.size = size;
         this.inventario = inventario;
+        this.crafter = crafter;
 
         boton = new Button();
 
@@ -45,20 +46,35 @@ public class MesaButton {
 
                         inventario.sacar(material, inventario.getElemento(material));
                         mesa.posicionar(material, fila, columna);
+                        materialAnterior=material;
+                    } else {
+                        materialAnterior = "None";
                     }
                 }catch (CasilleroOcupadoException e1){
                     mesa.getCasillero(fila,columna).liberar();
                     mesa.posicionar(material, fila, columna);
                     inventario.agregar(materialAnterior, inventario.getElemento(materialAnterior));
+                    materialAnterior=material;
                 }
                 crafter.updateCantidadMateriales();
 
             }
 
-            materialAnterior = material;
-
         });
     }
+
+    public void limpiar(){
+
+        Image imagen = new Image( "slotVacio.png",size,size,false,false);
+        boton.setGraphic(new ImageView(imagen));
+
+        if(!materialAnterior.equals("None")){ inventario.agregar(materialAnterior, inventario.getElemento(material)); }
+
+        material = "None";
+        materialAnterior = "None";
+
+    }
+
 
 
     public Button getButton() { return boton; }

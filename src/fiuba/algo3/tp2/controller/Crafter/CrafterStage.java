@@ -20,6 +20,7 @@ public class CrafterStage {
     int size = 600;
     Jugador jugador;
     MaterialesCrafter materialesCrafter;
+    MesaGridPane mesaGridPane;
     String[] materiales = {"madera", "piedra", "metal", "diamante"};
     String materialUltimoSeleccionado = "None";
 
@@ -60,17 +61,18 @@ public class CrafterStage {
     }
 
     private GridPane getMesa(Jugador jugador){
-        MesaGridPane mesa = new MesaGridPane(jugador, this,(size*3)/4);
-        return mesa.getVisual();
+        mesaGridPane = new MesaGridPane(jugador, this,(size*3)/4);
+        return mesaGridPane.getVisual();
     }
 
     public void updateCantidadMateriales(){ materialesCrafter.updateCantidadMateriales();}
+
 
     public void setUltimoMaterialSeleccionado(String material){ materialUltimoSeleccionado = material; }
 
     public String getUltimoMaterialSeleccionado(){ return materialUltimoSeleccionado;}
 
     private HBox getOpcionesHBox(){
-        return (new OpcionesHBox(stage, jugador)).getVisual();
+        return (new OpcionesHBox(stage, jugador, mesaGridPane)).getVisual();
     }
 }

@@ -20,7 +20,7 @@ public class OpcionesHBox {
 
     public Mesa mesa;
 
-    public OpcionesHBox(Stage stage, Jugador jugador){
+    public OpcionesHBox(Stage stage, Jugador jugador, MesaGridPane mesaGridPane){
 
         mesa = jugador.getMesaDeConstruccion();
 
@@ -29,7 +29,10 @@ public class OpcionesHBox {
         crearHerramienta = (new AlgocraftButton("crear herramienta",size/3,size/8,size/10)).getVisual();
 
         limpiar = (new AlgocraftButton("limpiar",size/4,size/16,size/24)).getVisual();
-        limpiar.setOnAction(e -> { mesa.limpiar(); });
+        limpiar.setOnAction(e -> {
+            mesaGridPane.limpiar();
+            mesa.limpiar();
+        });
 
         cerrar = (new CloseButton(size/4,size/16,size/24, stage)).getVisual();
 

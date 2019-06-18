@@ -36,6 +36,7 @@ public class MaterialesCrafter {
         }
     }
 
+
     public void updateCantidadMateriales(){
         for( int i=0; i<n; i++) {
             boxes.get(i).setCantidadDeObjetos();

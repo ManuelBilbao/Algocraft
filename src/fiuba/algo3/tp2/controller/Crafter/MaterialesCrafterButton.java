@@ -10,17 +10,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 public class MaterialesCrafterButton {
+
     Button boton;
     Label label;
 
     Inventario inventario;
     String objeto;
+    int size;
+    CrafterStage crafter;
 
 
     public MaterialesCrafterButton(Inventario inventario, String objeto, int size, CrafterStage crafter){
 
         boton = new Button();
         label = new Label();
+        this.size = size;
+        this.crafter = crafter;
 
         this.inventario = inventario;
         this.objeto = objeto;
@@ -58,4 +63,6 @@ public class MaterialesCrafterButton {
         VBox vBox = new VBox(boton,label);
         return vBox;
     }
+
+
 }
