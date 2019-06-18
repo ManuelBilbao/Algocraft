@@ -13,9 +13,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public Juego juego;
-    public Inventario inventarioMateriales;
-    public Inventario inventarioHerramientas;
-
 
     public static double width;
     public static double heigth;
@@ -32,7 +29,7 @@ public class Main extends Application {
 
         juego = new Juego();
 
-        juego.getJugador().getInventarioMateriales().agregar("madera",1);
+        juego.getJugador().getInventarioMateriales().agregar("piedra",1);
         juego.getJugador().getInventarioMateriales().agregar("madera",1);
         juego.getJugador().getInventarioMateriales().agregar("madera",1);
         juego.getJugador().getInventarioMateriales().agregar("piedra",1);

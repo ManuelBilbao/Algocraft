@@ -44,10 +44,8 @@ public class Mesa {
         inicializar();
     }
 
-    public boolean estructuraHachaMadera(){
-         return casilleros.equals(getModeloHachaMadera());
+    public boolean estructuraHachaMadera(){ return casilleros.equals(getModeloHachaMadera()); }
 
-    }
     public boolean estructuraHachaPiedra() {
         return casilleros.equals(getModeloHachaPiedra());
     }
