@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2;
+package fiuba.algo3.tp2.modelo;
 
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.mapa.CasilleroOcupadoException;
@@ -51,6 +51,10 @@ public class Juego {
 
     public Mapa getMapa() {
         return mapa;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
     }
 
 }

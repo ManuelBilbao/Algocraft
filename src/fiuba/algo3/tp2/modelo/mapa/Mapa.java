@@ -23,6 +23,7 @@ public class Mapa {
     }
 
     public Mapa(Jugador jugador) {
+
         for (int fila = 0; fila <= 30; fila++) {
             for(int col = 0; col<=30; col++){
                 casilleros.put(new Posicion(fila, col), new Casillero());
@@ -46,7 +47,6 @@ public class Mapa {
     public Posicion getPosicionJugador() {
         return posicionJugador;
     }
-
 
     public void setPosicionJugador(Posicion posicionNueva) {
         this.posicionJugador = posicionNueva;

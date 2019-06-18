@@ -35,6 +35,10 @@ public class Mesa {
         casilleros.get(new Posicion(fila, columna)).ocupar(elemento);
     }
 
+    public void sacar(int fila, int columna){
+        new Casillero(fila,columna);
+    }
+
     public void limpiar() {
         casilleros.clear();
         inicializar();
