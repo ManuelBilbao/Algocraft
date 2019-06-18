@@ -20,7 +20,7 @@ public class InventarioGridPane {
     public EquiparButton equiparButton;
 
     int n = 4;
-    int size = 100;
+    int size = 120;
 
     public InventarioGridPane(String[] herramientas, Jugador jugador, EquiparButton equiparButton){
 

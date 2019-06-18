@@ -1,7 +1,5 @@
-package fiuba.algo3.tp2.controller.ObjetosDisponibles;
+package fiuba.algo3.tp2.controller.Crafter;
 
-import fiuba.algo3.tp2.controller.Crafter.MesaButton;
-import fiuba.algo3.tp2.controller.Crafter.MesaGridPane;
 import fiuba.algo3.tp2.modelo.inventario.ElementoNoEstaEnElInventarioException;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
 import javafx.geometry.Pos;
@@ -9,14 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.TextAlignment;
 
-import java.security.KeyStore;
-
-public class ObjetosDisponiblesButton {
-
+public class MaterialesCrafterButton {
     Button boton;
     Label label;
 
@@ -24,7 +17,7 @@ public class ObjetosDisponiblesButton {
     String objeto;
 
 
-    public ObjetosDisponiblesButton(Inventario inventario, String objeto, int size){
+    public MaterialesCrafterButton(Inventario inventario, String objeto, int size, CrafterStage crafter){
 
         boton = new Button();
         label = new Label();
@@ -39,7 +32,14 @@ public class ObjetosDisponiblesButton {
 
         setCantidadDeObjetos();
 
-        boton.setOnAction(e -> { setCantidadDeObjetos(); });
+        boton.setOnAction(e -> {
+            try {
+                crafter.setUltimoMaterialSeleccionado(objeto);
+                inventario.cantidadDe(crafter.getUltimoMaterialSeleccionado());
+            }catch (ElementoNoEstaEnElInventarioException el){
+                crafter.setUltimoMaterialSeleccionado("None");
+            }
+        });
 
         label.setPrefSize(size,size/4);
     }

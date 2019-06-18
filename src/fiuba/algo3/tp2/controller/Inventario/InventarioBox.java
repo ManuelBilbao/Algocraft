@@ -20,7 +20,6 @@ public class InventarioBox {
 
     Button boton;
     Label label;
-    Boolean disponible = true;
 
 
     public InventarioBox(Jugador jugador,String herramienta, int fila, int columna, int size, EquiparButton equiparButton){

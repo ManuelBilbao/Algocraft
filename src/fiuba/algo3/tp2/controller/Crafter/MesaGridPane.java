@@ -11,11 +11,15 @@ public class MesaGridPane {
     public GridPane mesaGrid;
 
     public Inventario inventario;
+    public CrafterStage crafter;
 
     int n = 3;
-    int size = 150;
+    int size;
 
-    public MesaGridPane(Jugador jugador){
+    public MesaGridPane(Jugador jugador,CrafterStage crafter, int size){
+
+        this.size = size;
+        this.crafter = crafter;
 
         mesa = new Mesa();
         mesaGrid = new GridPane();
@@ -28,7 +32,7 @@ public class MesaGridPane {
 
         for(int i=0 ; i<n; i++){
             for(int j = 0; j<n; j++){
-                MesaButton boton = new MesaButton(mesa, inventario, i,j ,size);
+                MesaButton boton = new MesaButton(mesa, inventario, i,j ,size/n, crafter);
                 mesaGrid.add(boton.getButton() , i, j);
             }
         }

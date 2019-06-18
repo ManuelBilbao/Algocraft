@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.controller.AlertStage;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.Mesa;
 import fiuba.algo3.tp2.modelo.inventario.ElementoNoEstaEnElInventarioException;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
+import fiuba.algo3.tp2.modelo.mapa.CasilleroOcupadoException;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,12 +16,10 @@ public class MesaButton {
     int  size;
     Inventario inventario;
     Mesa mesa;
-    String material;
-    Object object;
-    String[] materiales= {"slotVacio", "madera", "piedra", "metal", "diamante"};
-    int i = 1;
+    String material="None";
+    String materialAnterior="None";
 
-    public MesaButton(Mesa mesa, Inventario inventario, int fila, int columna, int size){
+    public MesaButton(Mesa mesa, Inventario inventario, int fila, int columna, int size, CrafterStage crafter){
 
         this.fila = fila;
         this.col = columna;
@@ -34,30 +33,31 @@ public class MesaButton {
 
         boton.setOnAction(e -> {
 
-            material = materiales[i%5];
+            material = crafter.getUltimoMaterialSeleccionado();
 
-            try {
-                inventario.cantidadDe(material);
-            } catch (ElementoNoEstaEnElInventarioException e1) {
-                if(!material.equals("slotVacio")) {
-                    AlertStage alertStage = new AlertStage();
-                    alertStage.display("Algocraft - mensaje", "No posee " + material + " en inventario.");
-                    material = "slotVacio";
+            if(!material.equals("None")) {
+
+                try{
+                    if(inventario.cantidadDe(material)>0) {
+
+                        Image imagen = new Image(material + ".png", size, size, false, false);
+                        boton.setGraphic(new ImageView(imagen));
+
+                        inventario.sacar(material, inventario.getElemento(material));
+                        mesa.posicionar(material, fila, columna);
+                    }
+                }catch (CasilleroOcupadoException e1){
+                    mesa.getCasillero(fila,columna).liberar();
+                    mesa.posicionar(material, fila, columna);
+                    inventario.agregar(materialAnterior, inventario.getElemento(materialAnterior));
                 }
+                crafter.updateCantidadMateriales();
+
             }
 
-            i++;
-
-            Image imagen = new Image(material + ".png", size, size, false, false);
-            boton.setGraphic(new ImageView(imagen));
+            materialAnterior = material;
 
         });
-    }
-
-    public void limpiar(){
-
-        mesa.limpiar();
-
     }
 
 

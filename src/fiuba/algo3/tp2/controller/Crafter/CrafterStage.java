@@ -17,9 +17,11 @@ import javafx.stage.Stage;
 public class CrafterStage {
 
     Stage stage;
-    int size = 800;
+    int size = 600;
     Jugador jugador;
+    MaterialesCrafter materialesCrafter;
     String[] materiales = {"madera", "piedra", "metal", "diamante"};
+    String materialUltimoSeleccionado = "None";
 
 
     public CrafterStage(Jugador jugador){
@@ -45,22 +47,28 @@ public class CrafterStage {
     public Stage getStage(){ return stage;}
 
     private VBox getMaterialbar(Jugador jugador){
-        ObjetosDisponibles objetosDisponibles = new ObjetosDisponibles(size/8,materiales,jugador.getInventarioMateriales());
-        return objetosDisponibles.getVisualVBox();
+        materialesCrafter = new MaterialesCrafter(size/6,12,materiales,jugador.getInventarioMateriales(),this);
+        return materialesCrafter.getVisual();
 
     }
 
     private HBox getTitle(){
-        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Crafter",size*0.76,size/10,size/15);
+        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Crafter",size,size/10,size/15);
         HBox title = new HBox(algocraftTittle.getVisual());
         title.setAlignment(Pos.CENTER);
         return title;
     }
 
     private GridPane getMesa(Jugador jugador){
-        MesaGridPane mesa = new MesaGridPane(jugador);
+        MesaGridPane mesa = new MesaGridPane(jugador, this,(size*3)/4);
         return mesa.getVisual();
     }
+
+    public void updateCantidadMateriales(){ materialesCrafter.updateCantidadMateriales();}
+
+    public void setUltimoMaterialSeleccionado(String material){ materialUltimoSeleccionado = material; }
+
+    public String getUltimoMaterialSeleccionado(){ return materialUltimoSeleccionado;}
 
     private HBox getOpcionesHBox(){
         return (new OpcionesHBox(stage, jugador)).getVisual();

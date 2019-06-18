@@ -17,24 +17,28 @@ public class MenuPrincipal {
 
     public MenuPrincipal(Jugador jugador){
 
-        int size = 80;
+        int size = 800;
 
         menuInicial = new HBox();
         Button inventario = new Button("Inventario");
 
-        ObjetosDisponibles objetosDisponibles = new ObjetosDisponibles(size,materiales,jugador.getInventarioMateriales());
+        ObjetosDisponibles objetosDisponibles = new ObjetosDisponibles(size/8,24,materiales,jugador.getInventarioMateriales());
 
-        Button buttonCrafter = (new AlgocraftButton("Crafter",size/4,size*1.65,size/4 )).getVisual();
+        Button buttonCrafter = (new AlgocraftButton("Crafter",size/3,size/16,size/24 )).getVisual();
         Stage stageCrafter =  (new CrafterStage(jugador)).getStage() ;
-        buttonCrafter.setOnAction(e -> { stageCrafter.showAndWait(); });
+        buttonCrafter.setOnAction(e -> {
+            stageCrafter.showAndWait();
+            objetosDisponibles.updateCantidadDeMateriales();
+        });
 
-        Button buttonInventario = (new AlgocraftButton("Inventario",size/4,size*1.65,size/4 )).getVisual();
+        Button buttonInventario = (new AlgocraftButton("Inventario",size/3,size/16,size/24 )).getVisual();
         Stage inventarioStage =  (new InventarioStage(jugador)).getStage() ;
         buttonInventario.setOnAction(e -> { inventarioStage.showAndWait(); });
 
         menuInicial.getChildren().addAll(objetosDisponibles.getVisualHBox(), buttonCrafter, buttonInventario);
 
         menuInicial.setAlignment(Pos.CENTER);
+        menuInicial.setSpacing(30);
 
     }
 

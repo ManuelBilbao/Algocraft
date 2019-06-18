@@ -22,8 +22,8 @@ public class AlgocraftButton {
         button.setFont(fontMinecraft);
         button.setTextFill(Color.web("#ffffff"));
 
-        button.setMinWidth(ancho);
-        button.setMinHeight(alto);
+        button.setPrefWidth(ancho);
+        button.setPrefHeight(alto);
 
         button.setAlignment(Pos.CENTER);
         button.setStyle("-fx-border-color: white;");

@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class InventarioStage {
 
     Stage stage;
-    int size = 800;
+    int size = 600;
     Jugador jugador;
     String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra", "hachaDeDiamante","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoDeDiamante", "picoFino"};
 
@@ -32,7 +32,7 @@ public class InventarioStage {
 
         BorderPane layout = new BorderPane();
 
-        EquiparButton equiparButton = new EquiparButton(50);
+        EquiparButton equiparButton = new EquiparButton(size);
 
         layout.setTop(getTitle());
         layout.setCenter(getInventarioGridPane(equiparButton));
@@ -47,7 +47,7 @@ public class InventarioStage {
 
 
     private HBox getTitle(){
-        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Inventario",size*0.76,size/10,size/15);
+        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Inventario",size,size/10,size/15);
         HBox title = new HBox(algocraftTittle.getVisual());
         title.setAlignment(Pos.CENTER);
         return title;
@@ -58,8 +58,8 @@ public class InventarioStage {
         return inventario.getVisual();
     }
 
-    private HBox getInventaroOpcionesBox(EquiparButton equiparButton){
-        InventarioOpcionesBox box = new InventarioOpcionesBox(stage, equiparButton);
+    private VBox getInventaroOpcionesBox(EquiparButton equiparButton){
+        InventarioOpcionesBox box = new InventarioOpcionesBox(stage, equiparButton,size);
         return box.getVisual();
     }
 

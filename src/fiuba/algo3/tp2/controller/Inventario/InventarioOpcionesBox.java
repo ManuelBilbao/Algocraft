@@ -5,27 +5,33 @@ import fiuba.algo3.tp2.vista.AlgocraftButton;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class InventarioOpcionesBox {
 
-    int size = 50;
 
-    HBox box;
+    Button closeButtom;
+    Button equiparButton;
+    HBox herramientaEquipadaBox;
 
 
-    public InventarioOpcionesBox(Stage stage, EquiparButton equiparButton){
 
-        box = new HBox();
+    public InventarioOpcionesBox(Stage stage, EquiparButton equiparButton, int size){
 
-        box.getChildren().add((equiparButton.getVisual()));
-        box.getChildren().add((new CloseButton(size,size,size,stage)).getVisual());
+        this.equiparButton = equiparButton.getVisual();
+        herramientaEquipadaBox = equiparButton.getVisualHerramientaEquipada();
+        closeButtom =((new CloseButton(size/2,size/24,size/30,stage)).getVisual());
     }
 
 
-    public HBox getVisual(){
-        box.setAlignment(Pos.CENTER);
-        return box;
+    public VBox getVisual(){
+        HBox hbox = new HBox(equiparButton,closeButtom);
+        hbox.setAlignment(Pos.BOTTOM_CENTER);
+        VBox vbox = new VBox(herramientaEquipadaBox, hbox);
+        vbox.setAlignment(Pos.CENTER);
+        vbox.setSpacing(20);
+        return vbox;
     }
 
 }
