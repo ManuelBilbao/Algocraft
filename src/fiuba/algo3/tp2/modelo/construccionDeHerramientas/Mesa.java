@@ -27,6 +27,10 @@ public class Mesa {
         casilleros[fila][columna].ocupar(elemento);
     }
 
+    public void sacar(int fila, int columna){
+        new Casillero(fila,columna);
+    }
+
     public void limpiar() {
         for (int fila = 0; fila <= 2; fila++) {
             for(int col = 0; col<= 2; col++){

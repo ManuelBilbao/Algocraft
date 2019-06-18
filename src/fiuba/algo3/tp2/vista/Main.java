@@ -1,81 +1,71 @@
 package fiuba.algo3.tp2.vista;
 
+import fiuba.algo3.tp2.controller.MenuPrincipal;
 import fiuba.algo3.tp2.modelo.*;
-import fiuba.algo3.tp2.vista.AlgocraftPlantilla.LabelTitle;
-import fiuba.algo3.tp2.vista.MenuPrincipal.CrafterMenu;
-import fiuba.algo3.tp2.vista.MenuPrincipal.InventarioMenu;
-import fiuba.algo3.tp2.vista.MenuPrincipal.MaterialesDisponiblesMenu;
+import fiuba.algo3.tp2.modelo.inventario.Inventario;
 import javafx.application.Application;
-import javafx.scene.*;
-import javafx.stage.*;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.layout.*;
-
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 public class Main extends Application {
 
     public Juego juego;
+    public Inventario inventarioMateriales;
+    public Inventario inventarioHerramientas;
 
 
     public static double width;
     public static double heigth;
-    int sizeGame = 5;
-
-    private BorderPane mainPage;
-
-    public HBox menuInicial;
-    public CrafterMenu crafterMenu;
-    public InventarioMenu inventarioMenu;
-    public MaterialesDisponiblesMenu materialesDisponiblesMenu;
-
+    public static double sizeGame = 30;
+    public static BorderPane layout;
 
 
     public static void main(String[] args) {
         launch(args);
     }
 
-
     @Override
     public void start(Stage primaryStage) throws Exception {
 
         juego = new Juego();
 
+        juego.getJugador().getInventarioMateriales().agregar("madera",1);
+        juego.getJugador().getInventarioMateriales().agregar("madera",1);
+        juego.getJugador().getInventarioMateriales().agregar("madera",1);
+        juego.getJugador().getInventarioMateriales().agregar("piedra",1);
+        juego.getJugador().getInventarioMateriales().agregar("piedra",1);
+        juego.getJugador().getInventarioMateriales().agregar("diamante",1);
+
         width = Screen.getPrimary().getVisualBounds().getWidth() * 0.8;
         heigth = Screen.getPrimary().getVisualBounds().getHeight() * 0.8;
 
-        mainPage = new BorderPane();
         primaryStage.setTitle("Algocraft");
+        layout = new BorderPane();
+        layout.setTop(getTitle());
+        layout.setBottom(getMenuPrincipal());
+        /*setMap();
+        */
 
-        setMenuPrincipal();
-        setTitle();
-/*
-        mapaGrid = new MapaGrid();
-        mainPage.setCenter(mapaGrid.getVisual());
-*/
-        Scene theScene = new Scene(mainPage);
+        Scene theScene = new Scene(layout);
         primaryStage.setScene(theScene);
 
         primaryStage.show();
 
     }
 
-    private void setMenuPrincipal(){
-
-        menuInicial = new HBox();
-
-        crafterMenu = new CrafterMenu();
-        inventarioMenu = new InventarioMenu();
-        materialesDisponiblesMenu = new MaterialesDisponiblesMenu();
-
-        menuInicial.getChildren().setAll( materialesDisponiblesMenu.getVisual(), crafterMenu.getVisual(), inventarioMenu.getVisual());
-
-        mainPage.setBottom(menuInicial);
-
-
+    public HBox getTitle(){
+        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Algocraft",width, heigth/7,heigth/7);
+        HBox title = new HBox(algocraftTittle.getVisual());
+        title.setAlignment(Pos.CENTER);
+        return title;
     }
 
-    private void setTitle(){
-        LabelTitle label  = new LabelTitle("Algocraft", width, heigth/6, heigth/6);
-        mainPage.setTop(label.getVisual());
+    public HBox getMenuPrincipal(){
+        MenuPrincipal menuPrincipal= new MenuPrincipal(juego.getJugador());
+        return menuPrincipal.getVisual();
     }
 
 

@@ -5,4 +5,5 @@ module Algocraft {
     requires java.logging;
 
     opens fiuba.algo3.tp2.vista;
+
 }

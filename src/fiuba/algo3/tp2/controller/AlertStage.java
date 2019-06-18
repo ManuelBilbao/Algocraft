@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.vista.AlgocraftPlantilla;
+package fiuba.algo3.tp2.controller;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
