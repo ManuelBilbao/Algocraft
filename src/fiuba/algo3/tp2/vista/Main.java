@@ -41,30 +41,12 @@ public class Main extends Application {
 
         primaryStage.setTitle("Algocraft");
         layout = new BorderPane();
-        layout.setTop(getTitle());
-        layout.setBottom(getMenuPrincipal());
-        /*setMap();
-        */
 
-        Scene theScene = new Scene(layout);
+        Scene theScene = new Scene(layout, width, heigth);
         primaryStage.setScene(theScene);
 
         primaryStage.show();
 
     }
-
-    public HBox getTitle(){
-        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Algocraft",width, heigth/7,heigth/7);
-        HBox title = new HBox(algocraftTittle.getVisual());
-        title.setAlignment(Pos.CENTER);
-        return title;
-    }
-
-    public HBox getMenuPrincipal(){
-        MenuPrincipal menuPrincipal= new MenuPrincipal(juego.getJugador());
-        return menuPrincipal.getVisual();
-    }
-
-
 
 }
