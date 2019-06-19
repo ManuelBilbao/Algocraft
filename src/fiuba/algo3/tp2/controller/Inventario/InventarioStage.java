@@ -19,7 +19,7 @@ public class InventarioStage {
     Stage stage;
     int size = 600;
     Jugador jugador;
-    String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra", "hachaDeDiamante","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoDeDiamante", "picoFino"};
+    String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoFino"};
 
 
     public InventarioStage(Jugador jugador){

@@ -58,11 +58,9 @@ public class Mesa {
         return casilleros.equals(getModeloPicoMadera());
     }
 
-
     public boolean estructuraPicoMetal(){
         return casilleros.equals(getModeloPicoMetal());
     }
-
 
     public boolean estructuraPicoPiedra(){
         return casilleros.equals(getModeloPicoPiedra());

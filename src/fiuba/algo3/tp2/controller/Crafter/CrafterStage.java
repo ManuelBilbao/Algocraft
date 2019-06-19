@@ -23,11 +23,13 @@ public class CrafterStage {
     MesaGridPane mesaGridPane;
     String[] materiales = {"madera", "piedra", "metal", "diamante"};
     String materialUltimoSeleccionado = "None";
+    Mesa mesa;
 
 
     public CrafterStage(Jugador jugador){
 
         this.jugador = jugador;
+        mesa = jugador.getMesaDeConstruccion();
 
         stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -61,7 +63,7 @@ public class CrafterStage {
     }
 
     private GridPane getMesa(Jugador jugador){
-        mesaGridPane = new MesaGridPane(jugador, this,(size*3)/4);
+        mesaGridPane = new MesaGridPane(jugador,this,(size*3)/4);
         return mesaGridPane.getVisual();
     }
 

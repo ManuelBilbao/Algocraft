@@ -45,6 +45,10 @@ public class Jugador {
         mesaDeConstruccion.posicionar(elemento, fila, columna);
     }
 
+    public void sacarElementoALaMesaDeConstruccion(int fila, int columna) {
+        mesaDeConstruccion.sacar( fila, columna);
+    }
+
     public void vaciarMesaDeConstruccion(){
         mesaDeConstruccion.limpiar();
     }
