@@ -73,6 +73,11 @@ public class OpcionesHBox {
 
         esEstructuraValida = new HashMap<>();
 
+        /*
+                    VER
+         */
+        /*
+
         esEstructuraValida.put(herramientas[0], jugador.construirHachaDeMadera());
         esEstructuraValida.put(herramientas[1], jugador.construirHachaDePiedra());
         esEstructuraValida.put(herramientas[2], jugador.construirHachaDeMetal());
@@ -81,6 +86,8 @@ public class OpcionesHBox {
         esEstructuraValida.put(herramientas[5], jugador.construirPicoDeMetal());
         esEstructuraValida.put(herramientas[6], jugador.construirPicoFino());
 
+
+         */
         boolean seCrea = false;
         for(int i =0; i<n; i++){
             Herramienta resultadoConstruccion = esEstructuraValida.get(herramientas[i]);

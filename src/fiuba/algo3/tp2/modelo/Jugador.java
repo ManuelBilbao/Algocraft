@@ -18,7 +18,7 @@ public class Jugador {
         agregarElementoALaMesaDeConstruccion(new Madera(),1,0);
         agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
-        inventarioHerramientas.agregar("hachaDeMadera", this.construirHachaDeMadera());
+        inventarioHerramientas.agregar("hachaDeMadera", this.construir());
     }
 
     public Inventario getInventarioHerramientas() {
@@ -57,33 +57,9 @@ public class Jugador {
         return mesaDeConstruccion;
     }
 
-    public Herramienta construirHachaDeMadera() {
-        return constructor.construirHachaDeMadera(this.mesaDeConstruccion);
-
+    public Herramienta construir(){
+        return constructor.construir(this.mesaDeConstruccion);
     }
 
-    public Herramienta construirHachaDePiedra() {
-        return constructor.construirHachaDePiedra(this.mesaDeConstruccion);
 
-    }
-
-    public Herramienta construirHachaDeMetal() {
-        return constructor.construirHachaDeMetal(this.mesaDeConstruccion);
-    }
-
-    public Herramienta construirPicoDeMadera() {
-        return constructor.construirPicoDeMadera(this.mesaDeConstruccion);
-    }
-
-    public Herramienta construirPicoDePiedra() {
-        return constructor.construirPicoDePiedra(this.mesaDeConstruccion);
-    }
-
-    public Herramienta construirPicoDeMetal() {
-        return constructor.construirPicoDeMetal(this.mesaDeConstruccion);
-    }
-
-    public Herramienta construirPicoFino() {
-        return constructor.construirPicoFino(this.mesaDeConstruccion);
-    }
 }

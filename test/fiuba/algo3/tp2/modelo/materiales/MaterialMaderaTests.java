@@ -24,7 +24,7 @@ public class MaterialMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
         Madera bloqueMadera = new Madera();
 
         assertEquals(bloqueMadera.getDurabilidad(), 10);

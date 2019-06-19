@@ -25,7 +25,7 @@ public class MaterialMetalTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta picoDeMadera = jugador.construirPicoDeMadera();
+        Herramienta picoDeMadera = jugador.construir();
         Material metal = new Metal();
 
 

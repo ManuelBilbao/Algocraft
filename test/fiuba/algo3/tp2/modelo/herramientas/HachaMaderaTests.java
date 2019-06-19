@@ -20,7 +20,7 @@ public class HachaMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
 
         assertEquals(100, hacha.getDurabilidad());
         assertEquals(2, hacha.getFuerza());
@@ -35,7 +35,7 @@ public class HachaMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
         Material madera = new Madera();
 
         hacha.golpearMadera(madera);
@@ -53,7 +53,7 @@ public class HachaMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
         Material piedra = new Piedra();
 
         hacha.golpearMadera(piedra);
@@ -71,7 +71,7 @@ public class HachaMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
         Material metal = new Metal();
 
 
@@ -90,7 +90,7 @@ public class HachaMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
         Material diamante = new Diamante();
 
 

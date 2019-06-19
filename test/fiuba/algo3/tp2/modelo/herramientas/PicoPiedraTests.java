@@ -19,7 +19,7 @@ public class PicoPiedraTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDePiedra();
+        Herramienta pico = jugador.construir();
 
         assertEquals(pico.getDurabilidad(), 200);
         assertEquals(pico.getFuerza(), 4);
@@ -35,7 +35,7 @@ public class PicoPiedraTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Piedra(),0,2);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
-        Herramienta pico = jugador.construirPicoDePiedra();
+        Herramienta pico = jugador.construir();
         Material madera = new Madera();
         float durabilidad = pico.getDurabilidad();
 
@@ -55,7 +55,7 @@ public class PicoPiedraTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDePiedra();
+        Herramienta pico = jugador.construir();
         Material piedra = new Piedra();
         float durabilidad = pico.getDurabilidad();
 
@@ -76,7 +76,7 @@ public class PicoPiedraTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDePiedra();
+        Herramienta pico = jugador.construir();
         Material metal = new Metal();
         float durabilidad = pico.getDurabilidad();
 
@@ -96,7 +96,7 @@ public class PicoPiedraTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDePiedra();
+        Herramienta pico = jugador.construir();
         Material diamante = new Diamante();
         float durabilidad = pico.getDurabilidad();
 

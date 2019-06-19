@@ -29,7 +29,7 @@ public class InventarioTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
 
         inventario.agregar("hacha", hacha);
         assertEquals(inventario.cantidadDe("hacha"),1);

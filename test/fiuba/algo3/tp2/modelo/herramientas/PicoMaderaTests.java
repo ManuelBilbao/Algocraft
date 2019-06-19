@@ -19,7 +19,7 @@ public class PicoMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDeMadera();
+        Herramienta pico = jugador.construir();
 
         assertEquals(pico.getDurabilidad(), 100);
         assertEquals(pico.getFuerza(), 2);
@@ -34,7 +34,7 @@ public class PicoMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDeMadera();
+        Herramienta pico = jugador.construir();
         Material madera = new Madera();
 
         pico.golpearMadera(madera);
@@ -52,7 +52,7 @@ public class PicoMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDeMadera();
+        Herramienta pico = jugador.construir();
         Material piedra = new Piedra();
 
         pico.golpearMadera(piedra);
@@ -70,7 +70,7 @@ public class PicoMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDeMadera();
+        Herramienta pico = jugador.construir();
         Material metal = new Metal();
 
         pico.golpearMadera(metal);
@@ -88,7 +88,7 @@ public class PicoMaderaTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta pico = jugador.construirPicoDeMadera();
+        Herramienta pico = jugador.construir();
         Material diamante = new Diamante();
 
         pico.golpearMadera(diamante);

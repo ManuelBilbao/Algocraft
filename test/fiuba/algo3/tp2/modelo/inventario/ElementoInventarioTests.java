@@ -45,7 +45,7 @@ public class ElementoInventarioTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
 
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
@@ -65,7 +65,7 @@ public class ElementoInventarioTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),1,1);
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
         assertEquals(elemento.nombre(), "hacha");
@@ -81,7 +81,7 @@ public class ElementoInventarioTests {
         jugador.agregarElementoALaMesaDeConstruccion(new Madera(),2,1);
 
 
-        Herramienta hacha = jugador.construirHachaDeMadera();
+        Herramienta hacha = jugador.construir();
         ElementoInventario elemento = new ElementoInventario("hacha",hacha);
 
         assertEquals(elemento.getElemento(), hacha);
