@@ -116,4 +116,15 @@ public class Constructor {
         Herramienta picoFino = new PicoFino();
         return picoFino;
     }
+
+    public String identificadorDeHerramientas(Mesa mesaDeConstruccion){
+        if(mesaDeConstruccion.estructuraHachaMadera()){         return "hachaDeMadera"; }
+        else if(mesaDeConstruccion.estructuraHachaPiedra()){    return "hachaDePiedra";}
+        else if(mesaDeConstruccion.estructuraHachaMetal()){     return "hachaDeMetal"; }
+        else if(mesaDeConstruccion.estructuraPicoFino()){       return "picoFino"; }
+        else if(mesaDeConstruccion.estructuraPicoMadera()){     return "picoDeMadera";}
+        else if(mesaDeConstruccion.estructuraPicoPiedra()){     return "picoDePiedra"; }
+        else if(mesaDeConstruccion.estructuraPicoMetal()){      return "picoDeMetal"; }
+        else{ return "None";}
+    }
 }

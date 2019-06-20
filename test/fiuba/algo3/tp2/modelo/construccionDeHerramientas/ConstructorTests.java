@@ -258,5 +258,46 @@ public class ConstructorTests {
         assertEquals("NoEsPosibleConstruir",resultado);
     }
 
+    @Test
+    public void construccionDeHerramientasIdentificadorDeMesaInvalida(){
+
+        Constructor constructor = new Constructor();
+        Mesa mesa = new Mesa();
+
+        assertEquals(constructor.identificadorDeHerramientas(mesa),"None");
+    }
+
+    @Test
+    public void construccionDeHerramientasIdentificadorDeHachaDeMetal(){
+        Mesa mesa = new Mesa();
+        Constructor constructor = new Constructor();
+
+        mesa.posicionar(new Metal(),0,0);
+        mesa.posicionar(new Metal(),0,1);
+        mesa.posicionar(new Metal(),1,0);
+        mesa.posicionar(new Madera(),1,1);
+        mesa.posicionar(new Madera(),2,1);
+
+        assertEquals(constructor.identificadorDeHerramientas(mesa), "hachaDeMetal");
+
+    }
+
+    @Test
+    public void construccionDeHerramientasIdentificadorDePicoFino(){
+        Mesa mesa = new Mesa();
+        Constructor constructor = new Constructor();
+
+        mesa.posicionar(new Metal(),0,0);
+        mesa.posicionar(new Metal(),0,1);
+        mesa.posicionar(new Metal(),0,2);
+        mesa.posicionar(new Madera(),1,1);
+        mesa.posicionar(new Madera(),2,1);
+        mesa.posicionar(new Piedra(),1,0);
+
+        assertEquals(constructor.identificadorDeHerramientas(mesa), "picoFino");
+
+    }
+
+
 
 }

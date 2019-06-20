@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.controller.Crafter;
 
+import fiuba.algo3.tp2.controller.AlertStage;
 import fiuba.algo3.tp2.controller.CloseButton;
 import fiuba.algo3.tp2.modelo.Constructor;
 import fiuba.algo3.tp2.modelo.Jugador;
@@ -14,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.util.HashMap;
 
-public class OpcionesHBox {
+public class MesaOpcionesHBox {
 
     public int size = 600;
 
@@ -29,7 +30,8 @@ public class OpcionesHBox {
     public  MesaGridPane mesaGridPane;
     Stage stage;
 
-    public OpcionesHBox(Stage stage, Jugador jugador, MesaGridPane mesaGridPane) {
+
+    public MesaOpcionesHBox(Stage stage, Jugador jugador, MesaGridPane mesaGridPane) {
 
         this.mesaGridPane = mesaGridPane;
         this.stage = stage;
@@ -65,15 +67,18 @@ public class OpcionesHBox {
     private void construirHerramienta(){
 
         Constructor constructor = new Constructor();
+        String keyHerramienta = constructor.identificadorDeHerramientas(mesa);
 
         try {
             Herramienta herramienta = constructor.construir(mesa);
-            jugador.getInventarioHerramientas().agregar(herramienta.toString(), herramienta);
+            jugador.getInventarioHerramientas().agregar(keyHerramienta, herramienta);
             mesaGridPane.limpiarLuegoDeCrearHerramienta();
-            /*crafter.updateCantidadMateriales();
-            /*crear AlgocraftAlertBox*/
+
+            (new AlertStage()).display("Algocraft - Mensaje", "Construccion de "+keyHerramienta+" ha sido exitosa." );
+
         } catch (ImposibleConstruirHerramientaException el){
-                /* Falta crear AlgocraftAlertBox*/
+
+            (new AlertStage()).display("Algocraft - Mensaje", "Herramienta no construida.");
         }
 
     }

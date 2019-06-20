@@ -50,6 +50,9 @@ public class MesaButton {
 
             if(!material.equals("None")) {
 
+                if(!materialAnterior.equals("None")){inventario.agregar(materialAnterior, inventario.getElemento(materialAnterior));}
+
+
                 try{
                     if(inventario.cantidadDe(material)>0) {
 
@@ -60,12 +63,13 @@ public class MesaButton {
                         mesa.posicionar(objetoMaterialMapa.get(material), columna, fila);
                         materialAnterior=material;
                     } else {
+                        Image imagen = new Image("file:img/slotVacio.png", size, size, false, false);
+                        boton.setGraphic(new ImageView(imagen));
                         materialAnterior = "None";
                     }
                 }catch (CasilleroOcupadoException e1){
-                    mesa.getCasillero(fila,columna).liberar();
+                    mesa.getCasillero(columna,fila).liberar();
                     mesa.posicionar(objetoMaterialMapa.get(material), columna, fila);
-                    inventario.agregar(materialAnterior, inventario.getElemento(materialAnterior));
                     materialAnterior=material;
                 }
                 crafter.updateCantidadMateriales();

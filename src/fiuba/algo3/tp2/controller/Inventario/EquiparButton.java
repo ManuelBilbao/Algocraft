@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
+import fiuba.algo3.tp2.controller.AlertStage;
 import fiuba.algo3.tp2.controller.AlgocraftButton;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
@@ -13,8 +14,8 @@ public class EquiparButton {
 
     public EquiparButton(int size){
 
-        herramientaEquipada = "hachaDeMadera";
-        herramienta = "hachaDeMadera";
+        herramientaEquipada = "-";
+        herramienta = "-";
 
         herramientaEquipadaBox = new InventarioHerramientaEquipadaBox(this,size);
 
@@ -22,6 +23,8 @@ public class EquiparButton {
         boton.setOnAction(e -> {
             this.herramientaEquipada = herramienta;
             herramientaEquipadaBox.actualizar();
+            (new AlertStage()).display("Algocraft - Mensaje",herramienta + " equipada exitosamente." );
+
         });
 
     }

@@ -16,7 +16,6 @@ public class AlgocraftButton {
 
         Font fontMinecraft = Font.loadFont("file:img/Minecrafter.Alt.ttf", size);
 
-
         button = new Button(mensaje);
 
         button.setFont(fontMinecraft);

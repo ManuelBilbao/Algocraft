@@ -33,4 +33,8 @@ public class PicoFino extends Herramienta {
         super.golpearDiamante(bloque);
         material.enviarGolpeADiamante(bloque, fuerza);
     }
+
+    @Override
+    public String toString(){ return "picoFino" + "De" + material.toString(); }
+
 }

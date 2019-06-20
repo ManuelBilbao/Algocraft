@@ -15,6 +15,7 @@ public class InventarioStage {
 
     Stage stage;
     int size = 600;
+
     Jugador jugador;
     String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoFino"};
 
@@ -38,6 +39,8 @@ public class InventarioStage {
 
         Scene scene = new Scene(layout);
         stage.setScene(scene);
+
+        stage.setOnShown(e->{layout.setCenter(getInventarioGridPane(equiparButton)); });
     }
 
     public Stage getStage(){ return stage;}

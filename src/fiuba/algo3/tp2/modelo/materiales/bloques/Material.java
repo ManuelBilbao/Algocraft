@@ -11,4 +11,5 @@ public abstract class   Material {
         if (durabilidad <= 0) throw new NoPoseeDurabilidadException();
         durabilidad = durabilidad - fuerza;
     }
+
 }

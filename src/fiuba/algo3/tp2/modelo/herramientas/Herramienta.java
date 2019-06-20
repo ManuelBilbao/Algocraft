@@ -34,4 +34,6 @@ public abstract class Herramienta {
         desgaste.usar();
     }
 
+    public String toString(){ return "null";};
+
 }

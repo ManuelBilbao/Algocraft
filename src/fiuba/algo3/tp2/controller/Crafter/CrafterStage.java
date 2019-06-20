@@ -73,6 +73,6 @@ public class CrafterStage {
     public String getUltimoMaterialSeleccionado(){ return materialUltimoSeleccionado;}
 
     private HBox getOpcionesHBox(){
-        return (new OpcionesHBox(stage, jugador, mesaGridPane)).getVisual();
+        return (new MesaOpcionesHBox(stage, jugador, mesaGridPane)).getVisual();
     }
 }

@@ -3,6 +3,8 @@ package fiuba.algo3.tp2.modelo.herramientas;
 import fiuba.algo3.tp2.modelo.desgastes.Desgaste;
 import fiuba.algo3.tp2.modelo.materiales.herramientas.Material;
 
+import java.util.Queue;
+
 public class Hacha extends Herramienta {
 
     public Hacha(int fuerza, float durabilidad, Desgaste desgaste, Material material) {
@@ -17,4 +19,8 @@ public class Hacha extends Herramienta {
         super.golpearMadera(bloque);
         material.enviarGolpeAMadera(bloque, fuerza);
     }
+
+    @Override
+    public String toString(){ return "hacha" + "De" + material.toString(); }
+
 }

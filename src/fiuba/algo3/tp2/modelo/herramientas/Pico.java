@@ -23,4 +23,8 @@ public class Pico extends Herramienta {
         super.golpearMetal(bloque);
         material.enviarGolpeAMetal(bloque, fuerza);
     }
+
+    @Override
+    public String toString(){ return "hacha" + "De" + material.toString(); }
+
 }
