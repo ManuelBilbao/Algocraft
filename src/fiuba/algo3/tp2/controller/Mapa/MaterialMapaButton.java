@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.controller.Mapa;
 
+import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.mapa.Casillero;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Diamante;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
@@ -41,11 +42,14 @@ public class MaterialMapaButton {
         casilleroMetal.ocupar(new Metal());
         Casillero casilleroDiamante = new Casillero();
         casilleroDiamante.ocupar(new Diamante());
+        Casillero casilleroJugador = new Casillero();
+        casilleroJugador.ocupar(new Jugador());
 
         if(casillero.equals(casilleroMadera)){ return "madera";}
         else if(casillero.equals(casilleroPiedra)){ return "piedra";}
         else if(casillero.equals(casilleroMetal)){ return "metal";}
         else if(casillero.equals(casilleroDiamante)){ return "diamante";}
+        else if(casillero.equals(casilleroJugador)) { return "jugador"; }
         else { return "pasto";}
 
     }

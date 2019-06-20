@@ -55,6 +55,7 @@
 
     <target name="compilar.aplicacion" depends="setup, resolve">
         <javac srcdir="src" destdir="${build}" includeantruntime="false" debug="yes" target="${jdk.version}">
+            <compilerarg line="--module-path ${libs} --add-modules javafx-fxml-jar-11" />
             <classpath refid="classpath" />
         </javac>
     </target>
