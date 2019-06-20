@@ -24,7 +24,7 @@ public class ObjetosDisponiblesButton {
     String objeto;
 
 
-    public ObjetosDisponiblesButton(Inventario inventario, String objeto, int size){
+    public ObjetosDisponiblesButton(Inventario inventario, String objeto, double size){
 
         boton = new Button();
         label = new Label();

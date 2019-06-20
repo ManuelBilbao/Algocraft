@@ -16,13 +16,13 @@ public class ObjetosDisponibles {
 
     public List<ObjetosDisponiblesButton> boxes = new ArrayList<>();
     int n;
-    int sizeBox;
-    int sizeLetra;
+    double sizeBox;
+    double sizeLetra;
     String[] objetos;
     Inventario inventario;
     MesaGridPane mesa;
 
-    public ObjetosDisponibles(int sizeBox, int sizeLetra, String[] objetos, Inventario inventario){
+    public ObjetosDisponibles(double sizeBox, double sizeLetra, String[] objetos, Inventario inventario){
 
         n = objetos.length;
         this.sizeBox= sizeBox;
@@ -50,7 +50,7 @@ public class ObjetosDisponibles {
     }
 
 
-    private Label getTitle(int ancho, int alto, int size){
+    private Label getTitle(double ancho, double alto, double size){
         AlgocraftTittle title = new AlgocraftTittle("Materiales",ancho, alto, size);
         return title.getVisual();
     }

@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.vista;
 
 import fiuba.algo3.tp2.controller.AlgocraftTittle;
+import fiuba.algo3.tp2.controller.Mapa.MapaGridPane;
 import fiuba.algo3.tp2.controller.MenuPrincipal;
 import fiuba.algo3.tp2.modelo.*;
 import javafx.application.Application;
@@ -9,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.control.Label;
 
 
 public class Main extends Application {
@@ -37,14 +37,18 @@ public class Main extends Application {
         juego.getJugador().getInventarioMateriales().agregar("piedra",1);
         juego.getJugador().getInventarioMateriales().agregar("diamante",1);
 
-        width = Screen.getPrimary().getVisualBounds().getWidth() * 0.8;
-        heigth = Screen.getPrimary().getVisualBounds().getHeight() * 0.8;
+        width = Screen.getPrimary().getVisualBounds().getWidth()*0.8;
+        heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         primaryStage.setTitle("Algocraft");
 
         layout = new BorderPane();
+
+
         layout.setTop(getTitle());
-        layout.setBottom(getMenuPrincipal());
+        layout.setRight(getMenuPrincipal());
+        layout.setCenter(getMap());
+
         Scene theScene = new Scene(layout, width, heigth);
         primaryStage.setScene(theScene);
 
@@ -52,16 +56,22 @@ public class Main extends Application {
 
     }
 
-    public HBox getTitle(){
-        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Algocraft",width, heigth/7,heigth/7);
+    private HBox getTitle(){
+        AlgocraftTittle algocraftTittle = new AlgocraftTittle("Algocraft",width, heigth/12,heigth/24);
         HBox title = new HBox(algocraftTittle.getVisual());
         title.setAlignment(Pos.CENTER);
         return title;
     }
 
-    public HBox getMenuPrincipal(){
-        MenuPrincipal menuPrincipal= new MenuPrincipal(juego.getJugador());
+    private VBox getMenuPrincipal(){
+        MenuPrincipal menuPrincipal= new MenuPrincipal(juego.getJugador(), width, heigth/8);
         return menuPrincipal.getVisual();
     }
+
+    private GridPane getMap(){
+        MapaGridPane map = new  MapaGridPane(juego, width, heigth);
+        return map.getVisaul();
+    }
+
 
 }

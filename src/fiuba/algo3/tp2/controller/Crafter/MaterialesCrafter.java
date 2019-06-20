@@ -5,7 +5,6 @@ import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-
 import java.util.ArrayList;
 import java.util.List;
 

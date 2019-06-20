@@ -11,12 +11,14 @@ import java.util.HashMap;
 
 public class Mapa {
 
+    int n =  30;
+
     private HashMap<Posicion, Casillero> casilleros = new HashMap<>();
     private Posicion posicionJugador;
 
     public Mapa(){
-        for (int fila = 0; fila <= 30; fila++) {
-            for(int col = 0; col<=30; col++){
+        for (int fila = 0; fila <= n; fila++) {
+            for(int col = 0; col<=n; col++){
                 casilleros.put(new Posicion(fila, col), new Casillero());
             }
         }
@@ -24,14 +26,14 @@ public class Mapa {
 
     public Mapa(Jugador jugador) {
 
-        for (int fila = 0; fila <= 30; fila++) {
-            for(int col = 0; col<=30; col++){
+        for (int fila = 0; fila <= n; fila++) {
+            for(int col = 0; col<=n; col++){
                 casilleros.put(new Posicion(fila, col), new Casillero());
             }
         }
 
-        this.posicionJugador = new Posicion(15, 15);
-        ocuparCasillero(new Posicion(15, 15), jugador);
+        this.posicionJugador = new Posicion(n/2, n/2);
+        ocuparCasillero(new Posicion(n/2, n/2), jugador);
         InicializarMateriales inicializador = new InicializarMateriales();
         inicializador.inicializacionMateriales(casilleros);
     }

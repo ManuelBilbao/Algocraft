@@ -1,17 +1,10 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
-import fiuba.algo3.tp2.controller.AlgocraftTittle;
-import fiuba.algo3.tp2.controller.Crafter.MesaButton;
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.Mesa;
-import fiuba.algo3.tp2.modelo.inventario.ElementoNoEstaEnElInventarioException;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
