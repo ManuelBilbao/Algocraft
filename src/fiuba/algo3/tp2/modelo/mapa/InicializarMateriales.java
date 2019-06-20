@@ -8,11 +8,6 @@ import static java.lang.Integer.parseInt;
 
 public class InicializarMateriales {
 
-    private final int DIMENSION_MAPA = 30;
-    private final int CANTIDAD_MADERA = 150;
-    private final int CANTIDAD_PIEDRA = 100;
-    private final int CANTIDAD_METAL = 50;
-    private final int CANTIDAD_DIAMANTE = 25;
 
     public void inicializacionMateriales(HashMap<Posicion, Casillero> casilleros) {
 
