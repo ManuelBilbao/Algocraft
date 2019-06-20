@@ -14,7 +14,7 @@ public class AlgocraftTittle {
 
     public AlgocraftTittle(String mensaje, double ancho, double alto, double size){
 
-        Font fontMinecraft = Font.loadFont("file:img/Minecrafter.Alt.ttf", 14);
+        Font fontMinecraft = Font.loadFont("file:img/Minecrafter.Alt.ttf", size);
 
         label = new Label(mensaje);
 

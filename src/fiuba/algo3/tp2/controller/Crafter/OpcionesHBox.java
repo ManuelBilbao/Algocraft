@@ -3,6 +3,7 @@ package fiuba.algo3.tp2.controller.Crafter;
 import fiuba.algo3.tp2.controller.CloseButton;
 import fiuba.algo3.tp2.modelo.Constructor;
 import fiuba.algo3.tp2.modelo.Jugador;
+import fiuba.algo3.tp2.modelo.construccionDeHerramientas.ImposibleConstruirHerramientaException;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.Mesa;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.controller.AlgocraftButton;
@@ -64,44 +65,17 @@ public class OpcionesHBox {
     private void construirHerramienta(){
 
         Constructor constructor = new Constructor();
-        Herramienta herramienta = null;
 
-        String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoFino"};
-        HashMap <String,Herramienta> esEstructuraValida;
-        int n = herramientas.length;
-
-        esEstructuraValida = new HashMap<>();
-
-        /*
-                    VER
-         */
-        /*
-
-        esEstructuraValida.put(herramientas[0], jugador.construirHachaDeMadera());
-        esEstructuraValida.put(herramientas[1], jugador.construirHachaDePiedra());
-        esEstructuraValida.put(herramientas[2], jugador.construirHachaDeMetal());
-        esEstructuraValida.put(herramientas[3], jugador.construirPicoDeMadera());
-        esEstructuraValida.put(herramientas[4], jugador.construirPicoDePiedra());
-        esEstructuraValida.put(herramientas[5], jugador.construirPicoDeMetal());
-        esEstructuraValida.put(herramientas[6], jugador.construirPicoFino());
-
-
-         */
-        boolean seCrea = false;
-        for(int i =0; i<n; i++){
-            Herramienta resultadoConstruccion = esEstructuraValida.get(herramientas[i]);
-            if(resultadoConstruccion != null){
-                jugador.getInventarioHerramientas().agregar(herramientas[i], resultadoConstruccion);
-                seCrea = true;
-                mesaGridPane.limpiarLuegoDeCrearHerramienta();
-                /*crafter.updateCantidadMateriales();
-                crear AlgocraftAlertBox*/
-            }
+        try {
+            Herramienta herramienta = constructor.construir(mesa);
+            jugador.getInventarioHerramientas().agregar(herramienta.toString(), herramienta);
+            mesaGridPane.limpiarLuegoDeCrearHerramienta();
+            /*crafter.updateCantidadMateriales();
+            /*crear AlgocraftAlertBox*/
+        } catch (ImposibleConstruirHerramientaException el){
+                /* Falta crear AlgocraftAlertBox*/
         }
 
-        if  (!seCrea){
-            /* Falta crear AlgocraftAlertBox*/
-        }
     }
 
     public HBox getVisual() {

@@ -53,7 +53,7 @@ public class MesaButton {
                 try{
                     if(inventario.cantidadDe(material)>0) {
 
-                        Image imagen = new Image(material + ".png", size, size, false, false);
+                        Image imagen = new Image("file:img/"+ material + ".png", size, size, false, false);
                         boton.setGraphic(new ImageView(imagen));
 
                         inventario.sacar(material, inventario.getElemento(material));
@@ -77,7 +77,7 @@ public class MesaButton {
 
     public void limpiar(){
 
-        Image imagen = new Image( "slotVacio.png",size,size,false,false);
+        Image imagen = new Image( "file:img/"+"slotVacio.png",size,size,false,false);
         boton.setGraphic(new ImageView(imagen));
 
         if(!materialAnterior.equals("None")){ inventario.agregar(materialAnterior, inventario.getElemento(material)); }
@@ -88,7 +88,7 @@ public class MesaButton {
 
     public void limpiarLuegoDeCrearHerramienta(){
 
-        Image imagen = new Image( "slotVacio.png",size,size,false,false);
+        Image imagen = new Image( "file:img/"+"slotVacio.png",size,size,false,false);
         boton.setGraphic(new ImageView(imagen));
         material = "None";
         materialAnterior = "None";
