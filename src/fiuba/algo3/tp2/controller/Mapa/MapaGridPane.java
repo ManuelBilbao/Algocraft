@@ -12,8 +12,10 @@ import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Metal;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Piedra;
 import javafx.geometry.Pos;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,21 +42,33 @@ public class MapaGridPane {
         mapaGridPane.setAlignment(Pos.CENTER);
         mapaGridPane.setPrefSize(ancho,alto);
 
-        setBotonesTablero();
+        setMaterialesEnTablero();
+        setJugadorEnTablero();
     }
 
-    private void setBotonesTablero() {
+    private void setMaterialesEnTablero() {
 
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
 
-                MaterialMapaButton label = new MaterialMapaButton(mapa.getCasillero(i, j),anchoButton,altoButton);
+                MaterialMapaButton label = new MaterialMapaButton(mapa.getCasillero(i, j), anchoButton, altoButton);
 
                 mapaGridPane.add(label.getVisual(), i, j);
             }
         }
 
+    }
+
+    private void setJugadorEnTablero() {
+
+        int i =mapa.getPosicionJugador().getFila();
+        int j = mapa.getPosicionJugador().getColumna();
+
+        MaterialMapaButton label = new MaterialMapaButton(mapa.getCasillero(i, j),anchoButton,altoButton);
+        Label jugadorLabel = label.getVisual();
+        jugadorLabel.setGraphic(new ImageView(new Image("file:img/jugador.png",altoButton,anchoButton,false,false)));
+        mapaGridPane.add(jugadorLabel, i, j);
     }
 
     public GridPane getVisaul(){ return mapaGridPane;}
