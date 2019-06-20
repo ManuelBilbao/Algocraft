@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 public class Mapa {
 
-    int n =  60;
+    int n =  30;
     int m =  30;
 
     private HashMap<Posicion, Casillero> casilleros = new HashMap<>();
