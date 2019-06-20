@@ -23,16 +23,16 @@ import java.util.List;
 
 public class MapaGridPane {
 
-    public GridPane mapaGridPane;
+    private GridPane mapaGridPane;
 
-    public Mapa mapa;
-    public Jugador jugador;
+    private Mapa mapa;
+    private Jugador jugador;
 
-    double altoButton = 20;
-    double anchoButton = 20;
+    private double altoButton = 20;
+    private double anchoButton = 20;
 
-    int n;
-    int m;
+    private int n;
+    private int m;
 
     public MapaGridPane(Juego juego, double ancho, double alto) {
 
@@ -58,7 +58,7 @@ public class MapaGridPane {
 
                 MaterialMapaButton label = new MaterialMapaButton(mapa.getCasillero(i, j), anchoButton, altoButton);
 
-                mapaGridPane.add(label.getVisual(), i, j);
+                mapaGridPane.add(label.getVisual(), j, i);
             }
         }
 
