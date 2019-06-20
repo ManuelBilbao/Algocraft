@@ -11,8 +11,8 @@ import java.util.HashMap;
 
 public class Mapa {
 
-    int n =  30;
-    int m =  60;
+    int n =  60;
+    int m =  30;
 
     private HashMap<Posicion, Casillero> casilleros = new HashMap<>();
     private Posicion posicionJugador;
@@ -62,5 +62,9 @@ public class Mapa {
     public void ocuparCasillero(Posicion posicion, Object elemento) {
         casilleros.get(posicion).ocupar(elemento);
     }
+
+    public int getAlto(){ return m;}
+
+    public int getAncho(){return n;}
 
 }

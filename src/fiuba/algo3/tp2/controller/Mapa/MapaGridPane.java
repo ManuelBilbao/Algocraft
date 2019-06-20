@@ -31,12 +31,16 @@ public class MapaGridPane {
     double altoButton = 20;
     double anchoButton = 20;
 
-    int n = 30;
+    int n;
+    int m;
 
     public MapaGridPane(Juego juego, double ancho, double alto) {
 
         this.jugador = juego.getJugador();
         mapa = juego.getMapa();
+
+        n = juego.getMapa().getAncho();
+        m = juego.getMapa().getAlto();
 
         mapaGridPane = new GridPane();
         mapaGridPane.setAlignment(Pos.CENTER);
@@ -49,8 +53,8 @@ public class MapaGridPane {
     private void setMaterialesEnTablero() {
 
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= m; j++) {
 
                 MaterialMapaButton label = new MaterialMapaButton(mapa.getCasillero(i, j), anchoButton, altoButton);
 
@@ -62,13 +66,13 @@ public class MapaGridPane {
 
     private void setJugadorEnTablero() {
 
-        int i =mapa.getPosicionJugador().getFila();
-        int j = mapa.getPosicionJugador().getColumna();
+        int x = mapa.getPosicionJugador().getFila();
+        int y = mapa.getPosicionJugador().getColumna();
 
-        MaterialMapaButton label = new MaterialMapaButton(mapa.getCasillero(i, j),anchoButton,altoButton);
+        MaterialMapaButton label = new MaterialMapaButton(mapa.getCasillero(x, y),anchoButton,altoButton);
         Label jugadorLabel = label.getVisual();
         jugadorLabel.setGraphic(new ImageView(new Image("file:img/jugador.png",altoButton,anchoButton,false,false)));
-        mapaGridPane.add(jugadorLabel, i, j);
+        mapaGridPane.add(jugadorLabel, x, y);
     }
 
     public GridPane getVisaul(){ return mapaGridPane;}
