@@ -4,7 +4,6 @@ import fiuba.algo3.tp2.controller.Crafter.CrafterStage;
 import fiuba.algo3.tp2.controller.Inventario.InventarioStage;
 import fiuba.algo3.tp2.controller.ObjetosDisponibles.ObjetosDisponibles;
 import fiuba.algo3.tp2.modelo.Jugador;
-import fiuba.algo3.tp2.vista.AlgocraftButton;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;

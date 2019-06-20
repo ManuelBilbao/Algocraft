@@ -41,7 +41,7 @@ public class MesaButton {
 
         boton = new Button();
 
-        Image imagenInicial = new Image("slotVacio.png", size, size, false, false);
+        Image imagenInicial = new Image("file:img/"+"slotVacio.png", size, size, false, false);
         boton.setGraphic(new ImageView(imagenInicial));
 
         boton.setOnAction(e -> {

@@ -1,10 +1,8 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
-import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
-import fiuba.algo3.tp2.vista.AlgocraftButton;
+import fiuba.algo3.tp2.controller.AlgocraftButton;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 
 public class EquiparButton {
 

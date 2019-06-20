@@ -1,10 +1,8 @@
 package fiuba.algo3.tp2.controller.Crafter;
 
-import fiuba.algo3.tp2.controller.ObjetosDisponibles.ObjetosDisponibles;
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.Mesa;
-import fiuba.algo3.tp2.modelo.mapa.Mapa;
-import fiuba.algo3.tp2.vista.AlgocraftTittle;
+import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;

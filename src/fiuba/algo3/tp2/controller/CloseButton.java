@@ -1,6 +1,5 @@
 package fiuba.algo3.tp2.controller;
 
-import fiuba.algo3.tp2.vista.AlgocraftButton;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 

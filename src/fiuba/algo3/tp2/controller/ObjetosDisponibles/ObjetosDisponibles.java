@@ -2,7 +2,7 @@ package fiuba.algo3.tp2.controller.ObjetosDisponibles;
 
 import fiuba.algo3.tp2.controller.Crafter.MesaGridPane;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
-import fiuba.algo3.tp2.vista.AlgocraftTittle;
+import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;

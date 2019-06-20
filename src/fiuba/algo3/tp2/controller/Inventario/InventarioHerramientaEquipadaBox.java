@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
-import fiuba.algo3.tp2.vista.AlgocraftButton;
-import fiuba.algo3.tp2.vista.AlgocraftTittle;
+import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;

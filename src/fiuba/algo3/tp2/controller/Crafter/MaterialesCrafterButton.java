@@ -33,7 +33,7 @@ public class MaterialesCrafterButton {
         this.inventario = inventario;
         this.objeto = objeto;
 
-        Image imagen = new Image(objeto + ".png",size*0.8,size*0.8,false,false);
+        Image imagen = new Image("file:img/"+objeto + ".png",size*0.8,size*0.8,false,false);
         boton.setGraphic(new ImageView(imagen));
         boton.prefHeight(size);
         boton.prefWidth(size);

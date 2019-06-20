@@ -1,4 +1,4 @@
-package fiuba.algo3.tp2.vista;
+package fiuba.algo3.tp2.controller;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -14,7 +14,7 @@ public class AlgocraftButton {
 
     public AlgocraftButton(String mensaje, double ancho, double alto, double size){
 
-        Font fontMinecraft = Font.loadFont(getClass().getClassLoader().getResource("Minecrafter.Alt.ttf").toExternalForm(), size);
+        Font fontMinecraft = Font.loadFont("file:img/Minecrafter.Alt.ttf", size);
 
 
         button = new Button(mensaje);
@@ -28,7 +28,7 @@ public class AlgocraftButton {
         button.setAlignment(Pos.CENTER);
         button.setStyle("-fx-border-color: white;");
 
-        BackgroundImage background = new BackgroundImage(new Image("titleBackground.png"), BackgroundRepeat.REPEAT,BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        BackgroundImage background = new BackgroundImage(new Image("file:img/titleBackground.png"), BackgroundRepeat.REPEAT,BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         button.setBackground(new Background(background));
 
     }

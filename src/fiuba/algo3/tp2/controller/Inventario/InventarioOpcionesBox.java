@@ -1,7 +1,6 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
 import fiuba.algo3.tp2.controller.CloseButton;
-import fiuba.algo3.tp2.vista.AlgocraftButton;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
