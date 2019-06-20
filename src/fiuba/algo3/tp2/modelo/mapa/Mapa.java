@@ -27,7 +27,7 @@ public class Mapa {
 
     public Mapa(Jugador jugador) {
 
-        for (int fila = 0; fila <= n; fila++) {
+        for (int fila =0; fila <= n; fila++) {
             for(int col = 0; col<=m; col++){
                 casilleros.put(new Posicion(fila, col), new Casillero());
             }
@@ -46,6 +46,8 @@ public class Mapa {
     public Casillero getCasillero(Posicion posicion) {
         return casilleros.get(posicion);
     }
+
+    public HashMap<Posicion, Casillero> getMapa(){ return casilleros; }
 
     public Posicion getPosicionJugador() {
         return posicionJugador;
