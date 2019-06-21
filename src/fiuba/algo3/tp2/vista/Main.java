@@ -37,7 +37,6 @@ public class Main extends Application {
 
         layout = new BorderPane();
 
-
         layout.setTop(getTitle());
         layout.setRight(getMenuPrincipal());
         layout.setCenter(getMap());
@@ -63,7 +62,7 @@ public class Main extends Application {
 
     private GridPane getMap(){
         MapaGridPane map = new  MapaGridPane(juego, width, heigth);
-        return map.getVisaul();
+        return map.getVisual();
     }
 
 

@@ -75,6 +75,6 @@ public class MapaGridPane {
         mapaGridPane.add(jugadorLabel, x, y);
     }
 
-    public GridPane getVisaul(){ return mapaGridPane;}
+    public GridPane getVisual(){ return mapaGridPane;}
 
 }
