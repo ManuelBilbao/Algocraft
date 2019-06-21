@@ -30,13 +30,6 @@ public class Main extends Application {
 
         juego = new Juego();
 
-        juego.getJugador().getInventarioMateriales().agregar("piedra",1);
-        juego.getJugador().getInventarioMateriales().agregar("madera",1);
-        juego.getJugador().getInventarioMateriales().agregar("madera",1);
-        juego.getJugador().getInventarioMateriales().agregar("piedra",1);
-        juego.getJugador().getInventarioMateriales().agregar("piedra",1);
-        juego.getJugador().getInventarioMateriales().agregar("diamante",1);
-
         width = Screen.getPrimary().getVisualBounds().getWidth()*0.8;
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
