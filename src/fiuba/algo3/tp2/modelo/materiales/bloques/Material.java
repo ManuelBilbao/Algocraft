@@ -12,4 +12,8 @@ public abstract class   Material {
         durabilidad = durabilidad - fuerza;
     }
 
+
+    @Override
+    public String toString(){ return "Null"; }
+
 }

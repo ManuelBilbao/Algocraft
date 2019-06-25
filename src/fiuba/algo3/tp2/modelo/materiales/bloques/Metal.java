@@ -4,4 +4,8 @@ public class Metal extends Material {
 
     public Metal() { durabilidad = 50; }
 
+
+    @Override
+    public String toString(){ return "Metal"; }
+
 }
