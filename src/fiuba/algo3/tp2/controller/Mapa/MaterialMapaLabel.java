@@ -14,11 +14,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 
-public class MaterialMapaButton {
+public class MaterialMapaLabel {
 
     public Label label;
 
-    public MaterialMapaButton( Casillero casillero, double ancho, double alto){
+    public MaterialMapaLabel(Casillero casillero, double ancho, double alto){
 
         label = new Label();
 

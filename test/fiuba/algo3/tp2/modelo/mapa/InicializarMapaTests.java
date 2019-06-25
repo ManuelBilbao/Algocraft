@@ -2,9 +2,8 @@ package fiuba.algo3.tp2.modelo.mapa;
 
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.materiales.bloques.*;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
+import static junit.framework.TestCase.assertEquals;
 
 public class InicializarMapaTests {
 
@@ -13,7 +12,7 @@ public class InicializarMapaTests {
         Jugador jugador = new Jugador();
         Mapa mapa = new Mapa(jugador);
 
-        assertEquals(jugador,mapa.getCasillero(15,15).getContenido());
+        assertEquals(jugador,mapa.getCasillero(15,15). getContenido());
 
     }
 
@@ -24,7 +23,7 @@ public class InicializarMapaTests {
 
         inicializador.inicializacionMateriales(mapa.getMapa());
 
-        assertEquals((new Madera()).getDurabilidad(), ((Madera) mapa.getCasillero(1,10).getContenido()).getDurabilidad());
+        assertEquals( (new Madera()).getDurabilidad(), ((Madera) mapa.getCasillero(1,10).getContenido()).getDurabilidad());
         assertEquals((new Madera()).getDurabilidad(), ((Madera) mapa.getCasillero(1,11).getContenido()).getDurabilidad());
         assertEquals((new Madera()).getDurabilidad(), ((Madera) mapa.getCasillero(1,12).getContenido()).getDurabilidad());
         assertEquals((new Madera()).getDurabilidad(), ((Madera) mapa.getCasillero(1,13).getContenido()).getDurabilidad());

@@ -62,6 +62,9 @@ public class Mapa {
     }
 
     public void ocuparCasillero(Posicion posicion, Object elemento) {
+        if (posicion.getFila()<0 || posicion.getFila()>n || posicion.getColumna()<0 || posicion.getColumna()>m){
+            throw new CasilleroOcupadoException();
+        }
         casilleros.get(posicion).ocupar(elemento);
     }
 

@@ -16,13 +16,9 @@ public class Juego {
     }
 
     private void moverJugador(Posicion posicionActual, Posicion posicionNueva) {
-        try {
-            mapa.ocuparCasillero(posicionNueva, this.jugador);
-            mapa.liberarCasillero(posicionActual);
-            mapa.setPosicionJugador(posicionNueva);
-        } catch (CasilleroOcupadoException e) {
-            System.out.println("Casillero ocupado!");
-        }
+        mapa.ocuparCasillero(posicionNueva, this.jugador);
+        mapa.liberarCasillero(posicionActual);
+        mapa.setPosicionJugador(posicionNueva);
     }
 
     public void moverJugadorArriba() {
