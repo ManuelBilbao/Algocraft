@@ -61,7 +61,7 @@ public class Main extends Application {
         primaryStage.setScene(theScene);
 
 
-        Media musicFile = new Media(new File("/home/josefina/Algocraft/media/Minecraft-soundtrack.wav").toURI().toString());
+        Media musicFile = new Media(new File("media/Minecraft-soundtrack.wav").toURI().toString());
         mediaPlayer = new MediaPlayer(musicFile);
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setVolume(0.1);
