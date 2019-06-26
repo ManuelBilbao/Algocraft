@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
+import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.Mesa;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
@@ -14,19 +15,19 @@ public class InventarioGridPane {
     public GridPane mesaGrid;
 
     public Inventario inventario;
-    public Jugador jugador;
+    public Juego juego;
     public String[] herramientas;
     public EquiparButton equiparButton;
 
     int n = 3;
     int size = 120;
 
-    public InventarioGridPane(String[] herramientas, Jugador jugador, EquiparButton equiparButton){
+    public InventarioGridPane(String[] herramientas, Juego juego, EquiparButton equiparButton){
 
         mesa = new Mesa();
         mesaGrid = new GridPane();
-        inventario = jugador.getInventarioMateriales();
-        this.jugador = jugador;
+        inventario = juego.getJugador().getInventarioMateriales();
+        this.juego = juego;
         this.herramientas = herramientas;
         this.equiparButton = equiparButton;
 
@@ -52,7 +53,7 @@ public class InventarioGridPane {
 
 
     private VBox getBox(String herramienta) {
-        return (new InventarioBox(jugador, herramienta, size, size, size, equiparButton)).getVisual();
+        return (new InventarioBox(juego, herramienta, size, size, size, equiparButton)).getVisual();
     }
 
 

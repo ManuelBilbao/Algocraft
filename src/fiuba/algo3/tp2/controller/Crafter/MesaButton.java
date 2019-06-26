@@ -59,7 +59,7 @@ public class MesaButton {
                         Image imagen = new Image("file:img/"+ material + ".png", size, size, false, false);
                         boton.setGraphic(new ImageView(imagen));
 
-                        inventario.sacar(material, inventario.getElemento(material));
+                        inventario.sacar(material);
                         mesa.posicionar(objetoMaterialMapa.get(material), columna, fila);
                         materialAnterior=material;
                     } else {

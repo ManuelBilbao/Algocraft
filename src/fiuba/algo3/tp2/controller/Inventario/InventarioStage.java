@@ -1,7 +1,10 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
+import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.controller.AlgocraftTittle;
+import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
+import fiuba.algo3.tp2.modelo.inventario.ElementoNoEstaEnElInventarioException;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -16,13 +19,14 @@ public class InventarioStage {
     Stage stage;
     int size = 600;
 
-    Jugador jugador;
+    Juego juego;
     String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoFino"};
 
+    EquiparButton equiparButton;
 
-    public InventarioStage(Jugador jugador){
+    public InventarioStage(Juego juego){
 
-        this.jugador = jugador;
+        this.juego = juego;
 
         stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -30,7 +34,7 @@ public class InventarioStage {
 
         BorderPane layout = new BorderPane();
 
-        EquiparButton equiparButton = new EquiparButton(size);
+        equiparButton = new EquiparButton(size);
 
         layout.setTop(getTitle());
         layout.setCenter(getInventarioGridPane(equiparButton));
@@ -45,6 +49,10 @@ public class InventarioStage {
 
     public Stage getStage(){ return stage;}
 
+    public String getHerramientaEquipada(){ return equiparButton.getHerramientaEquipada(); }
+
+    public void borrarHerramientaEquipada(){ equiparButton.setHerramienta("null");}
+
 
     private HBox getTitle(){
         AlgocraftTittle algocraftTittle = new AlgocraftTittle("Inventario",size,size/10,size/15);
@@ -54,7 +62,7 @@ public class InventarioStage {
     }
 
     private GridPane getInventarioGridPane(EquiparButton equiparButton){
-        InventarioGridPane inventario = new InventarioGridPane(herramientas,jugador,equiparButton);
+        InventarioGridPane inventario = new InventarioGridPane(herramientas,juego,equiparButton);
         return inventario.getVisual();
     }
 

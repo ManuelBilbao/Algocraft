@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.controller.ObjetosDisponibles;
 
 import fiuba.algo3.tp2.controller.Crafter.MesaGridPane;
+import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
 import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import javafx.geometry.Pos;
@@ -22,13 +23,13 @@ public class ObjetosDisponibles {
     Inventario inventario;
     MesaGridPane mesa;
 
-    public ObjetosDisponibles(double sizeBox, double sizeLetra, String[] objetos, Inventario inventario){
+    public ObjetosDisponibles(double sizeBox, double sizeLetra, String[] objetos, Juego juego){
 
         n = objetos.length;
         this.sizeBox= sizeBox;
         this.sizeLetra = sizeLetra;
         this.objetos= objetos;
-        this.inventario = inventario;
+        this.inventario = juego.getJugador().getInventarioMateriales();
         setObjetos();
     }
 

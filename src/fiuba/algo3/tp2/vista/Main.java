@@ -4,26 +4,23 @@ import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import fiuba.algo3.tp2.controller.Mapa.MapaGridPane;
 import fiuba.algo3.tp2.controller.MenuPrincipal;
 import fiuba.algo3.tp2.modelo.*;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-import java.io.File;
 
 
 public class Main extends Application {
 
     public Juego juego;
 
-    public  MediaPlayer mediaPlayer;
 
     public static double width;
     public static double heigth;
@@ -43,22 +40,20 @@ public class Main extends Application {
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         MapaGridPane mapaGridPane =  new MapaGridPane(juego, width, heigth);
+        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, width, heigth/8);
 
         primaryStage.setTitle("Algocraft");
 
         layout = new BorderPane();
 
         layout.setTop(getTitle());
-        layout.setRight(getMenuPrincipal());
+        layout.setRight(menuPrincipal.getVisual());
         layout.setCenter(mapaGridPane.getVisual());
 
 
         Scene theScene = new Scene(layout, width, heigth);
         primaryStage.setScene(theScene);
 
-        Media musicFile = new Media(new File("/home/josefina/Algocraft/media/Minecraft-soundtrack.wav").toURI().toString());
-        mediaPlayer = new MediaPlayer(musicFile);
-        mediaPlayer.setAutoPlay(true);
 
         layout.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
@@ -81,11 +76,11 @@ public class Main extends Application {
                     ultimoComando = "A";
                     mapaGridPane.jugadorMoverIzquierda();
                 }
-                /*
-                if (event.getCode() == KeyCode.SPACE){
-                    mapaGridPane.jugadorUsarHerramienta(ultimoComando);
+                if (event.getCode() == KeyCode.F) {
+                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal);
+                    menuPrincipal.update();
                 }
-                */
+
                 event.consume();
             }
 
@@ -102,15 +97,6 @@ public class Main extends Application {
         return title;
     }
 
-    private VBox getMenuPrincipal(){
-        MenuPrincipal menuPrincipal= new MenuPrincipal(juego.getJugador(), width, heigth/8);
-        return menuPrincipal.getVisual();
-    }
-
-    private GridPane getMap(){
-        MapaGridPane map = new  MapaGridPane(juego, width, heigth);
-        return map.getVisual();
-    }
 
 
 }
