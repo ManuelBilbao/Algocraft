@@ -13,11 +13,17 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 
 public class Main extends Application {
 
     public Juego juego;
+
+    public  MediaPlayer mediaPlayer;
 
     public static double width;
     public static double heigth;
@@ -49,6 +55,10 @@ public class Main extends Application {
 
         Scene theScene = new Scene(layout, width, heigth);
         primaryStage.setScene(theScene);
+
+        Media musicFile = new Media(new File("/home/josefina/Algocraft/media/Minecraft-soundtrack.wav").toURI().toString());
+        mediaPlayer = new MediaPlayer(musicFile);
+        mediaPlayer.setAutoPlay(true);
 
         layout.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
