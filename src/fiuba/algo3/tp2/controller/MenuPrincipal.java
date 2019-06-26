@@ -3,6 +3,8 @@ package fiuba.algo3.tp2.controller;
 import fiuba.algo3.tp2.controller.Crafter.CrafterStage;
 import fiuba.algo3.tp2.controller.Inventario.InventarioStage;
 import fiuba.algo3.tp2.controller.ObjetosDisponibles.ObjetosDisponibles;
+import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
+import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.modelo.Jugador;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,6 +17,7 @@ public class MenuPrincipal {
 
     String[] materiales = {"madera", "piedra", "metal", "diamante"};
     VBox menuInicial;
+    InventarioStage inventarioStage;
 
     public MenuPrincipal(Jugador jugador, double ancho, double alto){
 
@@ -31,8 +34,8 @@ public class MenuPrincipal {
         });
 
         Button buttonInventario = (new AlgocraftButton("Inventario",ancho/3,alto/3, alto/6 )).getVisual();
-        Stage inventarioStage =  (new InventarioStage(jugador)).getStage() ;
-        buttonInventario.setOnAction(e -> { inventarioStage.showAndWait(); });
+        inventarioStage =  new InventarioStage(jugador) ;
+        buttonInventario.setOnAction(e -> { inventarioStage.getStage().showAndWait(); });
 
         menuInicial.getChildren().addAll(buttonCrafter, buttonInventario, objetosDisponibles.getVisualHBox());
 
@@ -40,6 +43,11 @@ public class MenuPrincipal {
         menuInicial.setSpacing(10);
 
     }
+
+    public Herramienta getHerramientaEquipada(){
+        return inventarioStage.getHerramientaEquipada();
+    }
+
 
     public VBox getVisual(){
         menuInicial.setPadding(new Insets(30, 30, 20, 20));

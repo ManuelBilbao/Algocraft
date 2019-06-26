@@ -2,9 +2,11 @@ package fiuba.algo3.tp2.controller.Mapa;
 
 import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
+import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.modelo.mapa.CasilleroOcupadoException;
 import fiuba.algo3.tp2.modelo.mapa.Mapa;
 import fiuba.algo3.tp2.modelo.mapa.Posicion;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Material;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -125,6 +127,36 @@ public class MapaGridPane {
         } finally {
             setJugadorEnTablero();
         };
+    }
+
+
+    public void jugadorUsarHerramienta(String ultimoComando, Herramienta herramienta){
+
+        if(herramienta==null) return;
+
+        Posicion posJugador = juego.getMapa().getPosicionJugador();
+        Posicion posBloque = new Posicion(posJugador.getFila(), posJugador.getColumna());
+        Material bloque = null;
+
+        if (ultimoComando=="A"){
+            bloque = juego.golpearIzquierda(herramienta);
+            posBloque.moverIzquierda();
+        }else if (ultimoComando == "D"){
+            bloque =juego.golpearDerecha(herramienta);
+            posBloque.moverDerecha();
+        }else if (ultimoComando == "W"){
+            bloque =juego.golpearArriba(herramienta);
+            posBloque.moverArriba();
+        } else if (ultimoComando == "S"){
+            bloque =juego.golpearAbajo(herramienta);
+            posBloque.moverAbajo();
+        } else{ return;}
+
+        if (bloque!= null && bloque.getDurabilidad()<=0){
+            limpiarCasillero(posBloque.getFila(), posBloque.getColumna());
+            juego.getMapa().liberarCasillero(posBloque);
+        }
+
     }
 
 

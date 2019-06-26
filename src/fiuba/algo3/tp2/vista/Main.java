@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
@@ -37,13 +38,14 @@ public class Main extends Application {
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         MapaGridPane mapaGridPane =  new MapaGridPane(juego, width, heigth);
+        MenuPrincipal menuPrincipal = new MenuPrincipal(juego.getJugador(), width, heigth/8);
 
         primaryStage.setTitle("Algocraft");
 
         layout = new BorderPane();
 
         layout.setTop(getTitle());
-        layout.setRight(getMenuPrincipal());
+        layout.setRight(menuPrincipal.getVisual());
         layout.setCenter(mapaGridPane.getVisual());
 
 
@@ -71,11 +73,9 @@ public class Main extends Application {
                     ultimoComando = "A";
                     mapaGridPane.jugadorMoverIzquierda();
                 }
-                /*
-                if (event.getCode() == KeyCode.SPACE){
-                    mapaGridPane.jugadorUsarHerramienta(ultimoComando);
+                if (event.getCode() == KeyCode.F) {
+                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal.getHerramientaEquipada());
                 }
-                */
                 event.consume();
             }
 
@@ -92,15 +92,6 @@ public class Main extends Application {
         return title;
     }
 
-    private VBox getMenuPrincipal(){
-        MenuPrincipal menuPrincipal= new MenuPrincipal(juego.getJugador(), width, heigth/8);
-        return menuPrincipal.getVisual();
-    }
-
-    private GridPane getMap(){
-        MapaGridPane map = new  MapaGridPane(juego, width, heigth);
-        return map.getVisual();
-    }
 
 
 }

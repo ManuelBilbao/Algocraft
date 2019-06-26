@@ -2,6 +2,8 @@ package fiuba.algo3.tp2.controller.Inventario;
 
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.controller.AlgocraftTittle;
+import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
+import fiuba.algo3.tp2.modelo.inventario.ElementoNoEstaEnElInventarioException;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -19,6 +21,7 @@ public class InventarioStage {
     Jugador jugador;
     String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoFino"};
 
+    EquiparButton equiparButton;
 
     public InventarioStage(Jugador jugador){
 
@@ -30,7 +33,7 @@ public class InventarioStage {
 
         BorderPane layout = new BorderPane();
 
-        EquiparButton equiparButton = new EquiparButton(size);
+        equiparButton = new EquiparButton(size);
 
         layout.setTop(getTitle());
         layout.setCenter(getInventarioGridPane(equiparButton));
@@ -44,6 +47,17 @@ public class InventarioStage {
     }
 
     public Stage getStage(){ return stage;}
+
+    public Herramienta getHerramientaEquipada(){
+        Herramienta h = null;
+        try{
+            h = (Herramienta) jugador.getInventarioHerramientas().getElemento(equiparButton.getHerramientaEquipada());
+        } catch (NullPointerException e){
+            return null;
+        }
+
+        return h;
+    }
 
 
     private HBox getTitle(){

@@ -48,7 +48,7 @@ public class Juego {
         moverJugador(posicionJugador, posicionNueva);
     }
 
-    private void golpear(Material bloque, Herramienta herramienta){
+    public void golpear(Material bloque, Herramienta herramienta){
 
         if(bloque.toString() == "Madera"){
             herramienta.golpearMadera(bloque);
@@ -66,31 +66,32 @@ public class Juego {
         }
     }
 
-    public void golpearDerecha(Herramienta herramienta){
+    public Material golpearDerecha(Herramienta herramienta){
         Material bloque = (Material) mapa.getCasillero(mapa.getPosicionJugador().posicionDerecha()).getContenido();
         golpear(bloque, herramienta);
+        return bloque;
 
     }
 
 
-    public void golpearIzquierda(Herramienta herramienta){
+    public Material golpearIzquierda(Herramienta herramienta){
         Material bloque = (Material) mapa.getCasillero(mapa.getPosicionJugador().posicionIzquierda()).getContenido();
         golpear(bloque, herramienta);
-
+        return bloque;
     }
 
 
-    public void golpearAbajo(Herramienta herramienta){
+    public Material golpearAbajo(Herramienta herramienta){
         Material bloque = (Material) mapa.getCasillero(mapa.getPosicionJugador().posicionInferior()).getContenido();
         golpear(bloque, herramienta);
-
+        return bloque;
     }
 
 
-    public void golpearArriba(Herramienta herramienta){
+    public Material golpearArriba(Herramienta herramienta){
         Material bloque = (Material) mapa.getCasillero(mapa.getPosicionJugador().posicionSuperior()).getContenido();
         golpear(bloque, herramienta);
-
+        return bloque;
     }
 
 
