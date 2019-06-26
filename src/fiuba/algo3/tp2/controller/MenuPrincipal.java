@@ -43,7 +43,7 @@ public class MenuPrincipal {
     public String getHerramientaEquipada(){
         return inventarioStage.getHerramientaEquipada();
     }
-    public void borrarHerramientaEquipada(){ inventarioStage.borrarHerramientaEquipada();}
+    public void desequiparHerramienta(){ inventarioStage.desequiparHerramienta();}
 
 
     public void update(){

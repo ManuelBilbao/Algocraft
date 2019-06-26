@@ -163,10 +163,12 @@ public class MapaGridPane {
             }
 
         } catch (NullPointerException e){
-
         } catch (NoPoseeDurabilidadException e){
+        }
+
+        if (herramienta.getDurabilidad()<=0) {
             juego.getJugador().getInventarioHerramientas().sacar(menu.getHerramientaEquipada());
-            menu.borrarHerramientaEquipada();
+            menu.desequiparHerramienta();
         }
 
         if (bloque!=null && bloque.getDurabilidad()<=0){

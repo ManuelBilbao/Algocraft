@@ -22,7 +22,7 @@ public class InventarioHerramientaEquipadaBox {
         title.setTextFill(Color.web("#85F9F4"));
     }
 
-    public void actualizar(){ herramienta.setText(equiparButton.getHerramientaEquipada()); }
+    public void update(){ herramienta.setText(equiparButton.getHerramientaEquipada()); }
 
     public HBox getVisual(){
         HBox box = new HBox(title,herramienta);

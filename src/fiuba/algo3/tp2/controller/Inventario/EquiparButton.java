@@ -22,7 +22,7 @@ public class EquiparButton {
         boton = (new AlgocraftButton("equipar",size/2, size/24, size/30)).getVisual();
         boton.setOnAction(e -> {
             this.herramientaEquipada = herramienta;
-            herramientaEquipadaBox.actualizar();
+            herramientaEquipadaBox.update();
             (new AlertStage()).display("Algocraft - Mensaje",herramienta + " equipada exitosamente." );
 
         });
@@ -34,6 +34,12 @@ public class EquiparButton {
     public HBox getVisualHerramientaEquipada(){ return herramientaEquipadaBox.getVisual(); }
 
     public void setHerramienta(String herramienta){ this.herramienta = herramienta;}
+
+    public void desequipar(){
+        this.herramientaEquipada = "-";
+        this.herramienta = "-";
+        herramientaEquipadaBox.update();
+    }
 
     public String getHerramientaEquipada(){ return herramientaEquipada;}
 

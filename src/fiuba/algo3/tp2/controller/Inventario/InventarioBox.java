@@ -46,8 +46,7 @@ public class InventarioBox {
             }
         });
 
-}
-
+    }
 
     public VBox getVisual() {
         VBox box = new VBox();

@@ -3,12 +3,13 @@ package fiuba.algo3.tp2.modelo;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.*;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.modelo.inventario.Inventario;
+import fiuba.algo3.tp2.modelo.inventario.InventarioHerramienta;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 
 public class Jugador {
 
     private Constructor constructor = new Constructor();
-    private Inventario inventarioHerramientas = new Inventario();
+    private Inventario inventarioHerramientas = new InventarioHerramienta();
     private Inventario inventarioMateriales = new Inventario();
     private Mesa mesaDeConstruccion = new Mesa();
 

@@ -44,14 +44,16 @@ public class InventarioStage {
         Scene scene = new Scene(layout);
         stage.setScene(scene);
 
-        stage.setOnShown(e->{layout.setCenter(getInventarioGridPane(equiparButton)); });
+        stage.setOnShown(e->{
+            layout.setCenter(getInventarioGridPane(equiparButton));
+        });
     }
 
     public Stage getStage(){ return stage;}
 
     public String getHerramientaEquipada(){ return equiparButton.getHerramientaEquipada(); }
 
-    public void borrarHerramientaEquipada(){ equiparButton.setHerramienta("null");}
+    public void desequiparHerramienta(){ equiparButton.desequipar();}
 
 
     private HBox getTitle(){
