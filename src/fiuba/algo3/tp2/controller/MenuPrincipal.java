@@ -34,8 +34,10 @@ public class MenuPrincipal {
         SoundButton botonSonido = new SoundButton(ancho/3,alto/3,alto/6 );
         Button buttonSound = (botonSonido).getVisual();
         buttonSound.setOnAction(e -> {
-            botonSonido.apagar(mediaPlayer, alto/6);
-            mediaPlayer.stop();
+            if (botonSonido.prendido()) {
+                botonSonido.apagar(mediaPlayer, alto / 6);
+            }
+            else{ botonSonido.prender(mediaPlayer,alto/6);}
         });
 
 
