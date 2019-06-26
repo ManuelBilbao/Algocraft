@@ -29,11 +29,14 @@ public class MenuPrincipal {
             objetosDisponibles.updateCantidadDeMateriales();
         });
 
+        Button buttonSound = (new SoundButton(ancho/3,alto/3,alto/6 )).getVisual();
+
+
         Button buttonInventario = (new AlgocraftButton("Inventario",ancho/3,alto/3, alto/6 )).getVisual();
         inventarioStage =  new InventarioStage(juego) ;
         buttonInventario.setOnAction(e -> { inventarioStage.getStage().showAndWait(); });
 
-        menuInicial.getChildren().addAll(buttonCrafter, buttonInventario, objetosDisponibles.getVisualHBox());
+        menuInicial.getChildren().addAll(buttonCrafter, buttonInventario, objetosDisponibles.getVisualHBox(),buttonSound);
 
         menuInicial.setAlignment(Pos.BOTTOM_CENTER);
         menuInicial.setSpacing(10);
