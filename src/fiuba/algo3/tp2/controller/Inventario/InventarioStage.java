@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
+import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
@@ -18,14 +19,14 @@ public class InventarioStage {
     Stage stage;
     int size = 600;
 
-    Jugador jugador;
+    Juego juego;
     String[] herramientas = {"hachaDeMadera", "hachaDeMetal", "hachaDePiedra","picoDeMadera", "picoDeMetal", "picoDePiedra", "picoFino"};
 
     EquiparButton equiparButton;
 
-    public InventarioStage(Jugador jugador){
+    public InventarioStage(Juego juego){
 
-        this.jugador = jugador;
+        this.juego = juego;
 
         stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -48,16 +49,9 @@ public class InventarioStage {
 
     public Stage getStage(){ return stage;}
 
-    public Herramienta getHerramientaEquipada(){
-        Herramienta h = null;
-        try{
-            h = (Herramienta) jugador.getInventarioHerramientas().getElemento(equiparButton.getHerramientaEquipada());
-        } catch (NullPointerException e){
-            return null;
-        }
+    public String getHerramientaEquipada(){ return equiparButton.getHerramientaEquipada(); }
 
-        return h;
-    }
+    public void borrarHerramientaEquipada(){ equiparButton.setHerramienta("null");}
 
 
     private HBox getTitle(){
@@ -68,7 +62,7 @@ public class InventarioStage {
     }
 
     private GridPane getInventarioGridPane(EquiparButton equiparButton){
-        InventarioGridPane inventario = new InventarioGridPane(herramientas,jugador,equiparButton);
+        InventarioGridPane inventario = new InventarioGridPane(herramientas,juego,equiparButton);
         return inventario.getVisual();
     }
 

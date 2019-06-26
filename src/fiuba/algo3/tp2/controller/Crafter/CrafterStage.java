@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.controller.Crafter;
 
+import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.construccionDeHerramientas.Mesa;
 import fiuba.algo3.tp2.controller.AlgocraftTittle;
@@ -24,9 +25,9 @@ public class CrafterStage {
     Mesa mesa;
 
 
-    public CrafterStage(Jugador jugador){
+    public CrafterStage(Juego juego){
 
-        this.jugador = jugador;
+        this.jugador = juego.getJugador();
         mesa = jugador.getMesaDeConstruccion();
 
         stage = new Stage();

@@ -4,6 +4,7 @@ import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import fiuba.algo3.tp2.controller.Mapa.MapaGridPane;
 import fiuba.algo3.tp2.controller.MenuPrincipal;
 import fiuba.algo3.tp2.modelo.*;
+import fiuba.algo3.tp2.modelo.materiales.bloques.Madera;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -38,7 +39,7 @@ public class Main extends Application {
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         MapaGridPane mapaGridPane =  new MapaGridPane(juego, width, heigth);
-        MenuPrincipal menuPrincipal = new MenuPrincipal(juego.getJugador(), width, heigth/8);
+        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, width, heigth/8);
 
         primaryStage.setTitle("Algocraft");
 
@@ -74,8 +75,10 @@ public class Main extends Application {
                     mapaGridPane.jugadorMoverIzquierda();
                 }
                 if (event.getCode() == KeyCode.F) {
-                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal.getHerramientaEquipada());
+                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal);
+                    menuPrincipal.update();
                 }
+
                 event.consume();
             }
 

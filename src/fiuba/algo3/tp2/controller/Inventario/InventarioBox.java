@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.controller.Inventario;
 
 import fiuba.algo3.tp2.controller.AlertStage;
+import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.controller.AlgocraftTittle;
 import fiuba.algo3.tp2.modelo.inventario.ElementoNoEstaEnElInventarioException;
@@ -21,9 +22,9 @@ public class InventarioBox {
     int size;
     String herramienta;
 
-    public InventarioBox(Jugador jugador,String herramienta, int fila, int columna, int size, EquiparButton equiparButton){
+    public InventarioBox(Juego juego, String herramienta, int fila, int columna, int size, EquiparButton equiparButton){
 
-        this.jugador = jugador;
+        this.jugador = juego.getJugador();
         this.size = size;
         this.herramienta = herramienta;
 

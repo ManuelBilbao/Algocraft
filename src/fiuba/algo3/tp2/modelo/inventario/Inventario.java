@@ -24,13 +24,9 @@ public class Inventario{
         }
     }
 
-    public void sacar(String nombreElemento, Object elemento){
+    public void sacar(String nombreElemento){
         if (inventario.containsKey(nombreElemento)){
-            inventario.put(nombreElemento,inventario.get(nombreElemento)).disminuirCantidad();
-        }
-        else{
-            inventario.put(nombreElemento,new ElementoInventario(nombreElemento,elemento));
-
+            inventario.get(nombreElemento).disminuirCantidad();
         }
     }
 

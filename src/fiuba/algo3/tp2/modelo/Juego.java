@@ -1,6 +1,7 @@
 package fiuba.algo3.tp2.modelo;
 
 import fiuba.algo3.tp2.modelo.Jugador;
+import fiuba.algo3.tp2.modelo.desgastes.NoPoseeDurabilidadException;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.modelo.mapa.CasilleroOcupadoException;
 import fiuba.algo3.tp2.modelo.mapa.Mapa;
@@ -50,20 +51,16 @@ public class Juego {
 
     public void golpear(Material bloque, Herramienta herramienta){
 
-        if(bloque.toString() == "Madera"){
-            herramienta.golpearMadera(bloque);
-        }
-        else if(bloque.toString() == "Piedra"){
-            herramienta.golpearPiedra(bloque);
-        }
-        else if(bloque.toString() == "Metal"){
-            herramienta.golpearMetal(bloque);
-        }
-        else if(bloque.toString() == "Diamante") {
-            herramienta.golpearDiamante(bloque);
-        }
-        else{
-        }
+            if (bloque.toString() == "Madera") {
+                herramienta.golpearMadera(bloque);
+            } else if (bloque.toString() == "Piedra") {
+                herramienta.golpearPiedra(bloque);
+            } else if (bloque.toString() == "Metal") {
+                herramienta.golpearMetal(bloque);
+            } else if (bloque.toString() == "Diamante") {
+                herramienta.golpearDiamante(bloque);
+            } else {
+            }
     }
 
     public Material golpearDerecha(Herramienta herramienta){

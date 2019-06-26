@@ -1,7 +1,9 @@
 package fiuba.algo3.tp2.controller.Mapa;
 
+import fiuba.algo3.tp2.controller.MenuPrincipal;
 import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
+import fiuba.algo3.tp2.modelo.desgastes.NoPoseeDurabilidadException;
 import fiuba.algo3.tp2.modelo.herramientas.Herramienta;
 import fiuba.algo3.tp2.modelo.mapa.CasilleroOcupadoException;
 import fiuba.algo3.tp2.modelo.mapa.Mapa;
@@ -23,6 +25,7 @@ public class MapaGridPane {
     private Mapa mapa;
     private Jugador jugador;
     private Juego juego;
+    private MenuPrincipal menu;
 
     private double altoCelda = 20;
     private double anchoCelda = 20;
@@ -130,47 +133,58 @@ public class MapaGridPane {
     }
 
 
-    public void jugadorUsarHerramienta(String ultimoComando, Herramienta herramienta){
+    public void jugadorUsarHerramienta(String ultimoComando, MenuPrincipal menu){
 
-        if(herramienta==null) return;
+        this.menu = menu;
+
+        Herramienta herramienta = getHerramieta();
+        if(herramienta==null) {return;}
 
         Posicion posJugador = juego.getMapa().getPosicionJugador();
         Posicion posBloque = new Posicion(posJugador.getFila(), posJugador.getColumna());
         Material bloque = null;
 
-        if (ultimoComando=="A"){
-            bloque = juego.golpearIzquierda(herramienta);
-            posBloque.moverIzquierda();
-        }else if (ultimoComando == "D"){
-            bloque =juego.golpearDerecha(herramienta);
-            posBloque.moverDerecha();
-        }else if (ultimoComando == "W"){
-            bloque =juego.golpearArriba(herramienta);
-            posBloque.moverArriba();
-        } else if (ultimoComando == "S"){
-            bloque =juego.golpearAbajo(herramienta);
-            posBloque.moverAbajo();
-        } else{ return;}
+        try {
 
-        if (bloque!= null && bloque.getDurabilidad()<=0){
+            if (ultimoComando == "A") {
+                bloque = juego.golpearIzquierda(herramienta);
+                posBloque.moverIzquierda();
+            } else if (ultimoComando == "D") {
+                bloque = juego.golpearDerecha(herramienta);
+                posBloque.moverDerecha();
+            } else if (ultimoComando == "W") {
+                bloque = juego.golpearArriba(herramienta);
+                posBloque.moverArriba();
+            } else if (ultimoComando == "S") {
+                bloque = juego.golpearAbajo(herramienta);
+                posBloque.moverAbajo();
+            } else {
+                return;
+            }
+
+        } catch (NullPointerException e){
+
+        } catch (NoPoseeDurabilidadException e){
+            juego.getJugador().getInventarioHerramientas().sacar(menu.getHerramientaEquipada());
+            menu.borrarHerramientaEquipada();
+        }
+
+        if (bloque!=null && bloque.getDurabilidad()<=0){
+            juego.getJugador().getInventarioMateriales().agregar(bloque.toString().toLowerCase(), bloque);
             limpiarCasillero(posBloque.getFila(), posBloque.getColumna());
             juego.getMapa().liberarCasillero(posBloque);
         }
 
     }
 
-
-    private Node getNodeByRowColumnIndex (final int fil, final int col, GridPane gridPane) {
-        Node res = null;
-        ObservableList<Node> childrens = gridPane.getChildren();
-
-        for (Node node : childrens) {
-            if(gridPane.getRowIndex(node) == fil && gridPane.getColumnIndex(node) == col) {
-                res = node;
-                break;
-            }
+    private Herramienta getHerramieta(){
+        Herramienta h;
+        try{
+            h = (Herramienta) jugador.getInventarioHerramientas().getElemento(menu.getHerramientaEquipada());
+        } catch (NullPointerException e){
+            return null;
         }
-        return res;
+        return  h;
     }
 
     public GridPane getVisual(){ return mapaGridPane;}
