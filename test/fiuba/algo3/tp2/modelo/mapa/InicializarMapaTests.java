@@ -2,8 +2,9 @@ package fiuba.algo3.tp2.modelo.mapa;
 
 import fiuba.algo3.tp2.modelo.Jugador;
 import fiuba.algo3.tp2.modelo.materiales.bloques.*;
-import org.junit.Test;
-import static junit.framework.TestCase.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class InicializarMapaTests {
 
