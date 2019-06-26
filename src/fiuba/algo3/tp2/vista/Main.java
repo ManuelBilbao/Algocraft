@@ -25,7 +25,7 @@ import java.io.File;
 public class Main extends Application {
 
     public Juego juego;
-    public  MediaPlayer mediaPlayer;
+    public  MediaPlayer soundtrackPlayer;
 
 
     public static double width;
@@ -42,16 +42,20 @@ public class Main extends Application {
 
         juego = new Juego();
 
-        Media musicFile = new Media(new File("media/Minecraft-soundtrack.wav").toURI().toString());
-        mediaPlayer = new MediaPlayer(musicFile);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setVolume(0.1);
+        Media soundtrack = new Media(new File("media/Minecraft-soundtrack.wav").toURI().toString());
+        soundtrackPlayer = new MediaPlayer(soundtrack);
+        soundtrackPlayer.setAutoPlay(true);
+        soundtrackPlayer.setVolume(0.1);
+
+        Media sonidoGolpe = new Media(new File("media/Minecraft-golpe.wav").toURI().toString());
+        MediaPlayer golpePlayer = new MediaPlayer(sonidoGolpe);
+
 
         width = Screen.getPrimary().getVisualBounds().getWidth()*0.8;
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         MapaGridPane mapaGridPane =  new MapaGridPane(juego, width, heigth);
-        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, mediaPlayer, width, heigth/8);
+        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, soundtrackPlayer, width, heigth/8);
 
         primaryStage.setTitle("Algocraft");
 
@@ -89,7 +93,7 @@ public class Main extends Application {
                     mapaGridPane.jugadorMoverIzquierda();
                 }
                 if (event.getCode() == KeyCode.F) {
-                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal);
+                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal,golpePlayer);
                     menuPrincipal.update();
                 }
 
