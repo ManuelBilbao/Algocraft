@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaPlayer;
 
 public class MenuPrincipal {
 
@@ -17,7 +18,7 @@ public class MenuPrincipal {
     CrafterStage craferStage;
     ObjetosDisponibles objetosDisponibles;
 
-    public MenuPrincipal(Juego juego, double ancho, double alto){
+    public MenuPrincipal(Juego juego, MediaPlayer mediaPlayer, double ancho, double alto){
 
         menuInicial = new VBox();
         objetosDisponibles = new ObjetosDisponibles(ancho/3/4, alto/7,materiales,juego);
@@ -29,7 +30,13 @@ public class MenuPrincipal {
             objetosDisponibles.updateCantidadDeMateriales();
         });
 
-        Button buttonSound = (new SoundButton(ancho/3,alto/3,alto/6 )).getVisual();
+
+        SoundButton botonSonido = new SoundButton(ancho/3,alto/3,alto/6 );
+        Button buttonSound = (botonSonido).getVisual();
+        buttonSound.setOnAction(e -> {
+            botonSonido.apagar(mediaPlayer, alto/6);
+            mediaPlayer.stop();
+        });
 
 
         Button buttonInventario = (new AlgocraftButton("Inventario",ancho/3,alto/3, alto/6 )).getVisual();

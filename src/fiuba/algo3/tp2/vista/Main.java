@@ -42,11 +42,16 @@ public class Main extends Application {
 
         juego = new Juego();
 
+        Media musicFile = new Media(new File("media/Minecraft-soundtrack.wav").toURI().toString());
+        mediaPlayer = new MediaPlayer(musicFile);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setVolume(0.1);
+
         width = Screen.getPrimary().getVisualBounds().getWidth()*0.8;
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         MapaGridPane mapaGridPane =  new MapaGridPane(juego, width, heigth);
-        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, width, heigth/8);
+        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, mediaPlayer, width, heigth/8);
 
         primaryStage.setTitle("Algocraft");
 
@@ -61,10 +66,6 @@ public class Main extends Application {
         primaryStage.setScene(theScene);
 
 
-        Media musicFile = new Media(new File("media/Minecraft-soundtrack.wav").toURI().toString());
-        mediaPlayer = new MediaPlayer(musicFile);
-        mediaPlayer.setAutoPlay(true);
-        mediaPlayer.setVolume(0.1);
 
         layout.setOnKeyPressed(new EventHandler<KeyEvent>() {
 

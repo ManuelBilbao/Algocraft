@@ -5,6 +5,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.MediaPlayer;
+
+import javax.print.attribute.standard.Media;
 
 
 public class SoundButton {
@@ -21,5 +24,10 @@ public class SoundButton {
 
     public Button getVisual(){
         return boton;
+    }
+
+    public void apagar(MediaPlayer mediaPlayer, double size){
+        Image apagado = new Image("file:img/mute.png",size*3,size*3,false,false);
+        boton.setGraphic(new ImageView(apagado));
     }
 }
