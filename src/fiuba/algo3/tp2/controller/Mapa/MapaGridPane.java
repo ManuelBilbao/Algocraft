@@ -16,9 +16,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-import javax.print.attribute.standard.Media;
+import java.io.File;
 
 
 public class MapaGridPane {
@@ -94,6 +95,7 @@ public class MapaGridPane {
 
 
     public void jugadorMoverArriba(){
+
         try{
             limpiarJugadorEnTablero();
             juego.moverJugadorArriba();
@@ -104,6 +106,7 @@ public class MapaGridPane {
     }
 
     public void jugadorMoverAbajo(){
+
         try{
             limpiarJugadorEnTablero();
             juego.moverJugadorAbajo();
@@ -114,7 +117,6 @@ public class MapaGridPane {
     }
 
     public void jugadorMoverDerecha(){
-
         try{
             limpiarJugadorEnTablero();
             juego.moverJugadorDerecha();
@@ -125,7 +127,6 @@ public class MapaGridPane {
     }
 
     public void jugadorMoverIzquierda(){
-
         try{
             limpiarJugadorEnTablero();
             juego.moverJugadorIzquieda();
@@ -136,7 +137,7 @@ public class MapaGridPane {
     }
 
 
-    public void jugadorUsarHerramienta(String ultimoComando, MenuPrincipal menu, MediaPlayer sonido){
+    public void jugadorUsarHerramienta(String ultimoComando, MenuPrincipal menu){
 
         this.menu = menu;
 
@@ -147,7 +148,6 @@ public class MapaGridPane {
         Posicion posBloque = new Posicion(posJugador.getFila(), posJugador.getColumna());
         Material bloque = null;
 
-        sonido.setVolume(3.0);
 
 
         try {
@@ -155,23 +155,15 @@ public class MapaGridPane {
             if (ultimoComando == "A") {
                 bloque = juego.golpearIzquierda(herramienta);
                 posBloque.moverIzquierda();
-                sonido.play();
-                sonido.stop();
             } else if (ultimoComando == "D") {
                 bloque = juego.golpearDerecha(herramienta);
                 posBloque.moverDerecha();
-                sonido.play();
-                sonido.stop();
             } else if (ultimoComando == "W") {
                 bloque = juego.golpearArriba(herramienta);
                 posBloque.moverArriba();
-                sonido.play();
-                sonido.stop();
             } else if (ultimoComando == "S") {
                 bloque = juego.golpearAbajo(herramienta);
                 posBloque.moverAbajo();
-                sonido.play();
-                sonido.stop();
             } else {
                 return;
             }

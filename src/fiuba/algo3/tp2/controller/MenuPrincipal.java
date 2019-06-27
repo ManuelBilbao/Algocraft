@@ -7,6 +7,7 @@ import fiuba.algo3.tp2.modelo.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 
@@ -18,7 +19,7 @@ public class MenuPrincipal {
     CrafterStage craferStage;
     ObjetosDisponibles objetosDisponibles;
 
-    public MenuPrincipal(Juego juego, MediaPlayer mediaPlayer, double ancho, double alto){
+    public MenuPrincipal(Juego juego, MediaPlayer musica, double ancho, double alto){
 
         menuInicial = new VBox();
         objetosDisponibles = new ObjetosDisponibles(ancho/3/4, alto/7,materiales,juego);
@@ -31,21 +32,34 @@ public class MenuPrincipal {
         });
 
 
-        SoundButton botonSonido = new SoundButton(ancho/3,alto/3,alto/6 );
+        SoundButton botonMusica = new SoundButton(ancho/3,alto/3,alto/6, "musica");
+        Button buttonMusica = (botonMusica).getVisual();
+        buttonMusica.setOnAction(e -> {
+            if (botonMusica.prendido()) {
+                botonMusica.apagar( alto / 6, "musicaMute",null);
+                musica.stop();
+            }
+            else{
+                botonMusica.prender(alto/6,"musica",null);
+                musica.play();
+            }
+        });
+
+        SoundButton botonSonido = new SoundButton(ancho/3,alto/3,alto/6, "speaker" );
         Button buttonSound = (botonSonido).getVisual();
         buttonSound.setOnAction(e -> {
             if (botonSonido.prendido()) {
-                botonSonido.apagar(mediaPlayer, alto / 6);
-            }
-            else{ botonSonido.prender(mediaPlayer,alto/6);}
-        });
+                botonSonido.apagar(alto / 6, "mute",null);
 
+            }
+            else{ botonSonido.prender(alto/6,"speaker",null);}
+        });
 
         Button buttonInventario = (new AlgocraftButton("Inventario",ancho/3,alto/3, alto/6 )).getVisual();
         inventarioStage =  new InventarioStage(juego) ;
         buttonInventario.setOnAction(e -> { inventarioStage.getStage().showAndWait(); });
 
-        menuInicial.getChildren().addAll(buttonCrafter, buttonInventario, objetosDisponibles.getVisualHBox(),buttonSound);
+        menuInicial.getChildren().addAll(buttonCrafter, buttonInventario, objetosDisponibles.getVisualHBox(),buttonSound, buttonMusica);
 
         menuInicial.setAlignment(Pos.BOTTOM_CENTER);
         menuInicial.setSpacing(10);

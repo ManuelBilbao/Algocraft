@@ -27,6 +27,12 @@ public class Main extends Application {
     public Juego juego;
     public  MediaPlayer soundtrackPlayer;
 
+    public MediaPlayer golpePlayer;
+    public MediaPlayer movimientoPlayer;
+    public Boolean sonidoActivado;
+
+
+
 
     public static double width;
     public static double heigth;
@@ -42,14 +48,26 @@ public class Main extends Application {
 
         juego = new Juego();
 
+        Media sonidoGolpe = new Media(new File("media/Minecraft-golpe.wav").toURI().toString());
+        this.golpePlayer = new MediaPlayer(sonidoGolpe);
+        golpePlayer.setVolume(3.0);
+
+
+        Media sonidoMovimiento = new Media(new File("media/Minecraft-golpe.wav").toURI().toString());
+        this.movimientoPlayer = new MediaPlayer(sonidoMovimiento);
+        movimientoPlayer.setVolume(3.0);
+
+        this.sonidoActivado = true;
+
         Media soundtrack = new Media(new File("media/Minecraft-soundtrack.wav").toURI().toString());
         soundtrackPlayer = new MediaPlayer(soundtrack);
         soundtrackPlayer.setAutoPlay(true);
         soundtrackPlayer.setVolume(0.1);
 
-        Media sonidoGolpe = new Media(new File("media/Minecraft-golpe.wav").toURI().toString());
-        MediaPlayer golpePlayer = new MediaPlayer(sonidoGolpe);
 
+//        private Boolean sonidoActivado(){ return sonidoActivado; }
+
+//        public void desactivarSonido(){ sonidoActivado = false;}
 
         width = Screen.getPrimary().getVisualBounds().getWidth()*0.8;
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
@@ -77,23 +95,43 @@ public class Main extends Application {
 
             public void handle(KeyEvent event) {
                 if(event.getCode() == KeyCode.W) {
+                    if (sonidoActivado){
+                        movimientoPlayer.play();
+                        movimientoPlayer.stop();
+                    }
                     ultimoComando = "W";
                     mapaGridPane.jugadorMoverArriba();
                 }
                 if( event.getCode() == KeyCode.S) {
+                    if (sonidoActivado){
+                        movimientoPlayer.play();
+                        movimientoPlayer.stop();
+                    }
                     ultimoComando = "S";
                     mapaGridPane.jugadorMoverAbajo();
                 }
                 if (event.getCode() == KeyCode.D) {
+                    if (sonidoActivado){
+                        movimientoPlayer.play();
+                        movimientoPlayer.stop();
+                    }
                     ultimoComando = "D";
                     mapaGridPane.jugadorMoverDerecha();
                 }
                 if (event.getCode() == KeyCode.A) {
+                    if (sonidoActivado){
+                        movimientoPlayer.play();
+                        movimientoPlayer.stop();
+                    }
                     ultimoComando = "A";
                     mapaGridPane.jugadorMoverIzquierda();
                 }
                 if (event.getCode() == KeyCode.F) {
-                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal,golpePlayer);
+                    if (sonidoActivado){
+                        golpePlayer.play();
+                        golpePlayer.stop();
+                    }
+                    mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal);
                     menuPrincipal.update();
                 }
 
