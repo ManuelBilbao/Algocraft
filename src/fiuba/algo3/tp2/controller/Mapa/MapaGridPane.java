@@ -1,5 +1,6 @@
 package fiuba.algo3.tp2.controller.Mapa;
 
+import fiuba.algo3.tp2.controller.AlertStage;
 import fiuba.algo3.tp2.controller.MenuPrincipal;
 import fiuba.algo3.tp2.modelo.Juego;
 import fiuba.algo3.tp2.modelo.Jugador;
@@ -15,6 +16,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 
 public class MapaGridPane {
@@ -170,6 +175,13 @@ public class MapaGridPane {
         if (herramienta.getDurabilidad()<=0) {
             juego.getJugador().getInventarioHerramientas().sacar(menu.getHerramientaEquipada());
             menu.desequiparHerramienta();
+
+            Media media = new Media(new File("media/Minecraft-ruptura.wav").toURI().toString());
+            MediaPlayer ruptura = new MediaPlayer(media);
+            ruptura.setVolume(1.0);
+            ruptura.play();
+
+            (new AlertStage()).display("Algocraft - Mensaje","Se rompió la herramienta" );
         }
 
         if (bloque!=null && bloque.getDurabilidad()<=0){

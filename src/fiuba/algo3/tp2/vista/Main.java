@@ -17,6 +17,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
 import java.io.File;
 
@@ -91,7 +92,7 @@ public class Main extends Application {
                 if(event.getCode() == KeyCode.W) {
                     if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
-                        movimientoPlayer.stop();
+                        movimientoPlayer.seek(new Duration(0));
                     }
                     ultimoComando = "W";
                     mapaGridPane.jugadorMoverArriba();
@@ -99,7 +100,7 @@ public class Main extends Application {
                 if( event.getCode() == KeyCode.S) {
                     if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
-                        movimientoPlayer.stop();
+                        movimientoPlayer.seek(new Duration(0));
                     }
                     ultimoComando = "S";
                     mapaGridPane.jugadorMoverAbajo();
@@ -107,7 +108,7 @@ public class Main extends Application {
                 if (event.getCode() == KeyCode.D) {
                     if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
-                        movimientoPlayer.stop();
+                        movimientoPlayer.seek(new Duration(0));
                     }
                     ultimoComando = "D";
                     mapaGridPane.jugadorMoverDerecha();
@@ -115,7 +116,7 @@ public class Main extends Application {
                 if (event.getCode() == KeyCode.A) {
                     if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
-                        movimientoPlayer.stop();
+                        movimientoPlayer.seek(new Duration(0));
                     }
                     ultimoComando = "A";
                     mapaGridPane.jugadorMoverIzquierda();
@@ -123,7 +124,7 @@ public class Main extends Application {
                 if (event.getCode() == KeyCode.F) {
                     if (menuPrincipal.sonidoActivado()){
                         golpePlayer.play();
-                        golpePlayer.stop();
+                        golpePlayer.seek(new Duration(0));
                     }
                     mapaGridPane.jugadorUsarHerramienta(ultimoComando, menuPrincipal);
                     menuPrincipal.update();
