@@ -9,6 +9,9 @@ public class InventarioHerramienta extends Inventario {
     protected HashMap<String, ArrayList> inventario = new HashMap();
 
     @Override
+    public boolean vacio(){ return inventario.isEmpty(); }
+
+    @Override
     public int cantidadDe(String nombreElemento) {
         if ((!inventario.containsKey(nombreElemento))) throw new ElementoNoEstaEnElInventarioException();
             return inventario.get(nombreElemento).size();
