@@ -7,7 +7,6 @@ import fiuba.algo3.tp2.modelo.Juego;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 
@@ -18,11 +17,14 @@ public class MenuPrincipal {
     InventarioStage inventarioStage;
     CrafterStage craferStage;
     ObjetosDisponibles objetosDisponibles;
+    Boolean sonidoActivado;
 
-    public MenuPrincipal(Juego juego, MediaPlayer musica, double ancho, double alto){
+    public MenuPrincipal(Juego juego, MediaPlayer musica, double ancho, double alto, Boolean sonidoActivado){
 
         menuInicial = new VBox();
         objetosDisponibles = new ObjetosDisponibles(ancho/3/4, alto/7,materiales,juego);
+        this.sonidoActivado = true;
+
 
         Button buttonCrafter = (new AlgocraftButton("Crafter",ancho/3,alto/3,alto/6 )).getVisual();
         craferStage =  new CrafterStage(juego);
@@ -32,27 +34,30 @@ public class MenuPrincipal {
         });
 
 
-        SoundButton botonMusica = new SoundButton(ancho/3,alto/3,alto/6, "musica");
+        SoundButton botonMusica = new SoundButton(alto/6, "musica",true);
         Button buttonMusica = (botonMusica).getVisual();
         buttonMusica.setOnAction(e -> {
             if (botonMusica.prendido()) {
-                botonMusica.apagar( alto / 6, "musicaMute",null);
+                botonMusica.apagar( alto / 6, "musicaMute");
                 musica.stop();
             }
             else{
-                botonMusica.prender(alto/6,"musica",null);
+                botonMusica.prender(alto/6,"musica");
                 musica.play();
             }
         });
 
-        SoundButton botonSonido = new SoundButton(ancho/3,alto/3,alto/6, "speaker" );
+        SoundButton botonSonido = new SoundButton(alto/6, "speaker", true);
         Button buttonSound = (botonSonido).getVisual();
         buttonSound.setOnAction(e -> {
             if (botonSonido.prendido()) {
-                botonSonido.apagar(alto / 6, "mute",null);
-
+                botonSonido.apagar(alto / 6, "mute");
+                this.sonidoActivado = false;
             }
-            else{ botonSonido.prender(alto/6,"speaker",null);}
+            else{
+                botonSonido.prender(alto/6,"speaker");
+                this.sonidoActivado = true;
+            }
         });
 
         Button buttonInventario = (new AlgocraftButton("Inventario",ancho/3,alto/3, alto/6 )).getVisual();
@@ -64,6 +69,10 @@ public class MenuPrincipal {
         menuInicial.setAlignment(Pos.BOTTOM_CENTER);
         menuInicial.setSpacing(10);
 
+    }
+
+    public Boolean sonidoActivado(){
+        return sonidoActivado;
     }
 
     public String getHerramientaEquipada(){

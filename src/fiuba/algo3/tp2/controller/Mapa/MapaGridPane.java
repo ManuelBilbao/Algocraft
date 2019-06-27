@@ -9,17 +9,12 @@ import fiuba.algo3.tp2.modelo.mapa.CasilleroOcupadoException;
 import fiuba.algo3.tp2.modelo.mapa.Mapa;
 import fiuba.algo3.tp2.modelo.mapa.Posicion;
 import fiuba.algo3.tp2.modelo.materiales.bloques.Material;
-import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-import java.io.File;
 
 
 public class MapaGridPane {

@@ -29,7 +29,6 @@ public class Main extends Application {
 
     public MediaPlayer golpePlayer;
     public MediaPlayer movimientoPlayer;
-    public Boolean sonidoActivado;
 
 
 
@@ -50,14 +49,12 @@ public class Main extends Application {
 
         Media sonidoGolpe = new Media(new File("media/Minecraft-golpe.wav").toURI().toString());
         this.golpePlayer = new MediaPlayer(sonidoGolpe);
-        golpePlayer.setVolume(3.0);
+        golpePlayer.setVolume(1.0);
 
 
-        Media sonidoMovimiento = new Media(new File("media/Minecraft-golpe.wav").toURI().toString());
+        Media sonidoMovimiento = new Media(new File("media/Minecraft-walk2.wav").toURI().toString());
         this.movimientoPlayer = new MediaPlayer(sonidoMovimiento);
-        movimientoPlayer.setVolume(3.0);
-
-        this.sonidoActivado = true;
+        movimientoPlayer.setVolume(1.0);
 
         Media soundtrack = new Media(new File("media/Minecraft-soundtrack.wav").toURI().toString());
         soundtrackPlayer = new MediaPlayer(soundtrack);
@@ -65,15 +62,11 @@ public class Main extends Application {
         soundtrackPlayer.setVolume(0.1);
 
 
-//        private Boolean sonidoActivado(){ return sonidoActivado; }
-
-//        public void desactivarSonido(){ sonidoActivado = false;}
-
         width = Screen.getPrimary().getVisualBounds().getWidth()*0.8;
         heigth = Screen.getPrimary().getVisualBounds().getHeight();
 
         MapaGridPane mapaGridPane =  new MapaGridPane(juego, width, heigth);
-        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, soundtrackPlayer, width, heigth/8);
+        MenuPrincipal menuPrincipal = new MenuPrincipal(juego, soundtrackPlayer, width, heigth/8, true);
 
         primaryStage.setTitle("Algocraft");
 
@@ -93,9 +86,10 @@ public class Main extends Application {
 
             String ultimoComando = "null";
 
+
             public void handle(KeyEvent event) {
                 if(event.getCode() == KeyCode.W) {
-                    if (sonidoActivado){
+                    if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
                         movimientoPlayer.stop();
                     }
@@ -103,7 +97,7 @@ public class Main extends Application {
                     mapaGridPane.jugadorMoverArriba();
                 }
                 if( event.getCode() == KeyCode.S) {
-                    if (sonidoActivado){
+                    if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
                         movimientoPlayer.stop();
                     }
@@ -111,7 +105,7 @@ public class Main extends Application {
                     mapaGridPane.jugadorMoverAbajo();
                 }
                 if (event.getCode() == KeyCode.D) {
-                    if (sonidoActivado){
+                    if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
                         movimientoPlayer.stop();
                     }
@@ -119,7 +113,7 @@ public class Main extends Application {
                     mapaGridPane.jugadorMoverDerecha();
                 }
                 if (event.getCode() == KeyCode.A) {
-                    if (sonidoActivado){
+                    if (menuPrincipal.sonidoActivado()){
                         movimientoPlayer.play();
                         movimientoPlayer.stop();
                     }
@@ -127,7 +121,7 @@ public class Main extends Application {
                     mapaGridPane.jugadorMoverIzquierda();
                 }
                 if (event.getCode() == KeyCode.F) {
-                    if (sonidoActivado){
+                    if (menuPrincipal.sonidoActivado()){
                         golpePlayer.play();
                         golpePlayer.stop();
                     }
